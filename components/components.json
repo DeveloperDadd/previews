@@ -1,1 +1,7 @@
-
+{
+  "id": "primary-nav",
+  "category": "nav",
+  "use_when": "everytime",
+  "avoid_when": "n/a",
+  "needs": ["About", "Services", "New Patients"]
+}
