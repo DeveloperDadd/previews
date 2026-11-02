@@ -20,6 +20,10 @@ Folders that start with `_` are never published, so only built pages go live.
 Every page carries a "this is a preview" bar and a `noindex` tag, so search
 engines leave it alone.
 
+Every site has one call to action: calling the business. There are no forms,
+no online booking and no embedded widgets. The build stops if a page has a
+form or invites people to book online.
+
 ## Build one by hand
 
     node _tools/build.js <slug>
@@ -35,7 +39,7 @@ Clear out previews that haven't turned into clients after 30 days.
 ## When a prospect signs
 
 Copy their `<slug>/` folder into its own repository, remove the preview bar and the
-`noindex` tag, swap the form for a real one, and point their domain at it.
+`noindex` tag, and point their domain at it.
 
 ## Colors
 

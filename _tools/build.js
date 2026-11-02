@@ -35,6 +35,12 @@ const REQUIRED = ['slug', 'name', 'category', 'city', 'headline', 'intro', 'phon
   'listing_url', 'services'];
 const MIST = '#F1F3F2';
 
+// The only call to action on these sites is a phone call. Fields from the
+// old quote-form template are ignored, and booking language stops the build.
+const RETIRED_FIELDS = ['quote_label', 'contact_heading', 'contact_intro', 'form_prompt', 'submit_label'];
+const BOOKING_BLOCK = /\b(book(ing)? online|online (booking|scheduling|appointments?)|schedul(e|ing) online|book now|booking (link|page|widget|system)|request (an )?appointment online)\b/i;
+const BOOKING_CHECK = /\b(book|request|schedule) (an |your )?appointment\b/i;
+
 const esc = (value) => String(value)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -132,6 +138,8 @@ function main() {
     errors.push(`phone doesn't look like a US number: ${d.phone}`);
   }
   if (errors.length) fail(errors);
+  const retired = RETIRED_FIELDS.filter((key) => key in d);
+  if (retired.length) warnings.push(`ignored ${retired.join(', ')}: sites are call-only now (use call_heading and call_intro)`);
 
   const name = d.name.trim();
   const phone = d.phone.trim();
@@ -157,7 +165,7 @@ function main() {
 
   // Sections after "What we do" alternate grey, white, grey... so neighbours never match.
   let reviews = d.reviews || [];
-  const order = [...(photos.length >= 3 ? ['gallery'] : []), ...(reviews.length ? ['reviews'] : []), 'area', 'contact'];
+  const order = [...(photos.length >= 3 ? ['gallery'] : []), ...(reviews.length ? ['reviews'] : []), 'area'];
   const alt = Object.fromEntries(order.map((key, i) => [key, i % 2 === 0 ? ' alt' : '']));
 
   // Rating line
@@ -281,7 +289,6 @@ function main() {
     hero_grid_class: heroGridClass,
     rating_html: ratingHtml,
     hero_photo_html: heroPhotoHtml,
-    quote_label: esc(d.quote_label || 'Request a quote'),
     intro: esc(d.intro),
     services_html: servicesHtml,
     gallery_html: galleryHtml,
@@ -289,11 +296,8 @@ function main() {
     area_alt: alt.area,
     area_html: areaHtml,
     hours_html: hoursHtml,
-    contact_alt: alt.contact,
-    contact_heading: esc(d.contact_heading || 'Get a quote'),
-    contact_intro: esc(d.contact_intro || "Call us, or tell us what you need and we'll get back to you."),
-    form_prompt: esc(d.form_prompt || 'What do you need?'),
-    submit_label: esc(d.submit_label || 'Send request'),
+    call_heading: esc(d.call_heading || 'Give us a call'),
+    call_intro: esc(d.call_intro || 'Tell us what you need and when you need it.'),
     footer_address_html: address ? `<p>${esc(address)}</p>` : '',
     year: String(new Date().getFullYear()),
     credit_html: creditHtml,
@@ -307,6 +311,17 @@ function main() {
   };
   if (!files['index.html'].includes('name="robots" content="noindex')) fail(['Safety check failed: noindex tag missing']);
   if (!files['index.html'].includes('class="preview-bar"')) fail(['Safety check failed: preview notice missing']);
+
+  // Call-only checks: no forms or embedded widgets, no invitations to book online.
+  const page = files['index.html'];
+  if (/<(form|input|textarea|select|iframe)\b/i.test(page)) {
+    fail(['Call-only check failed: the page contains a form or embedded widget']);
+  }
+  const visible = page.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  const blocked = visible.match(BOOKING_BLOCK);
+  if (blocked) fail([`Call-only check failed: "${blocked[0]}" invites online booking. Reword it to point to calling.`]);
+  const flagged = visible.match(BOOKING_CHECK);
+  if (flagged) warnings.push(`"${flagged[0]}" appears on the page; make sure it tells people to call, not book online`);
 
   const outDir = path.join(ROOT, slug);
   fs.mkdirSync(outDir, { recursive: true });

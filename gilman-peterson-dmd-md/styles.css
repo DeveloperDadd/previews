@@ -8,7 +8,6 @@
   --ink: #1F2933;
   --muted: #56616B;
   --rule: #D8DDDF;
-  --field: #AEB6BB;
   --max: 72rem;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -69,8 +68,6 @@ a { color: inherit; text-underline-offset: 3px; }
   text-decoration: none; cursor: pointer;
 }
 .btn-call { background: var(--sign); color: var(--deep); font-variant-numeric: tabular-nums; }
-.btn-outline { border-color: rgba(255,255,255,.75); color: #fff; }
-.btn-outline:hover { background: rgba(255,255,255,.1); }
 .btn-call:hover { filter: brightness(1.06); }
 .hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--deep); }
 
@@ -93,7 +90,7 @@ h2 {
 .gallery { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
 .gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--rule); }
 
-.reviews { display: grid; gap: 2.5rem 3rem; margin-top: 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin: 0; }
+.reviews { display: grid; gap: 2.5rem 3rem; margin-top: 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
 .review { margin: 0; }
 #area .section-intro { margin-bottom: 1.25rem; }
 .review .stars { color: var(--paint); letter-spacing: .06em; }
@@ -115,24 +112,23 @@ h3.sub { margin: 0 0 .75rem; font-size: 1.375rem; font-weight: 700; font-stretch
 .hours tr.today th, .hours tr.today td { font-weight: 700; }
 .hours tr.today th::after { content: " (today)"; font-weight: 400; color: var(--muted); }
 
-.contact-grid { display: grid; gap: 3rem; }
-@media (min-width: 56rem) { .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 5rem; } }
-.big-phone {
-  display: inline-block; margin: .25rem 0 1rem;
-  color: var(--paint); text-decoration: none;
-  font-weight: 800; font-stretch: 72%; line-height: 1;
-  font-size: clamp(2.5rem, 7vw, 3.75rem); font-variant-numeric: tabular-nums;
+/* Closing call band: the same paint and stripes as the hero, so the page ends where it began */
+.call-section { position: relative; padding: 5.5rem 0 4.5rem; }
+.call-section::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 1.5rem; height: 11px;
+  background: linear-gradient(var(--sign) 0 2px, transparent 2px 5px, var(--sign) 5px 11px);
 }
-form { display: grid; gap: 1rem; }
-label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
-input, textarea {
-  font: inherit; font-weight: 400; color: var(--ink); background: #fff;
-  padding: .75rem .85rem; border: 1px solid var(--field); border-radius: 6px; width: 100%;
+.call-section h2 { color: #fff; }
+.call-intro { font-size: 1.25rem; line-height: 1.45; max-width: 40ch; margin: 0 0 1rem; }
+.call-number {
+  display: inline-block;
+  color: var(--sign); text-decoration: none;
+  font-weight: 800; font-stretch: 70%; line-height: 1;
+  font-size: clamp(3rem, 12vw, 7rem); font-variant-numeric: tabular-nums;
 }
-textarea { min-height: 7rem; resize: vertical; }
-input:focus-visible, textarea:focus-visible { outline: 3px solid var(--paint); outline-offset: 1px; border-color: var(--paint); }
-.btn-submit { background: var(--paint); color: #fff; justify-self: start; }
-.form-note { margin: 0; padding: 1rem 1.1rem; background: #fff; border-left: 4px solid var(--paint); }
+.call-number:hover { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 10px; }
+.today-hours { margin: 1rem 0 0; font-size: 1.0625rem; }
 
 .site-footer { background: var(--deep); color: rgba(255,255,255,.85); padding: 2.5rem 0 3rem; font-size: .95rem; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.25rem 2rem; }

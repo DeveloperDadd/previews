@@ -33,7 +33,6 @@
         {{rating_html}}
         <div class="actions">
           <a class="btn btn-call" href="tel:{{tel}}">Call {{phone}}</a>
-          <a class="btn btn-outline" href="#contact">{{quote_label}}</a>
         </div>
       </div>
       {{hero_photo_html}}
@@ -63,20 +62,12 @@
     </div>
   </section>
 
-  <section class="section{{contact_alt}}" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <h2>{{contact_heading}}</h2>
-        <p class="section-intro">{{contact_intro}}</p>
-        <a class="big-phone" href="tel:{{tel}}">{{phone}}</a>
-      </div>
-      <form id="quote-form" novalidate>
-        <label>Your name<input name="name" autocomplete="name"></label>
-        <label>Phone number<input name="phone" type="tel" autocomplete="tel"></label>
-        <label>{{form_prompt}}<textarea name="message"></textarea></label>
-        <button class="btn btn-submit" type="submit">{{submit_label}}</button>
-        <p class="form-note" id="form-note" tabindex="-1" hidden>This is a preview, so the form doesn't send yet. When the site goes live, requests will go straight to {{name}}. For now, call {{phone}}.</p>
-      </form>
+  <section class="call-section on-paint" id="call">
+    <div class="wrap">
+      <h2>{{call_heading}}</h2>
+      <p class="call-intro">{{call_intro}}</p>
+      <a class="call-number" href="tel:{{tel}}">{{phone}}</a>
+      <p class="today-hours" id="today-hours" hidden></p>
     </div>
   </section>
 </main>
