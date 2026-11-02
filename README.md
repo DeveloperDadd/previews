@@ -40,3 +40,11 @@ Copy their page into its own repository, remove the preview bar and the
 
 Pick one per business in the JSON `palette` field:
 `navy`, `red`, `green`, `teal`, `slate`, `plum`.
+
+Or match the business's own branding with a `colors` block instead:
+
+    "colors": {"paint": "#7A3B12", "deep": "#4E250B", "sign": "#F3D9A4"}
+
+`paint` is the main brand color (header, hero, buttons), `deep` a darker shade
+(footer, call-button text), `sign` the highlight (stars, stripes, call button).
+The build refuses colors that would make text hard to read.

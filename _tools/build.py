@@ -34,7 +34,44 @@ PALETTES = {
 }
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 REQUIRED = ["slug", "name", "category", "city", "headline", "intro", "phone",
-            "palette", "listing_url", "services"]
+            "listing_url", "services"]
+MIST = "#F1F3F2"
+
+
+def luminance(hex_color):
+    rgb = [int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    lin = [c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4 for c in rgb]
+    return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
+
+
+def contrast(a, b):
+    hi, lo = sorted((luminance(a), luminance(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def check_colors(colors, errors, warnings):
+    """Custom colours must stay readable everywhere the template uses them."""
+    for key in ("paint", "deep", "sign"):
+        if not re.fullmatch(r"#[0-9A-Fa-f]{6}", str(colors.get(key, ""))):
+            errors.append(f"colors.{key} must be a hex colour like #1D3557")
+    if errors:
+        return
+    p, dp, s = colors["paint"], colors["deep"], colors["sign"]
+    for label, a, b, need in [
+        ("white text on paint (hero, buttons)", "#FFFFFF", p, 4.5),
+        ("white text on deep (footer)", "#FFFFFF", dp, 4.5),
+        ("deep text on sign (call button)", dp, s, 4.5),
+    ]:
+        ratio = contrast(a, b)
+        if ratio < need:
+            errors.append(f"{label} contrast is {ratio:.1f}:1; needs {need}:1")
+    for label, a, b, need in [
+        ("sign on paint (stars, stripes)", s, p, 3.0),
+        ("paint links on grey sections", p, MIST, 4.5),
+    ]:
+        ratio = contrast(a, b)
+        if ratio < need:
+            warnings.append(f"{label} contrast is {ratio:.1f}:1; aim for {need}:1")
 
 
 def esc(value):
@@ -77,7 +114,11 @@ def main():
         errors.append(f"slug in file ({d['slug']}) doesn't match file name ({slug})")
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", slug):
         errors.append("slug must be lowercase letters, numbers and single hyphens")
-    if d.get("palette") and d["palette"] not in PALETTES:
+    if d.get("colors"):
+        check_colors(d["colors"], errors, warnings)
+    elif not d.get("palette"):
+        errors.append("missing required field: palette (or a custom colors block)")
+    elif d["palette"] not in PALETTES:
         errors.append(f"palette must be one of: {', '.join(PALETTES)}")
     if d.get("phone") and len(re.sub(r"\D", "", d["phone"])) not in (10, 11):
         errors.append(f"phone doesn't look like a US number: {d['phone']}")
@@ -89,7 +130,7 @@ def main():
 
     name = d["name"].strip()
     phone = d["phone"].strip()
-    pal = PALETTES[d["palette"]]
+    pal = d["colors"] if d.get("colors") else PALETTES[d["palette"]]
     sample = bool(d.get("sample"))
 
     if len(d["headline"]) > 90:
