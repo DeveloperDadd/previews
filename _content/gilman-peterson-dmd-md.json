@@ -1,0 +1,78 @@
+{
+  "slug": "gilman-peterson-dmd-md",
+  "name": "Gilman Peterson, DMD, MD",
+  "category": "Dentist",
+  "city": "Lexington",
+  "colors": {
+    "paint": "#2B4A5E",
+    "deep": "#1A2F3D",
+    "sign": "#BDE6D6"
+  },
+  "headline": "Tooth extractions and wisdom teeth removal on Perimeter Drive in Lexington.",
+  "intro": "We remove wisdom teeth and other teeth that need to come out, one at a time or several in one visit. Appointments are recommended, so call ahead to get on the schedule.",
+  "phone": "(833) 546-3522",
+  "address": "620 Perimeter Dr #100, Lexington, KY 40517",
+  "listing_url": "https://share.google/mVuBPSvzBcfpyNQ8b",
+  "rating": 3.5,
+  "review_count": 10,
+  "services": [
+    {
+      "name": "Wisdom teeth removal",
+      "detail": "Extraction of wisdom teeth, with a follow-up visit afterward."
+    },
+    {
+      "name": "Tooth extractions",
+      "detail": "A single tooth or several in one appointment."
+    },
+    {
+      "name": "Cosmetic dentistry",
+      "detail": "Ask the office about cosmetic options when you call."
+    },
+    {
+      "name": "Payment options",
+      "detail": "Credit, debit, tap-to-pay and payment plans."
+    },
+    {
+      "name": "Accessible office",
+      "detail": "Wheelchair-accessible entrance, parking and restroom."
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Bobby Corwin",
+      "rating": 5,
+      "text": "Amazing, friendly,  very professional, and understanding staff. It feels like they really care about you. Had wisdom teeth pulled the other week and Dr. Peterson did it without any sedation, and I did not feel a thing, and I had little to no swelling and bleeding, which is the mark of a good Maxillofacial Surgeon."
+    },
+    {
+      "author": "Crystal Quick-Justice",
+      "rating": 5,
+      "text": "I had to have 3 teeth extracted and cut out. I had a little pain the first day, but zero pain the next morning. The staff is very friendly."
+    },
+    {
+      "author": "Cathy Adams",
+      "rating": 5,
+      "text": "My grandaughter had a tooth pulled and never felt a thing. Great experience all the way around."
+    }
+  ],
+  "service_area": [],
+  "hours": {
+    "Monday": "8:30\u00a0AM\u00a0\u2013\u2060\u00a012\u00a0PM, 1\u00a0\u2013\u2060\u00a04:30\u00a0PM",
+    "Tuesday": "8\u00a0AM\u00a0\u2013\u2060\u00a012\u00a0PM, 1\u00a0\u2013\u2060\u00a04:30\u00a0PM",
+    "Wednesday": "8:30\u00a0AM\u00a0\u2013\u2060\u00a012\u00a0PM, 1\u00a0\u2013\u2060\u00a04:30\u00a0PM",
+    "Thursday": "8\u00a0AM\u00a0\u2013\u2060\u00a012\u00a0PM, 1\u00a0\u2013\u2060\u00a04:30\u00a0PM",
+    "Friday": "8\u00a0AM\u00a0\u2013\u2060\u00a012\u00a0PM, 1\u00a0\u2013\u2060\u00a04:30\u00a0PM",
+    "Saturday": "Closed",
+    "Sunday": "Closed"
+  },
+  "quote_label": "Request an appointment",
+  "contact_heading": "Request an appointment",
+  "contact_intro": "Call the office, or leave your name and number and we'll call you back to set up a time.",
+  "form_prompt": "When's a good time to call you back?",
+  "photos": [],
+  "guesses": [
+    "Wisdom teeth removal and tooth extractions come from patient reviews and Google's review topics; the listing itself only names cosmetic dentistry as an offering",
+    "Follow-up visit after wisdom teeth removal (mentioned in reviews, not on the listing)",
+    "'Several in one appointment' (reviews mention 3, 6 and 9 teeth in one visit)",
+    "Headline and intro wording are written for the preview, not taken from the business"
+  ]
+}
