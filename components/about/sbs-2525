@@ -1,0 +1,165 @@
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-2525">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/apartment.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/apartment.jpg">
+            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/apartment.jpg" alt="room" width="960" height="796">
+        </picture>
+        <div class="cs-content">
+            <span class="cs-topper">Discover Available Options</span>
+            <h2 class="cs-title">Choose the one Option you like best...</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur. Enim nibh porta odio nisl quis. Mattis amet ac morbi dui netus est maecenas. Adipiscing facilisis tincidunt morbi ut imperdiet sodales suspendisse ultrices. Sed vulputate nascetur neque auctor mauris ut nunc. 
+            </p>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, dolor iste! In enim cumque voluptates animi id laborum expedita nihil totam illum, commodi saepe, repudiandae similique magnam accusamus consequatur alias fugit autem, eaque tempora earum. Nam perspiciatis aliquam error nisi quae et, assumenda animi sunt consequatur eaque possimus aperiam! Perspiciatis.
+            </p>
+            <h3 class="cs-h3">Types of Real Estate Properties for Sale:</h3>
+            <ul class="cs-card-group">
+                <li class="cs-item">Single Family Home</li>
+                <li class="cs-item">Townhouse</li>
+                <li class="cs-item">Condominium</li>
+                <li class="cs-item">Cooperative</li>
+                <li class="cs-item">Duplex</li>
+                <li class="cs-item">Triplex</li>
+                <li class="cs-item">Row House</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs-2525 {
+    background-color: #FAFBFC;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-2525 .cs-container {
+    width: 100%;
+    max-width: 90rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #sbs-2525 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    /* moved section padding to cs-content so the cs-background can be full width */
+    padding: var(--sectionPadding);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #sbs-2525 .cs-topper {
+    font-size: 1.5625rem;
+    font-style: italic;
+    text-transform: initial;
+    letter-spacing: 0;
+    margin-bottom: 1.25rem;
+    color: var(--headerColor);
+  }
+  #sbs-2525 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #sbs-2525 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-2525 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    margin: 0 0 2rem;
+    color: var(--headerColor);
+  }
+  #sbs-2525 .cs-card-group {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 4vw, 1.25rem);
+  }
+  #sbs-2525 .cs-item {
+    list-style: none;
+    font-size: clamp(0.8125rem, 3vw, 1rem);
+    line-height: 1.2em;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  #sbs-2525 .cs-picture {
+    margin-right: auto;
+    display: block;
+    position: relative;
+    width: 95vw;
+    height: 90vw;
+    max-height: 25rem;
+    z-index: 1;
+  }
+  #sbs-2525 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbs-2525 {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #sbs-2525 .cs-container {
+    flex-direction: row;
+    justify-content: flex-end;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-2525 .cs-content {
+    width: 48%;
+    max-width: 35.1875rem;
+    padding: var(--sectionPadding);
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  #sbs-2525 .cs-picture {
+    width: 57vw;
+    height: auto;
+    margin-right: -1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50%;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #sbs-2525 .cs-content {
+    max-width: 36.5625rem;
+  }
+  #sbs-2525 .cs-picture {
+    height: 90%;
+    max-height: 100%;
+  }
+}
+</style>
