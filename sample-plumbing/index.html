@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sample Plumbing Co. | Plumber in Lexington</title>
+<meta name="description" content="Same-day plumbing repairs for homes across Lexington and nearby towns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paint: #1D3557;
+  --deep: #13243B;
+  --sign: #F4C542;
+  --paper: #FFFFFF;
+  --mist: #F1F3F2;
+  --ink: #1F2933;
+  --muted: #56616B;
+  --rule: #D8DDDF;
+  --field: #AEB6BB;
+  --max: 72rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--paint); outline-offset: 3px; }
+.on-paint :focus-visible { outline-color: var(--sign); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+/* Preview notice */
+.preview-bar { background: var(--ink); color: #fff; font-size: .875rem; line-height: 1.45; }
+.preview-bar .wrap { padding-top: .55rem; padding-bottom: .55rem; }
+.preview-bar p { margin: 0; }
+
+/* Header + hero share the paint, like one van door */
+.on-paint { background: var(--paint); color: #fff; }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-weight: 700; font-stretch: 80%; font-size: 1.125rem; text-decoration: none; line-height: 1.2; }
+.header-phone { font-weight: 700; font-stretch: 85%; font-size: 1.125rem; text-decoration: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.hero { position: relative; padding: 2.5rem 0 5.5rem; }
+.hero::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 1.5rem; height: 11px;
+  background: linear-gradient(var(--sign) 0 6px, transparent 6px 9px, var(--sign) 9px 11px);
+}
+.hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 56rem) { .hero-grid.has-photo { grid-template-columns: 1.3fr 1fr; } }
+.hero h1 {
+  margin: 0 0 1.25rem;
+  font-weight: 800; font-stretch: 70%;
+  line-height: .9; letter-spacing: -.005em;
+  font-size: clamp(3.25rem, 11vw, 7.25rem);
+  text-wrap: balance; overflow-wrap: anywhere;
+}
+.hero h1.medium { font-size: clamp(2.75rem, 8.5vw, 5.75rem); }
+.hero h1.long { font-size: clamp(2.25rem, 6.5vw, 4.25rem); line-height: .95; }
+.lede { font-size: 1.25rem; line-height: 1.45; max-width: 36ch; margin: 0 0 1.25rem; }
+.rating { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .6rem; margin: 0 0 2rem; }
+.rating .stars { color: var(--sign); font-size: 1.2rem; letter-spacing: .06em; }
+.rating a { color: #fff; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3.25rem; padding: .7rem 1.4rem;
+  border: 2px solid transparent; border-radius: 6px;
+  font: inherit; font-weight: 700; font-stretch: 90%; font-size: 1.125rem; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+}
+.btn-call { background: var(--sign); color: var(--deep); font-variant-numeric: tabular-nums; }
+.btn-outline { border-color: rgba(255,255,255,.75); color: #fff; }
+.btn-outline:hover { background: rgba(255,255,255,.1); }
+.btn-call:hover { filter: brightness(1.06); }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--deep); }
+
+/* Sections */
+.section { padding: 4.5rem 0; }
+.section.alt { background: var(--mist); }
+h2 {
+  margin: 0 0 .75rem;
+  font-weight: 750; font-stretch: 78%;
+  font-size: clamp(2rem, 4.5vw, 2.75rem); line-height: 1.02;
+}
+.section-intro { max-width: 60ch; color: var(--muted); font-size: 1.125rem; margin: 0 0 2.5rem; }
+
+.services { list-style: none; margin: 0; padding: 0; display: grid; column-gap: 3rem; }
+@media (min-width: 44rem) { .services { grid-template-columns: 1fr 1fr; } }
+.services li { border-top: 1px solid var(--rule); padding: 1.1rem 0 1.35rem; }
+.services h3 { margin: 0 0 .25rem; font-size: 1.25rem; font-weight: 700; font-stretch: 90%; line-height: 1.25; }
+.services p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+.gallery { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--rule); }
+
+.reviews { display: grid; gap: 2.5rem 3rem; margin-top: 2rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin: 0; }
+.review { margin: 0; }
+#area .section-intro { margin-bottom: 1.25rem; }
+.review .stars { color: var(--paint); letter-spacing: .06em; }
+.review blockquote { margin: .5rem 0 .9rem; font-size: 1.1875rem; line-height: 1.5; }
+.review blockquote p { margin: 0; }
+.review figcaption { color: var(--muted); font-size: .95rem; }
+.more-link { display: inline-block; margin-top: 2.5rem; font-weight: 600; color: var(--paint); }
+
+.split { display: grid; gap: 3rem; }
+@media (min-width: 56rem) { .split { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+h3.sub { margin: 0 0 .75rem; font-size: 1.375rem; font-weight: 700; font-stretch: 85%; }
+.towns { list-style: none; padding: 0; margin: 0 0 2rem; columns: 2; column-gap: 2rem; }
+.towns li { padding: .3rem 0; break-inside: avoid; }
+.address { font-style: normal; margin: 0 0 .5rem; }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.hours th, .hours td { padding: .55rem 0; border-bottom: 1px solid var(--rule); font-weight: 400; vertical-align: top; }
+.hours th { text-align: left; padding-right: 1rem; }
+.hours td { text-align: right; }
+.hours tr.today th, .hours tr.today td { font-weight: 700; }
+.hours tr.today th::after { content: " (today)"; font-weight: 400; color: var(--muted); }
+
+.contact-grid { display: grid; gap: 3rem; }
+@media (min-width: 56rem) { .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 5rem; } }
+.big-phone {
+  display: inline-block; margin: .25rem 0 1rem;
+  color: var(--paint); text-decoration: none;
+  font-weight: 800; font-stretch: 72%; line-height: 1;
+  font-size: clamp(2.5rem, 7vw, 3.75rem); font-variant-numeric: tabular-nums;
+}
+form { display: grid; gap: 1rem; }
+label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
+input, textarea {
+  font: inherit; font-weight: 400; color: var(--ink); background: #fff;
+  padding: .75rem .85rem; border: 1px solid var(--field); border-radius: 6px; width: 100%;
+}
+textarea { min-height: 7rem; resize: vertical; }
+input:focus-visible, textarea:focus-visible { outline: 3px solid var(--paint); outline-offset: 1px; border-color: var(--paint); }
+.btn-submit { background: var(--paint); color: #fff; justify-self: start; }
+.form-note { margin: 0; padding: 1rem 1.1rem; background: #fff; border-left: 4px solid var(--paint); }
+
+.site-footer { background: var(--deep); color: rgba(255,255,255,.85); padding: 2.5rem 0 3rem; font-size: .95rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.25rem 2rem; }
+.site-footer p { margin: 0; }
+.footer-name { font-weight: 700; font-stretch: 80%; font-size: 1.25rem; color: #fff; }
+
+/* Phone-sized screens get a call bar that is always in reach */
+.call-bar { display: none; }
+@media (max-width: 43.99rem) {
+  body { padding-bottom: 5rem; }
+  .header-phone .num { display: none; }
+  .call-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom));
+    background: var(--paper); border-top: 1px solid var(--rule);
+  }
+  .call-bar .btn { flex: 1; background: var(--paint); color: #fff; }
+}
+</style>
+</head>
+<body>
+
+<div class="preview-bar" role="note">
+  <div class="wrap"><p>Sample preview. The business, reviews and details on this page are made up.</p></div>
+</div>
+
+<div class="on-paint">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">Sample Plumbing Co.</a>
+      <a class="header-phone" href="tel:+18595550142">Call<span class="num"> (859) 555-0142</span></a>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="">Sample Plumbing Co.</h1>
+        <p class="lede">Same-day plumbing repairs for homes across Lexington and nearby towns.</p>
+        <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span><strong>4.9</strong> from <a href="https://www.google.com/maps">186 Google reviews</a></span></p>
+        <div class="actions">
+          <a class="btn btn-call" href="tel:+18595550142">Call (859) 555-0142</a>
+          <a class="btn btn-outline" href="#contact">Request a quote</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+<main>
+  <section class="section" id="services">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p class="section-intro">From a dripping faucet to a burst pipe, we fix it right the first time and leave your home cleaner than we found it.</p>
+      <ul class="services">
+        <li><h3>Emergency repairs</h3><p>Burst pipes, major leaks and backups, answered day or night.</p></li>
+        <li><h3>Water heaters</h3><p>Repair and replacement for tank and tankless units.</p></li>
+        <li><h3>Drain cleaning</h3><p>Kitchen, bath and main-line clogs cleared and camera-checked.</p></li>
+        <li><h3>Leak detection</h3><p>Hidden leaks found without tearing up walls.</p></li>
+        <li><h3>Fixture installs</h3><p>Faucets, toilets, sinks and garbage disposals.</p></li>
+        <li><h3>Sump pumps</h3><p>New installs, battery backups and yearly checks.</p></li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <section class="section alt" id="reviews">
+    <div class="wrap">
+      <h2>What customers say</h2>
+      <div class="reviews">
+        <figure class="review"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><blockquote><p>Called at 7 in the morning with water coming through the ceiling. They were here by 9 and had it fixed before lunch.</p></blockquote><figcaption>Sample review</figcaption></figure>
+        <figure class="review"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><blockquote><p>Clear price up front, no surprises, and they put down floor covers before walking in.</p></blockquote><figcaption>Sample review</figcaption></figure>
+        <figure class="review"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><blockquote><p>Replaced our water heater the same day we called. Friendly, quick, and they hauled the old one away.</p></blockquote><figcaption>Sample review</figcaption></figure>
+      </div>
+      <a class="more-link" href="https://www.google.com/maps">Read all 186 reviews on Google</a>
+    </div>
+  </section>
+
+  <section class="section" id="area">
+    <div class="wrap split">
+      <div>
+        <h2>Where we work</h2>
+        <p class="section-intro">We serve Lexington and nearby towns, including:</p>
+        <ul class="towns">
+          <li>Lexington</li>
+          <li>Nicholasville</li>
+          <li>Georgetown</li>
+          <li>Versailles</li>
+          <li>Winchester</li>
+          <li>Paris</li>
+          <li>Richmond</li>
+          <li>Midway</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Hours</h2>
+        <table class="hours">
+          <tr data-day="Monday"><th scope="row">Monday</th><td>7:00 AM – 6:00 PM</td></tr>
+          <tr data-day="Tuesday"><th scope="row">Tuesday</th><td>7:00 AM – 6:00 PM</td></tr>
+          <tr data-day="Wednesday"><th scope="row">Wednesday</th><td>7:00 AM – 6:00 PM</td></tr>
+          <tr data-day="Thursday"><th scope="row">Thursday</th><td>7:00 AM – 6:00 PM</td></tr>
+          <tr data-day="Friday"><th scope="row">Friday</th><td>7:00 AM – 6:00 PM</td></tr>
+          <tr data-day="Saturday"><th scope="row">Saturday</th><td>8:00 AM – 2:00 PM</td></tr>
+          <tr data-day="Sunday"><th scope="row">Sunday</th><td>Closed</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Get a quote</h2>
+        <p class="section-intro">Call us, or tell us what you need and we&#x27;ll get back to you.</p>
+        <a class="big-phone" href="tel:+18595550142">(859) 555-0142</a>
+      </div>
+      <form id="quote-form" novalidate>
+        <label>Your name<input name="name" autocomplete="name"></label>
+        <label>Phone number<input name="phone" type="tel" autocomplete="tel"></label>
+        <label>What do you need?<textarea name="message"></textarea></label>
+        <button class="btn btn-submit" type="submit">Send request</button>
+        <p class="form-note" id="form-note" tabindex="-1" hidden>This is a preview, so the form doesn't send yet. When the site goes live, requests will go straight to Sample Plumbing Co.. For now, call (859) 555-0142.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p class="footer-name">Sample Plumbing Co.</p>
+      
+      <p><a href="tel:+18595550142">(859) 555-0142</a></p>
+    </div>
+    <div>
+      <p>&copy; 2026 Sample Plumbing Co.</p>
+      
+    </div>
+  </div>
+</footer>
+
+<div class="call-bar"><a class="btn" href="tel:+18595550142">Call (859) 555-0142</a></div>
+
+<script>
+(function () {
+  var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date().getDay()];
+  var row = document.querySelector('.hours tr[data-day="' + day + '"]');
+  if (row) row.classList.add("today");
+  var form = document.getElementById("quote-form");
+  var note = document.getElementById("form-note");
+  if (form && note) form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    note.hidden = false;
+    note.focus();
+  });
+})();
+</script>
+</body>
+</html>

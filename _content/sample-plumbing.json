@@ -1,0 +1,40 @@
+{
+  "slug": "sample-plumbing",
+  "sample": true,
+  "name": "Sample Plumbing Co.",
+  "category": "Plumber",
+  "city": "Lexington",
+  "palette": "navy",
+  "headline": "Same-day plumbing repairs for homes across Lexington and nearby towns.",
+  "intro": "From a dripping faucet to a burst pipe, we fix it right the first time and leave your home cleaner than we found it.",
+  "phone": "(859) 555-0142",
+  "address": "",
+  "listing_url": "https://www.google.com/maps",
+  "rating": 4.9,
+  "review_count": 186,
+  "services": [
+    {"name": "Emergency repairs", "detail": "Burst pipes, major leaks and backups, answered day or night."},
+    {"name": "Water heaters", "detail": "Repair and replacement for tank and tankless units."},
+    {"name": "Drain cleaning", "detail": "Kitchen, bath and main-line clogs cleared and camera-checked."},
+    {"name": "Leak detection", "detail": "Hidden leaks found without tearing up walls."},
+    {"name": "Fixture installs", "detail": "Faucets, toilets, sinks and garbage disposals."},
+    {"name": "Sump pumps", "detail": "New installs, battery backups and yearly checks."}
+  ],
+  "reviews": [
+    {"author": "Sample", "rating": 5, "text": "Called at 7 in the morning with water coming through the ceiling. They were here by 9 and had it fixed before lunch."},
+    {"author": "Sample", "rating": 5, "text": "Clear price up front, no surprises, and they put down floor covers before walking in."},
+    {"author": "Sample", "rating": 5, "text": "Replaced our water heater the same day we called. Friendly, quick, and they hauled the old one away."}
+  ],
+  "service_area": ["Lexington", "Nicholasville", "Georgetown", "Versailles", "Winchester", "Paris", "Richmond", "Midway"],
+  "hours": {
+    "Monday": "7:00 AM – 6:00 PM",
+    "Tuesday": "7:00 AM – 6:00 PM",
+    "Wednesday": "7:00 AM – 6:00 PM",
+    "Thursday": "7:00 AM – 6:00 PM",
+    "Friday": "7:00 AM – 6:00 PM",
+    "Saturday": "8:00 AM – 2:00 PM",
+    "Sunday": "Closed"
+  },
+  "photos": [],
+  "guesses": []
+}

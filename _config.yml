@@ -1,0 +1,4 @@
+# GitHub Pages settings. Folders starting with "_" (template, tools, content)
+# are never published. Only each business folder's index.html goes live.
+exclude:
+  - README.md
