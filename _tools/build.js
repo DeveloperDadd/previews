@@ -123,18 +123,19 @@ function fill(template, values, file) {
 
 // Extra slots for the "components" layout: nav links, the hero photo with credential
 // boxes (hero-408), about (sbs-2525), new-patient steps (steps-889), reviews
-// (reviews-1088) and the footer (cs-footer-1292), which carries the hours and location.
-// Sections without content are left out.
+// (reviews-1088), a location section with a Google Maps embed, and the footer
+// (cs-footer-1292), which carries the hours. Sections without content are left out.
 function componentValues(d, ctx) {
-  const { photos, reviews, listing, sample, address, hours, warnings } = ctx;
+  const { photos, reviews, listing, sample, address, hours, name, phone, tel, warnings } = ctx;
   const about = d.about && !isBlank(d.about.paragraphs) ? d.about : null;
   const steps = d.steps && !isBlank(d.steps.items) ? d.steps : null;
   const stats = (d.stats || []).slice(0, 2);
   if ((d.stats || []).length > 2) warnings.push('more than 2 stats given; showing the first 2');
 
-  // Page order after Services: about, new patients, reviews. Backgrounds alternate.
-  // Hours and location live in the footer.
-  const order = [...(about ? ['about'] : []), ...(steps ? ['steps'] : []), ...(reviews.length ? ['reviews'] : [])];
+  // Page order after Services: about, new patients, reviews, location. Backgrounds alternate.
+  // The location section needs a street address, so service-area businesses go without it.
+  const order = [...(about ? ['about'] : []), ...(steps ? ['steps'] : []),
+    ...(reviews.length ? ['reviews'] : []), ...(address ? ['location'] : [])];
   const alt = Object.fromEntries(order.map((key, i) => [key, i % 2 === 0 ? ' alt' : '']));
 
   const links = [
@@ -144,7 +145,8 @@ function componentValues(d, ctx) {
   ];
   const navHtml = links.map(([id, label]) =>
     `          <li class="cs-li"><a class="cs-li-link" href="#${id}">${label}</a></li>`).join('\n');
-  const footerLinks = [...links, ...(reviews.length ? [['reviews', 'Reviews']] : [])];
+  const footerLinks = [...links, ...(reviews.length ? [['reviews', 'Reviews']] : []),
+    ...(address ? [['location', 'Location']] : [])];
   const footerLinksHtml = footerLinks.map(([id, label]) =>
     `      <li class="cs-nav-li"><a class="cs-nav-link" href="#${id}">${label}</a></li>`).join('\n');
 
@@ -231,6 +233,36 @@ function componentValues(d, ctx) {
       `      <ul class="cs-card-group">\n${items}\n      </ul>\n${more}    </div>\n    </div>\n  </section>`;
   }
 
+  // Location (no source piece in components/): address, short notes, a directions link and
+  // a Google Maps embed. The embed needs no API key; it pins the street address unless
+  // location.map_query says otherwise. The build's iframe check allows this embed only.
+  let locationHtml = '';
+  if (address) {
+    const loc = d.location || {};
+    const comma = address.indexOf(', ');
+    const addressHtml = comma > 0
+      ? `${esc(address.slice(0, comma))}<br>${esc(address.slice(comma + 2))}`
+      : esc(address);
+    const notes = (loc.notes || []).map((t) => `        <p class="location-note">${esc(t)}</p>`).join('\n');
+    const mapSrc = 'https://maps.google.com/maps?q=' + encodeURIComponent(loc.map_query || address) +
+      '&z=15&output=embed';
+    const directions = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(address);
+    locationHtml =
+      `  <section class="section${alt.location}" id="location">\n    <div class="wrap location">\n` +
+      '      <div class="location-text">\n' +
+      `        <h2>${esc(loc.heading || 'Find us')}</h2>\n` +
+      `        <address class="location-address">${addressHtml}</address>\n` +
+      (notes ? `${notes}\n` : '') +
+      '        <div class="location-actions">\n' +
+      `          <a class="cs-button-transparent" href="${esc(directions)}">Get directions</a>\n` +
+      `          <a class="location-call" href="tel:${tel}">or call ${phone}</a>\n` +
+      '        </div>\n      </div>\n' +
+      '      <div class="location-map">\n' +
+      `        <iframe src="${esc(mapSrc)}" title="Map showing ${esc(name)} at ${esc(address)}" ` +
+      'loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>\n' +
+      '      </div>\n    </div>\n  </section>';
+  }
+
   return {
     nav_html: navHtml,
     hero_class: heroMediaHtml ? '' : ' no-media',
@@ -238,6 +270,7 @@ function componentValues(d, ctx) {
     about_html: aboutHtml,
     steps_html: stepsHtml,
     c_reviews_html: reviewsHtml,
+    c_location_html: locationHtml,
     footer_links_html: footerLinksHtml,
     c_footer_hours_html: footerHoursHtml,
     c_footer_location_html: footerLocationHtml,
@@ -446,7 +479,10 @@ function main() {
   };
 
   if (layout === 'components') {
-    Object.assign(values, componentValues(d, { photos, reviews, listing, sample, address, hours, warnings }));
+    Object.assign(values, componentValues(d, {
+      photos, reviews, listing, sample, address, hours,
+      name, phone: values.phone, tel: values.tel, warnings,
+    }));
   }
 
   const tpl = (file) => fs.readFileSync(path.join(ROOT, LAYOUTS[layout], file), 'utf8');
@@ -463,8 +499,10 @@ function main() {
   if (!files['index.html'].includes('class="preview-bar"')) fail(['Safety check failed: preview notice missing']);
 
   // Call-only checks: no forms or embedded widgets, no invitations to book online.
+  // The one embed allowed is the keyless Google Maps iframe in the location section.
   const page = files['index.html'];
-  if (/<(form|input|textarea|select|iframe)\b/i.test(page)) {
+  const MAP_EMBED = /<iframe\b[^>]*\bsrc="https:\/\/maps\.google\.com\/maps\?[^"]*output=embed"[^>]*>\s*<\/iframe>/gi;
+  if (/<(form|input|textarea|select|iframe)\b/i.test(page.replace(MAP_EMBED, ''))) {
     fail(['Call-only check failed: the page contains a form or embedded widget']);
   }
   const visible = page.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');

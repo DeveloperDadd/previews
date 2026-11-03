@@ -9,12 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=c436ef40">
+<link rel="stylesheet" href="styles.css?v=10367eb0">
 </head>
 <body id="top">
 <!-- Layout "components": built from the pieces in /components (cs-navigation, call-now,
      patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-1292),
-     restyled to the preview design rules. Edit here, never in a built page. -->
+     restyled to the preview design rules, plus a location section with a map that has
+     no source piece. Edit here, never in a built page. -->
 
 <div class="preview-bar" role="note">
   <div class="wrap"><p>This is a preview of a new website for Gilman Peterson, DMD, MD. It isn't live yet. Made by Critchfield Systems.</p></div>
@@ -127,6 +128,24 @@
     </div>
     </div>
   </section>
+
+  <section class="section" id="location">
+    <div class="wrap location">
+      <div class="location-text">
+        <h2>Find the office</h2>
+        <address class="location-address">620 Perimeter Dr #100<br>Lexington, KY 40517</address>
+        <p class="location-note">Open weekdays, with a break from 12 to 1. Closed on weekends.</p>
+        <p class="location-note">The entrance, parking and restroom are wheelchair accessible.</p>
+        <div class="location-actions">
+          <a class="cs-button-transparent" href="https://www.google.com/maps/dir/?api=1&amp;destination=620%20Perimeter%20Dr%20%23100%2C%20Lexington%2C%20KY%2040517">Get directions</a>
+          <a class="location-call" href="tel:+18335463522">or call (833) 546-3522</a>
+        </div>
+      </div>
+      <div class="location-map">
+        <iframe src="https://maps.google.com/maps?q=620%20Perimeter%20Dr%20%23100%2C%20Lexington%2C%20KY%2040517&amp;z=15&amp;output=embed" title="Map showing Gilman Peterson, DMD, MD at 620 Perimeter Dr #100, Lexington, KY 40517" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer id="cs-footer-1292">
@@ -142,6 +161,7 @@
       <li class="cs-nav-li"><a class="cs-nav-link" href="#about">About</a></li>
       <li class="cs-nav-li"><a class="cs-nav-link" href="#new-patients">New Patients</a></li>
       <li class="cs-nav-li"><a class="cs-nav-link" href="#reviews">Reviews</a></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="#location">Location</a></li>
     </ul>
     <div class="cs-hours">
       <span class="cs-header">Hours</span>
@@ -169,6 +189,6 @@
 
 <div class="call-bar"><a class="btn" href="tel:+18335463522">Call (833) 546-3522</a></div>
 
-<script src="script.js?v=c436ef40"></script>
+<script src="script.js?v=10367eb0"></script>
 </body>
 </html>

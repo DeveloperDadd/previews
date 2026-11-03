@@ -48,12 +48,17 @@ Pick one per business in the JSON `layout` field. Leaving it out means `classic`
 - `classic`: the original one-page template in `_template/`.
 - `components`: built from the pieces in `components/` (navigation, call-now button,
   grid pattern, hero-408, sbs-2525, steps-889, reviews-1088, cs-footer-1292), restyled
-  to the preview rules. Hours, address and phone sit in the footer; there is no separate
-  location or closing call section. Lives in `_template/components/`. Extra optional fields:
+  to the preview rules. Above the footer, businesses with a street address get a location
+  section: address, directions link and a Google Maps embed (no API key needed). That
+  embed is the only iframe the build allows. Hours and phone sit in the footer. Lives in
+  `_template/components/`. Extra optional fields:
   - `stats`: up to 2 `{"value", "label"}` boxes over the hero photo (facts only)
   - `about`: `{"heading", "paragraphs", "list_heading", "list", "photo": {"url", "alt"}}`
   - `steps`: `{"heading", "intro", "items": [{"name", "detail"}]}`, shown as "New Patients"
   - `reviews_heading`, `footer_blurb`
+  - `location`: `{"heading", "notes": ["..."], "map_query"}`; all optional. `notes` are short
+    facts for visitors (parking, which entrance); `map_query` replaces the address as the
+    map search if the pin lands in the wrong spot
   - `colors.accent`: an optional brighter brand color for step numbers, stripes and
     bullets (large or decorative only, so it needs just 3:1 on white)
 

@@ -76,6 +76,13 @@
     }
   ],
   "service_area": [],
+  "location": {
+    "heading": "Find the office",
+    "notes": [
+      "Open weekdays, with a break from 12 to 1. Closed on weekends.",
+      "The entrance, parking and restroom are wheelchair accessible."
+    ]
+  },
   "hours": {
     "Monday": "8:30 AM – 12 PM, 1 – 4:30 PM",
     "Tuesday": "8 AM – 12 PM, 1 – 4:30 PM",
@@ -101,6 +108,7 @@
     "'Several in one visit' comes from reviews (3, 6 and 9 teeth in one visit)",
     "Follow-up visit step comes from patient reviews, not the listing or website",
     "Forms-ahead step comes from their website's New Patients page",
-    "Headline, intro and step wording are written for the preview"
+    "Headline, intro and step wording are written for the preview",
+    "Map pin is placed from the street address, not the Google listing: check it lands on the building"
   ]
 }
