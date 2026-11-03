@@ -122,16 +122,18 @@ function fill(template, values, file) {
 
 // Extra slots for the "components" layout: nav links, the hero photo with credential
 // boxes (hero-408), about (sbs-2525), new-patient steps (steps-889), reviews
-// (reviews-1088) and the footer (cs-footer-272). Sections without content are left out.
+// (reviews-1088) and the footer (cs-footer-1292), which carries the hours and location.
+// Sections without content are left out.
 function componentValues(d, ctx) {
-  const { photos, reviews, listing, sample, address, warnings } = ctx;
+  const { photos, reviews, listing, sample, address, hours, warnings } = ctx;
   const about = d.about && !isBlank(d.about.paragraphs) ? d.about : null;
   const steps = d.steps && !isBlank(d.steps.items) ? d.steps : null;
   const stats = (d.stats || []).slice(0, 2);
   if ((d.stats || []).length > 2) warnings.push('more than 2 stats given; showing the first 2');
 
-  // Page order after Services: about, new patients, reviews, location. Backgrounds alternate.
-  const order = [...(about ? ['about'] : []), ...(steps ? ['steps'] : []), ...(reviews.length ? ['reviews'] : []), 'area'];
+  // Page order after Services: about, new patients, reviews. Backgrounds alternate.
+  // Hours and location live in the footer.
+  const order = [...(about ? ['about'] : []), ...(steps ? ['steps'] : []), ...(reviews.length ? ['reviews'] : [])];
   const alt = Object.fromEntries(order.map((key, i) => [key, i % 2 === 0 ? ' alt' : '']));
 
   const links = [
@@ -141,9 +143,23 @@ function componentValues(d, ctx) {
   ];
   const navHtml = links.map(([id, label]) =>
     `          <li class="cs-li"><a class="cs-li-link" href="#${id}">${label}</a></li>`).join('\n');
-  const footerLinks = [...links, ...(reviews.length ? [['reviews', 'Reviews']] : []), ['area', 'Hours and location']];
+  const footerLinks = [...links, ...(reviews.length ? [['reviews', 'Reviews']] : [])];
   const footerLinksHtml = footerLinks.map(([id, label]) =>
-    `      <li><a href="#${id}">${label}</a></li>`).join('\n');
+    `      <li class="cs-nav-li"><a class="cs-nav-link" href="#${id}">${label}</a></li>`).join('\n');
+
+  // Footer columns: hours (today's row is marked by script.js) and location with directions.
+  const hourDays = DAYS.filter((day) => day in hours);
+  const footerHoursHtml = hourDays.length
+    ? '    <div class="cs-hours">\n      <span class="cs-header">Hours</span>\n      <dl class="cs-hours-list">\n' +
+      hourDays.map((day) =>
+        `        <div class="cs-hours-row" data-day="${day}"><dt>${day}</dt><dd>${esc(hours[day])}</dd></div>`).join('\n') +
+      '\n      </dl>\n    </div>'
+    : '';
+  const footerLocationHtml = address
+    ? '    <ul class="cs-nav cs-location">\n      <li class="cs-nav-li"><span class="cs-header">Location</span></li>\n' +
+      `      <li class="cs-nav-li"><address>${esc(address)}</address></li>\n` +
+      `      <li class="cs-nav-li"><a class="cs-nav-link" href="${listing}">Get directions</a></li>\n    </ul>`
+    : '';
 
   // Hero media: first photo behind up to two credential boxes.
   let heroMediaHtml = '';
@@ -221,11 +237,10 @@ function componentValues(d, ctx) {
     about_html: aboutHtml,
     steps_html: stepsHtml,
     c_reviews_html: reviewsHtml,
-    c_area_alt: alt.area,
     footer_links_html: footerLinksHtml,
+    c_footer_hours_html: footerHoursHtml,
+    c_footer_location_html: footerLocationHtml,
     footer_blurb: esc(d.footer_blurb || `${d.category} in ${d.city}.`),
-    c_footer_address_html: address
-      ? `<li><a class="cs-contact-link cs-address" href="${listing}">${esc(address)}</a></li>` : '',
   };
 }
 
@@ -430,7 +445,7 @@ function main() {
   };
 
   if (layout === 'components') {
-    Object.assign(values, componentValues(d, { photos, reviews, listing, sample, address, warnings }));
+    Object.assign(values, componentValues(d, { photos, reviews, listing, sample, address, hours, warnings }));
   }
 
   const tpl = (file) => fs.readFileSync(path.join(ROOT, LAYOUTS[layout], file), 'utf8');

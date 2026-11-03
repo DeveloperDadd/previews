@@ -205,59 +205,58 @@ h2 {
 #reviews-1088 .cs-desc { display: block; color: var(--muted); font-size: .95rem; }
 .more-link { display: inline-block; margin-top: 2.25rem; font-weight: 600; color: var(--paint); }
 
-/* ---------- Location and hours ---------- */
-.split { display: grid; gap: 3rem; }
-@media (min-width: 56rem) { .split { grid-template-columns: 1fr 1fr; gap: 5rem; } }
-h3.sub { margin: 0 0 .75rem; font-size: 1.375rem; font-weight: 700; font-stretch: 85%; }
-#area .section-intro { margin-bottom: 1.25rem; }
-.towns { list-style: none; padding: 0; margin: 0 0 2rem; columns: 2; column-gap: 2rem; }
-.towns li { padding: .3rem 0; break-inside: avoid; }
-.address { font-style: normal; margin: 0 0 .5rem; font-size: 1.125rem; }
-.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-.hours th, .hours td { padding: .55rem 0; border-bottom: 1px solid var(--rule); font-weight: 400; vertical-align: top; }
-.hours th { text-align: left; padding-right: 1rem; }
-.hours td { text-align: right; }
-.hours tr.today th, .hours tr.today td { font-weight: 700; }
-.hours tr.today th::after { content: " (today)"; font-weight: 400; color: var(--muted); }
-
-/* ---------- Closing call band ---------- */
-.call-section { position: relative; padding: 5.5rem 0 4.5rem; background: var(--paint); color: #fff; }
-.call-section::before {
+/* ---------- Footer (components/footer/cs-footer-1292): name and phone, page links, hours, location ---------- */
+#cs-footer-1292 { position: relative; background: var(--deep); color: rgba(255,255,255,.85); font-size: .95rem; }
+#cs-footer-1292::before {
   content: "";
-  position: absolute; left: 0; right: 0; top: 1.5rem; height: 11px;
+  position: absolute; left: 0; right: 0; top: 1.25rem; height: 11px;
   background: linear-gradient(var(--sign) 0 2px, transparent 2px 5px, var(--sign) 5px 11px);
 }
-.call-section :focus-visible { outline-color: var(--sign); }
-.call-section h2 { color: #fff; }
-.call-intro { font-size: 1.25rem; line-height: 1.45; max-width: 40ch; margin: 0 0 1rem; }
-.call-number {
-  display: inline-block;
+#cs-footer-1292 :focus-visible { outline-color: var(--sign); }
+#cs-footer-1292 p { margin: 0; }
+#cs-footer-1292 a { color: rgba(255,255,255,.85); }
+#cs-footer-1292 a:hover { color: #fff; }
+#cs-footer-1292 .cs-container {
+  max-width: var(--max); margin: 0 auto; padding: 4.25rem var(--gutter) 2.5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem 1.5rem; align-items: start;
+}
+/* Phones: name and phone, then links beside location, then the hours table */
+#cs-footer-1292 .cs-logo-group, #cs-footer-1292 .cs-hours { grid-column: 1 / -1; }
+#cs-footer-1292 .cs-hours { order: 1; }
+#cs-footer-1292 .cs-logo { font-weight: 750; font-stretch: 78%; font-size: 1.5rem; line-height: 1.1; color: #fff; margin-bottom: .4rem; }
+#cs-footer-1292 .cs-text { max-width: 34ch; }
+#cs-footer-1292 .cs-link {
+  display: inline-block; margin-top: 1.25rem;
   color: var(--sign); text-decoration: none;
   font-weight: 800; font-stretch: 70%; line-height: 1;
-  font-size: clamp(3rem, 12vw, 7rem); font-variant-numeric: tabular-nums;
+  font-size: clamp(2.25rem, 9vw, 3rem); font-variant-numeric: tabular-nums; white-space: nowrap;
 }
-.call-number:hover { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 10px; }
-.today-hours { margin: 1rem 0 0; font-size: 1.0625rem; }
-
-/* ---------- Footer (components/footer/cs-footer-272) ---------- */
-#cs-footer-272 { background: var(--deep); color: rgba(255,255,255,.85); font-size: .95rem; }
-#cs-footer-272 :focus-visible { outline-color: var(--sign); }
-#cs-footer-272 .cs-container {
-  max-width: var(--max); margin: 0 auto; padding: 3rem var(--gutter) 2rem;
-  display: grid; gap: 2rem;
+#cs-footer-1292 .cs-link:hover { color: var(--sign); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+#cs-footer-1292 .cs-header { display: block; font-weight: 700; color: #fff; margin-bottom: .35rem; }
+#cs-footer-1292 .cs-nav { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+#cs-footer-1292 address { font-style: normal; }
+#cs-footer-1292 .cs-hours-list { margin: 0; font-variant-numeric: tabular-nums; }
+#cs-footer-1292 .cs-hours-row {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem;
+  padding: .4rem 0; border-bottom: 1px solid rgba(255,255,255,.15);
 }
-@media (min-width: 44rem) { #cs-footer-272 .cs-container { grid-template-columns: 2fr 1fr 1.4fr; } }
-#cs-footer-272 p { margin: 0; }
-#cs-footer-272 .cs-logo { font-weight: 750; font-stretch: 78%; font-size: 1.375rem; color: #fff; margin-bottom: .35rem; }
-#cs-footer-272 ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; align-content: start; }
-#cs-footer-272 .cs-header { display: block; font-weight: 700; color: #fff; margin-bottom: .2rem; }
-#cs-footer-272 a { color: rgba(255,255,255,.85); }
-#cs-footer-272 a:hover { color: #fff; }
-#cs-footer-272 .cs-address { font-style: normal; }
-#cs-footer-272 .cs-bottom {
+#cs-footer-1292 .cs-hours-row dt, #cs-footer-1292 .cs-hours-row dd { margin: 0; }
+#cs-footer-1292 .cs-hours-row.today { color: #fff; font-weight: 700; }
+#cs-footer-1292 .cs-hours-row.today dt::after { content: " (today)"; font-weight: 400; color: rgba(255,255,255,.75); }
+#cs-footer-1292 .cs-bottom {
   max-width: var(--max); margin: 0 auto; padding: 1.25rem var(--gutter) 2.5rem;
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem;
   border-top: 1px solid rgba(255,255,255,.15);
+}
+#cs-footer-1292 .cs-location { max-width: 14rem; }
+@media (min-width: 44rem) {
+  #cs-footer-1292 .cs-container { grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 3rem; }
+  #cs-footer-1292 .cs-hours { grid-column: auto; order: 0; }
+}
+@media (min-width: 64rem) {
+  #cs-footer-1292 .cs-container { grid-template-columns: minmax(16rem, 1fr) auto 22rem 13rem; column-gap: 3rem; }
+  #cs-footer-1292 .cs-logo-group { grid-column: auto; }
+  #cs-footer-1292 .cs-link { font-size: 2.5rem; }
 }
 
 /* Phone-sized screens get a call bar that is always in reach */

@@ -1,15 +1,8 @@
-// Marks today's row in the hours table and shows today's hours under the phone number.
+// Marks today's row in the footer hours.
 (function () {
   var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date().getDay()];
-  var row = document.querySelector('.hours tr[data-day="' + day + '"]');
-  if (!row) return;
-  row.classList.add("today");
-  var cell = row.querySelector("td");
-  var line = document.getElementById("today-hours");
-  if (cell && line) {
-    line.textContent = "Today: " + cell.textContent.trim();
-    line.hidden = false;
-  }
+  var row = document.querySelector('.cs-hours-row[data-day="' + day + '"]');
+  if (row) row.classList.add("today");
 })();
 
 // Small-screen menu (from components/nav/cs-navigation): opens and closes the link list.

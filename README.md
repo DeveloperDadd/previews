@@ -47,8 +47,9 @@ Pick one per business in the JSON `layout` field. Leaving it out means `classic`
 
 - `classic`: the original one-page template in `_template/`.
 - `components`: built from the pieces in `components/` (navigation, call-now button,
-  grid pattern, hero-408, sbs-2525, steps-889, reviews-1088, cs-footer-272), restyled
-  to the preview rules. Lives in `_template/components/`. Extra optional fields:
+  grid pattern, hero-408, sbs-2525, steps-889, reviews-1088, cs-footer-1292), restyled
+  to the preview rules. Hours, address and phone sit in the footer; there is no separate
+  location or closing call section. Lives in `_template/components/`. Extra optional fields:
   - `stats`: up to 2 `{"value", "label"}` boxes over the hero photo (facts only)
   - `about`: `{"heading", "paragraphs", "list_heading", "list", "photo": {"url", "alt"}}`
   - `steps`: `{"heading", "intro", "items": [{"name", "detail"}]}`, shown as "New Patients"

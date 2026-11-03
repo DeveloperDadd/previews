@@ -13,7 +13,7 @@
 </head>
 <body id="top">
 <!-- Layout "components": built from the pieces in /components (cs-navigation, call-now,
-     patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-272),
+     patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-1292),
      restyled to the preview design rules. Edit here, never in a built page. -->
 
 <div class="preview-bar" role="note">
@@ -127,61 +127,42 @@
     </div>
     </div>
   </section>
-
-  <section class="section" id="area">
-    <div class="wrap split">
-      <div>
-        <h2>Where to find us</h2>
-        <address class="address">620 Perimeter Dr #100, Lexington, KY 40517</address>
-        <a class="more-link" style="margin-top:0" href="https://share.google/nMQS2P2w0CJFNZ8RV">Get directions</a>
-      </div>
-      <div>
-        <h2>Hours</h2>
-        <table class="hours">
-          <tr data-day="Monday"><th scope="row">Monday</th><td>8:30 AM – 12 PM, 1 – 4:30 PM</td></tr>
-          <tr data-day="Tuesday"><th scope="row">Tuesday</th><td>8 AM – 12 PM, 1 – 4:30 PM</td></tr>
-          <tr data-day="Wednesday"><th scope="row">Wednesday</th><td>8:30 AM – 12 PM, 1 – 4:30 PM</td></tr>
-          <tr data-day="Thursday"><th scope="row">Thursday</th><td>8 AM – 12 PM, 1 – 4:30 PM</td></tr>
-          <tr data-day="Friday"><th scope="row">Friday</th><td>8 AM – 12 PM, 1 – 4:30 PM</td></tr>
-          <tr data-day="Saturday"><th scope="row">Saturday</th><td>Closed</td></tr>
-          <tr data-day="Sunday"><th scope="row">Sunday</th><td>Closed</td></tr>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="call-section" id="call">
-    <div class="wrap">
-      <h2>Call the office</h2>
-      <p class="call-intro">Call to set up a visit or ask about a procedure.</p>
-      <a class="call-number" href="tel:+18335463522">(833) 546-3522</a>
-      <p class="today-hours" id="today-hours" hidden></p>
-    </div>
-  </section>
 </main>
 
-<footer id="cs-footer-272">
+<footer id="cs-footer-1292">
   <div class="cs-container">
     <div class="cs-logo-group">
       <p class="cs-logo">Gilman Peterson, DMD, MD</p>
       <p class="cs-text">Oral and maxillofacial surgery in Lexington, Kentucky.</p>
+      <a class="cs-link" href="tel:+18335463522">(833) 546-3522</a>
     </div>
     <ul class="cs-nav">
-      <li><span class="cs-header">On this page</span></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#new-patients">New Patients</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#area">Hours and location</a></li>
+      <li class="cs-nav-li"><span class="cs-header">On this page</span></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="#services">Services</a></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="#about">About</a></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="#new-patients">New Patients</a></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="#reviews">Reviews</a></li>
     </ul>
-    <ul class="cs-contact">
-      <li><span class="cs-header">Contact</span></li>
-      <li><a class="cs-contact-link cs-address" href="https://share.google/nMQS2P2w0CJFNZ8RV">620 Perimeter Dr #100, Lexington, KY 40517</a></li>
-      <li><a class="cs-contact-link" href="tel:+18335463522">(833) 546-3522</a></li>
+    <div class="cs-hours">
+      <span class="cs-header">Hours</span>
+      <dl class="cs-hours-list">
+        <div class="cs-hours-row" data-day="Monday"><dt>Monday</dt><dd>8:30 AM – 12 PM, 1 – 4:30 PM</dd></div>
+        <div class="cs-hours-row" data-day="Tuesday"><dt>Tuesday</dt><dd>8 AM – 12 PM, 1 – 4:30 PM</dd></div>
+        <div class="cs-hours-row" data-day="Wednesday"><dt>Wednesday</dt><dd>8:30 AM – 12 PM, 1 – 4:30 PM</dd></div>
+        <div class="cs-hours-row" data-day="Thursday"><dt>Thursday</dt><dd>8 AM – 12 PM, 1 – 4:30 PM</dd></div>
+        <div class="cs-hours-row" data-day="Friday"><dt>Friday</dt><dd>8 AM – 12 PM, 1 – 4:30 PM</dd></div>
+        <div class="cs-hours-row" data-day="Saturday"><dt>Saturday</dt><dd>Closed</dd></div>
+        <div class="cs-hours-row" data-day="Sunday"><dt>Sunday</dt><dd>Closed</dd></div>
+      </dl>
+    </div>
+    <ul class="cs-nav cs-location">
+      <li class="cs-nav-li"><span class="cs-header">Location</span></li>
+      <li class="cs-nav-li"><address>620 Perimeter Dr #100, Lexington, KY 40517</address></li>
+      <li class="cs-nav-li"><a class="cs-nav-link" href="https://share.google/nMQS2P2w0CJFNZ8RV">Get directions</a></li>
     </ul>
   </div>
   <div class="cs-bottom">
-    <p>&copy; 2026 Gilman Peterson, DMD, MD</p>
+    <p class="cs-copyright">&copy; 2026 Gilman Peterson, DMD, MD</p>
     <p>Website by Critchfield Systems</p>
   </div>
 </footer>

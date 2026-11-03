@@ -13,7 +13,7 @@
 </head>
 <body id="top">
 <!-- Layout "components": built from the pieces in /components (cs-navigation, call-now,
-     patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-272),
+     patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-1292),
      restyled to the preview design rules. Edit here, never in a built page. -->
 
 <div class="preview-bar" role="note">
@@ -71,42 +71,24 @@
 {{steps_html}}
 
 {{c_reviews_html}}
-
-  <section class="section{{c_area_alt}}" id="area">
-    <div class="wrap split">
-{{area_html}}
-{{hours_html}}
-    </div>
-  </section>
-
-  <section class="call-section" id="call">
-    <div class="wrap">
-      <h2>{{call_heading}}</h2>
-      <p class="call-intro">{{call_intro}}</p>
-      <a class="call-number" href="tel:{{tel}}">{{phone}}</a>
-      <p class="today-hours" id="today-hours" hidden></p>
-    </div>
-  </section>
 </main>
 
-<footer id="cs-footer-272">
+<footer id="cs-footer-1292">
   <div class="cs-container">
     <div class="cs-logo-group">
       <p class="cs-logo">{{name}}</p>
       <p class="cs-text">{{footer_blurb}}</p>
+      <a class="cs-link" href="tel:{{tel}}">{{phone}}</a>
     </div>
     <ul class="cs-nav">
-      <li><span class="cs-header">On this page</span></li>
+      <li class="cs-nav-li"><span class="cs-header">On this page</span></li>
 {{footer_links_html}}
     </ul>
-    <ul class="cs-contact">
-      <li><span class="cs-header">Contact</span></li>
-      {{c_footer_address_html}}
-      <li><a class="cs-contact-link" href="tel:{{tel}}">{{phone}}</a></li>
-    </ul>
+{{c_footer_hours_html}}
+{{c_footer_location_html}}
   </div>
   <div class="cs-bottom">
-    <p>&copy; {{year}} {{name}}</p>
+    <p class="cs-copyright">&copy; {{year}} {{name}}</p>
     {{credit_html}}
   </div>
 </footer>
