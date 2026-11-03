@@ -15,6 +15,7 @@
  * Uses only Node's built-in modules: no npm install needed.
  */
 'use strict';
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -449,10 +450,14 @@ function main() {
   }
 
   const tpl = (file) => fs.readFileSync(path.join(ROOT, LAYOUTS[layout], file), 'utf8');
+  const css = fill(tpl('styles.css'), values, 'styles.css');
+  const js = tpl('script.js');
+  // Stamps styles.css and script.js links so a rebuilt page never pairs with a cached old stylesheet.
+  values.asset_version = crypto.createHash('sha1').update(css).update(js).digest('hex').slice(0, 8);
   const files = {
     'index.html': fill(tpl('index.html'), values, 'index.html'),
-    'styles.css': fill(tpl('styles.css'), values, 'styles.css'),
-    'script.js': tpl('script.js'),
+    'styles.css': css,
+    'script.js': js,
   };
   if (!files['index.html'].includes('name="robots" content="noindex')) fail(['Safety check failed: noindex tag missing']);
   if (!files['index.html'].includes('class="preview-bar"')) fail(['Safety check failed: preview notice missing']);
