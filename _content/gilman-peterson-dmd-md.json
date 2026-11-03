@@ -5,9 +5,10 @@
   "category": "Oral surgeon",
   "city": "Lexington",
   "colors": {
-    "paint": "#8A3A1F",
-    "deep": "#4E2010",
-    "sign": "#E3B04B"
+    "paint": "#004B96",
+    "deep": "#003264",
+    "sign": "#C8E1FA",
+    "accent": "#007DFA"
   },
   "headline": "Wisdom teeth, extractions and implants from a board-certified Lexington oral surgeon.",
   "intro": "Dr. Peterson is an oral and maxillofacial surgeon. His work ranges from a single tooth that has to come out to surgery on the jaw itself.",

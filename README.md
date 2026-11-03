@@ -53,6 +53,8 @@ Pick one per business in the JSON `layout` field. Leaving it out means `classic`
   - `about`: `{"heading", "paragraphs", "list_heading", "list", "photo": {"url", "alt"}}`
   - `steps`: `{"heading", "intro", "items": [{"name", "detail"}]}`, shown as "New Patients"
   - `reviews_heading`, `footer_blurb`
+  - `colors.accent`: an optional brighter brand color for step numbers, stripes and
+    bullets (large or decorative only, so it needs just 3:1 on white)
 
   The nav links to Services, plus About and New Patients when those sections have content.
 

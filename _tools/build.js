@@ -93,6 +93,14 @@ function checkColors(colors, errors, warnings) {
     const ratio = contrast(a, b);
     if (ratio < need) errors.push(`${label} contrast is ${ratio.toFixed(1)}:1; needs ${need}:1`);
   }
+  // Optional accent: a brighter brand color, used only for large numbers, stripes and bullets.
+  if (colors.accent !== undefined) {
+    if (!/^#[0-9A-Fa-f]{6}$/.test(String(colors.accent))) {
+      errors.push('colors.accent must be a hex color like #007DFA');
+    } else if (contrast(colors.accent, '#FFFFFF') < 3.0) {
+      errors.push(`accent on white contrast is ${contrast(colors.accent, '#FFFFFF').toFixed(1)}:1; needs 3:1 for large numbers`);
+    }
+  }
   for (const [label, a, b, need] of [
     ['sign on paint (stars, stripes)', s, p, 3.0],
     ['paint links on grey sections', p, MIST, 4.5],
@@ -398,7 +406,7 @@ function main() {
   const values = {
     title: esc(`${name} | ${d.category} in ${d.city}`),
     headline: esc(d.headline),
-    paint: pal.paint, deep: pal.deep, sign: pal.sign,
+    paint: pal.paint, deep: pal.deep, sign: pal.sign, accent: pal.accent || pal.paint,
     preview_note: note,
     name: esc(name),
     name_size: nameSize,
