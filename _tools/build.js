@@ -31,6 +31,13 @@ const PALETTES = {
   plum:  { paint: '#5B2A4A', deep: '#3D1B32', sign: '#F1C6A8' },
 };
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+// Page layouts. "classic" is the original one-page template; "components" is built
+// from the pieces in components/ (see _template/components/). Pick one per business
+// with the JSON "layout" field; leaving it out means classic.
+const LAYOUTS = {
+  classic: '_template',
+  components: path.join('_template', 'components'),
+};
 const REQUIRED = ['slug', 'name', 'category', 'city', 'headline', 'intro', 'phone',
   'listing_url', 'services'];
 const MIST = '#F1F3F2';
@@ -105,6 +112,115 @@ function fill(template, values, file) {
   return out;
 }
 
+// Extra slots for the "components" layout: nav links, the hero photo with credential
+// boxes (hero-408), about (sbs-2525), new-patient steps (steps-889), reviews
+// (reviews-1088) and the footer (cs-footer-272). Sections without content are left out.
+function componentValues(d, ctx) {
+  const { photos, reviews, listing, sample, address, warnings } = ctx;
+  const about = d.about && !isBlank(d.about.paragraphs) ? d.about : null;
+  const steps = d.steps && !isBlank(d.steps.items) ? d.steps : null;
+  const stats = (d.stats || []).slice(0, 2);
+  if ((d.stats || []).length > 2) warnings.push('more than 2 stats given; showing the first 2');
+
+  // Page order after Services: about, new patients, reviews, location. Backgrounds alternate.
+  const order = [...(about ? ['about'] : []), ...(steps ? ['steps'] : []), ...(reviews.length ? ['reviews'] : []), 'area'];
+  const alt = Object.fromEntries(order.map((key, i) => [key, i % 2 === 0 ? ' alt' : '']));
+
+  const links = [
+    ['services', 'Services'],
+    ...(about ? [['about', 'About']] : []),
+    ...(steps ? [['new-patients', 'New Patients']] : []),
+  ];
+  const navHtml = links.map(([id, label]) =>
+    `          <li class="cs-li"><a class="cs-li-link" href="#${id}">${label}</a></li>`).join('\n');
+  const footerLinks = [...links, ...(reviews.length ? [['reviews', 'Reviews']] : []), ['area', 'Hours and location']];
+  const footerLinksHtml = footerLinks.map(([id, label]) =>
+    `      <li><a href="#${id}">${label}</a></li>`).join('\n');
+
+  // Hero media: first photo behind up to two credential boxes.
+  let heroMediaHtml = '';
+  if (photos.length || stats.length) {
+    const p = photos[0];
+    const picture = p
+      ? `      <picture class="cs-background"><img src="${esc(p.url)}" alt="${esc(p.alt || '')}" ` +
+        'referrerpolicy="no-referrer" width="600" height="900"></picture>\n'
+      : '';
+    const boxes = stats.map((s) =>
+      `        <div class="cs-stat-box"><span class="cs-stat">${esc(s.value)}</span>` +
+      `<span class="cs-desc">${esc(s.label)}</span></div>`).join('\n');
+    heroMediaHtml =
+      `    <div class="cs-stat-group${p ? '' : ' no-photo'}">\n${picture}` +
+      (boxes ? `      <div class="cs-stats">\n${boxes}\n      </div>\n` : '') + '    </div>';
+  }
+
+  let aboutHtml = '';
+  if (about) {
+    const photo = about.photo && String(about.photo.url || '').startsWith('https://') ? about.photo : null;
+    if (about.photo && !photo) warnings.push('about.photo needs an https:// URL; left out');
+    const picture = photo
+      ? `      <picture class="cs-picture"><img src="${esc(photo.url)}" alt="${esc(photo.alt || '')}" ` +
+        'loading="lazy" referrerpolicy="no-referrer" width="800" height="600"></picture>\n'
+      : '';
+    const paras = about.paragraphs.map((t) => `        <p class="cs-text">${esc(t)}</p>`).join('\n');
+    const list = isBlank(about.list) ? '' :
+      (about.list_heading ? `        <h3 class="cs-h3">${esc(about.list_heading)}</h3>\n` : '') +
+      '        <ul class="cs-card-group">\n' +
+      about.list.map((t) => `          <li class="cs-item">${esc(t)}</li>`).join('\n') + '\n        </ul>\n';
+    aboutHtml =
+      `  <section class="section${alt.about}" id="about">\n    <div id="sbs-2525">\n` +
+      `    <div class="cs-container wrap">\n${picture}      <div class="cs-content">\n` +
+      `        <h2 class="cs-title">${esc(about.heading || 'About us')}</h2>\n${paras}\n${list}` +
+      '      </div>\n    </div>\n    </div>\n  </section>';
+  }
+
+  let stepsHtml = '';
+  if (steps) {
+    const items = steps.items.map((s, i) =>
+      '        <li class="cs-item">' +
+      `<span class="cs-number" aria-hidden="true">${i + 1}</span>` +
+      `<h3 class="cs-h3">${esc(s.name)}</h3>` +
+      (s.detail ? `<p class="cs-item-p">${esc(s.detail)}</p>` : '') + '</li>').join('\n');
+    stepsHtml =
+      `  <section class="section${alt.steps}" id="new-patients">\n    <div id="steps-889">\n    <div class="wrap">\n` +
+      `      <h2 class="cs-title">${esc(steps.heading || 'Your first visit')}</h2>\n` +
+      (steps.intro ? `      <p class="section-intro">${esc(steps.intro)}</p>\n` : '') +
+      `      <ol class="cs-card-group">\n${items}\n      </ol>\n    </div>\n    </div>\n  </section>`;
+  }
+
+  let reviewsHtml = '';
+  if (reviews.length) {
+    const items = reviews.map((r) => {
+      const rating = parseInt(r.rating ?? 5, 10);
+      const who = sample ? 'Sample review' : esc(r.author || 'Customer');
+      return '        <li class="cs-item">' +
+        `<span class="stars" aria-label="${rating} out of 5 stars">${stars(rating)}</span>` +
+        `<p class="cs-item-text">${esc(r.text)}</p>` +
+        `<div class="cs-flex"><span class="cs-name">${who}</span><span class="cs-desc">Google review</span></div></li>`;
+    }).join('\n');
+    const more = d.review_count
+      ? `      <a class="more-link" href="${listing}">Read all ${parseInt(d.review_count, 10).toLocaleString('en-US')} reviews on Google</a>\n`
+      : '';
+    reviewsHtml =
+      `  <section class="section${alt.reviews}" id="reviews">\n    <div id="reviews-1088">\n    <div class="wrap">\n` +
+      `      <h2 class="cs-title">${esc(d.reviews_heading || 'What customers say')}</h2>\n` +
+      `      <ul class="cs-card-group">\n${items}\n      </ul>\n${more}    </div>\n    </div>\n  </section>`;
+  }
+
+  return {
+    nav_html: navHtml,
+    hero_class: heroMediaHtml ? '' : ' no-media',
+    hero_media_html: heroMediaHtml,
+    about_html: aboutHtml,
+    steps_html: stepsHtml,
+    c_reviews_html: reviewsHtml,
+    c_area_alt: alt.area,
+    footer_links_html: footerLinksHtml,
+    footer_blurb: esc(d.footer_blurb || `${d.category} in ${d.city}.`),
+    c_footer_address_html: address
+      ? `<li><a class="cs-contact-link cs-address" href="${listing}">${esc(address)}</a></li>` : '',
+  };
+}
+
 function fail(lines) {
   console.log('Build stopped:');
   for (const line of lines) console.log('  -', line);
@@ -137,6 +253,8 @@ function main() {
   if (d.phone && ![10, 11].includes(d.phone.replace(/\D/g, '').length)) {
     errors.push(`phone doesn't look like a US number: ${d.phone}`);
   }
+  const layout = d.layout || 'classic';
+  if (!(layout in LAYOUTS)) errors.push(`layout must be one of: ${Object.keys(LAYOUTS).join(', ')}`);
   if (errors.length) fail(errors);
   const retired = RETIRED_FIELDS.filter((key) => key in d);
   if (retired.length) warnings.push(`ignored ${retired.join(', ')}: sites are call-only now (use call_heading and call_intro)`);
@@ -303,7 +421,11 @@ function main() {
     credit_html: creditHtml,
   };
 
-  const tpl = (file) => fs.readFileSync(path.join(ROOT, '_template', file), 'utf8');
+  if (layout === 'components') {
+    Object.assign(values, componentValues(d, { photos, reviews, listing, sample, address, warnings }));
+  }
+
+  const tpl = (file) => fs.readFileSync(path.join(ROOT, LAYOUTS[layout], file), 'utf8');
   const files = {
     'index.html': fill(tpl('index.html'), values, 'index.html'),
     'styles.css': fill(tpl('styles.css'), values, 'styles.css'),

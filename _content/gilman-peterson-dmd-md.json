@@ -1,52 +1,72 @@
 {
   "slug": "gilman-peterson-dmd-md",
+  "layout": "components",
   "name": "Gilman Peterson, DMD, MD",
-  "category": "Dentist",
+  "category": "Oral surgeon",
   "city": "Lexington",
   "colors": {
-    "paint": "#2B4A5E",
-    "deep": "#1A2F3D",
-    "sign": "#BDE6D6"
+    "paint": "#8A3A1F",
+    "deep": "#4E2010",
+    "sign": "#E3B04B"
   },
-  "headline": "Tooth extractions and wisdom teeth removal on Perimeter Drive in Lexington.",
-  "intro": "We remove wisdom teeth and other teeth that need to come out, one at a time or several in one visit. Appointments are recommended, so call ahead to get on the schedule.",
+  "headline": "Wisdom teeth, extractions and implants from a board-certified Lexington oral surgeon.",
+  "intro": "Dr. Peterson is an oral and maxillofacial surgeon. His work ranges from a single tooth that has to come out to surgery on the jaw itself.",
   "phone": "(833) 546-3522",
   "address": "620 Perimeter Dr #100, Lexington, KY 40517",
-  "listing_url": "https://share.google/mVuBPSvzBcfpyNQ8b",
+  "listing_url": "https://share.google/nMQS2P2w0CJFNZ8RV",
   "rating": 3.5,
   "review_count": 10,
-  "services": [
-    {
-      "name": "Wisdom teeth removal",
-      "detail": "Extraction of wisdom teeth, with a follow-up visit afterward."
-    },
-    {
-      "name": "Tooth extractions",
-      "detail": "A single tooth or several in one appointment."
-    },
-    {
-      "name": "Cosmetic dentistry",
-      "detail": "Ask the office about cosmetic options when you call."
-    },
-    {
-      "name": "Payment options",
-      "detail": "Credit, debit, tap-to-pay and payment plans."
-    },
-    {
-      "name": "Accessible office",
-      "detail": "Wheelchair-accessible entrance, parking and restroom."
-    }
+  "stats": [
+    {"value": "Two degrees", "label": "Dental and medical, both from the University of Kentucky"},
+    {"value": "Board certified", "label": "American Board of Oral and Maxillofacial Surgery"}
   ],
+  "services": [
+    {"name": "Wisdom teeth removal", "detail": "One tooth or all four, including teeth that have to be cut out."},
+    {"name": "Tooth extractions", "detail": "A single tooth or several in one visit."},
+    {"name": "Dental implants", "detail": "A post placed in the jaw to hold a replacement tooth."},
+    {"name": "Bone grafts", "detail": "Rebuilding bone in the jaw, often so an implant has a solid base."},
+    {"name": "Denture-preparation surgery", "detail": "Reshaping the ridge of the jaw so dentures sit right."},
+    {"name": "Corrective jaw surgery", "detail": "Orthognathic surgery to fix how the upper and lower jaws line up."},
+    {"name": "Dental anesthesia", "detail": "Numbing or anesthesia, depending on the procedure. Ask about your options when you call."}
+  ],
+  "about": {
+    "heading": "About Dr. Peterson",
+    "paragraphs": [
+      "Dr. Gilman Peterson earned his dental degree (DMD) and his medical degree (MD) at the University of Kentucky, then finished his residency in oral and maxillofacial surgery there too. He is a Diplomate of the American Board of Oral and Maxillofacial Surgery.",
+      "Call the office with questions about your insurance or the cost of a procedure before you come in."
+    ],
+    "list_heading": "At the office",
+    "list": [
+      "Most dental and medical insurance",
+      "Payment plans through CareCredit",
+      "Credit, debit and tap to pay",
+      "Wheelchair-accessible entrance, parking and restroom"
+    ],
+    "photo": {
+      "url": "https://cdcssl.ibsrv.net/ibimg/smb/1023x767_80/webmgr/1o/c/1/cam00788.jpg.webp?b6b3d5dc57ac5aeb0d05f4ea9af35753",
+      "alt": "Waiting room and front desk at the Perimeter Drive office"
+    }
+  },
+  "steps": {
+    "heading": "New patients",
+    "intro": "A few things to know before your first appointment.",
+    "items": [
+      {"name": "Call the office", "detail": "Appointments are recommended, so call (833) 546-3522 to get on the schedule. Have your insurance card ready."},
+      {"name": "Fill out your forms ahead", "detail": "New patient forms can be filled out before your visit, which shortens check-in. Ask about them when you call."},
+      {"name": "Come back for a follow-up", "detail": "After an extraction you come back for a short follow-up visit so Dr. Peterson can check how you're healing."}
+    ]
+  },
+  "reviews_heading": "What patients say",
   "reviews": [
     {
       "author": "Bobby Corwin",
       "rating": 5,
-      "text": "Amazing, friendly,  very professional, and understanding staff. It feels like they really care about you. Had wisdom teeth pulled the other week and Dr. Peterson did it without any sedation, and I did not feel a thing, and I had little to no swelling and bleeding, which is the mark of a good Maxillofacial Surgeon."
+      "text": "Amazing, friendly, very professional, and understanding staff. It feels like they really care about you. Had wisdom teeth pulled the other week and Dr. Peterson did it without any sedation, and I did not feel a thing, and I had little to no swelling and bleeding, which is the mark of a good Maxillofacial Surgeon."
     },
     {
       "author": "Crystal Quick-Justice",
       "rating": 5,
-      "text": "I had to have 3 teeth extracted and cut out. I had a little pain the first day, but zero pain the next morning. The staff is very friendly."
+      "text": "Absolutely the best oral surgeon! I had to have 3 teeth extracted and cut out. I had a little pain the first day, but zero pain the next morning. The staff is very friendly. I would not go anywhere else!"
     },
     {
       "author": "Cathy Adams",
@@ -56,21 +76,30 @@
   ],
   "service_area": [],
   "hours": {
-    "Monday": "8:30 AM –⁠ 12 PM, 1 –⁠ 4:30 PM",
-    "Tuesday": "8 AM –⁠ 12 PM, 1 –⁠ 4:30 PM",
-    "Wednesday": "8:30 AM –⁠ 12 PM, 1 –⁠ 4:30 PM",
-    "Thursday": "8 AM –⁠ 12 PM, 1 –⁠ 4:30 PM",
-    "Friday": "8 AM –⁠ 12 PM, 1 –⁠ 4:30 PM",
+    "Monday": "8:30 AM – 12 PM, 1 – 4:30 PM",
+    "Tuesday": "8 AM – 12 PM, 1 – 4:30 PM",
+    "Wednesday": "8:30 AM – 12 PM, 1 – 4:30 PM",
+    "Thursday": "8 AM – 12 PM, 1 – 4:30 PM",
+    "Friday": "8 AM – 12 PM, 1 – 4:30 PM",
     "Saturday": "Closed",
     "Sunday": "Closed"
   },
   "call_heading": "Call the office",
-  "call_intro": "Call to set up a visit or ask a question.",
-  "photos": [],
+  "call_intro": "Call to set up a visit or ask about a procedure.",
+  "footer_blurb": "Oral and maxillofacial surgery in Lexington, Kentucky.",
+  "photos": [
+    {
+      "url": "https://cdcssl.ibsrv.net/ibimg/smb/600x908_80/webmgr/1o/c/1/gpp20candid20220-20edit.jpg.webp?bb9908037daa01bf6d75e80b734fa9bf",
+      "alt": "Dr. Gilman Peterson in his white coat"
+    }
+  ],
   "guesses": [
-    "Wisdom teeth removal and tooth extractions come from patient reviews and Google's review topics; the listing itself only names cosmetic dentistry as an offering",
-    "Follow-up visit after wisdom teeth removal (mentioned in reviews, not on the listing)",
-    "'Several in one appointment' (reviews mention 3, 6 and 9 teeth in one visit)",
-    "Headline and intro wording are written for the preview, not taken from the business"
+    "Category shown as Oral surgeon (from their website); Google lists the business as Dentist",
+    "Both photos come from their current website, lexingtonoralsurgeons.com, and load from that site; the Google listing has no owner photos",
+    "Services, credentials and the insurance and CareCredit lines come from their website's Staff, Services and Office pages, not the Google listing; the one-line service descriptions are written for the preview",
+    "'Several in one visit' comes from reviews (3, 6 and 9 teeth in one visit)",
+    "Follow-up visit step comes from patient reviews, not the listing or website",
+    "Forms-ahead step comes from their website's New Patients page",
+    "Headline, intro and step wording are written for the preview"
   ]
 }

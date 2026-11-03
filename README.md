@@ -41,6 +41,21 @@ Clear out previews that haven't turned into clients after 30 days.
 Copy their `<slug>/` folder into its own repository, remove the preview bar and the
 `noindex` tag, and point their domain at it.
 
+## Layouts
+
+Pick one per business in the JSON `layout` field. Leaving it out means `classic`.
+
+- `classic`: the original one-page template in `_template/`.
+- `components`: built from the pieces in `components/` (navigation, call-now button,
+  grid pattern, hero-408, sbs-2525, steps-889, reviews-1088, cs-footer-272), restyled
+  to the preview rules. Lives in `_template/components/`. Extra optional fields:
+  - `stats`: up to 2 `{"value", "label"}` boxes over the hero photo (facts only)
+  - `about`: `{"heading", "paragraphs", "list_heading", "list", "photo": {"url", "alt"}}`
+  - `steps`: `{"heading", "intro", "items": [{"name", "detail"}]}`, shown as "New Patients"
+  - `reviews_heading`, `footer_blurb`
+
+  The nav links to Services, plus About and New Patients when those sections have content.
+
 ## Colors
 
 Pick one per business in the JSON `palette` field:

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{title}}</title>
+<meta name="description" content="{{headline}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+<!-- Layout "components": built from the pieces in /components (cs-navigation, call-now,
+     patterns/grid, hero-408, steps-889, sbs-2525, reviews-1088, cs-footer-272),
+     restyled to the preview design rules. Edit here, never in a built page. -->
+
+<div class="preview-bar" role="note">
+  <div class="wrap"><p>{{preview_note}}</p></div>
+</div>
+
+<header id="cs-navigation">
+  <div class="cs-container">
+    <a href="#top" class="cs-logo">{{name}}</a>
+    <nav class="cs-nav" aria-label="Main">
+      <button class="cs-toggle" type="button" aria-expanded="false" aria-controls="cs-ul-wrapper">
+        <span class="cs-box" aria-hidden="true"><span class="cs-line"></span><span class="cs-line"></span><span class="cs-line"></span></span>
+        <span class="cs-toggle-text">Menu</span>
+      </button>
+      <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+        <ul class="cs-ul">
+{{nav_html}}
+        </ul>
+      </div>
+    </nav>
+    <a class="call-now" href="tel:{{tel}}">
+      <span class="call-now-text">Call<span class="num"> {{phone}}</span></span>
+      <svg class="call-now-icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </div>
+</header>
+
+<section id="hero-408" class="grid-pattern">
+  <div class="cs-container{{hero_class}}">
+    <div class="cs-content">
+      <h1 class="cs-title {{name_size}}">{{name}}</h1>
+      <p class="cs-text">{{headline}}</p>
+      <div class="cs-actions">
+        <a href="tel:{{tel}}" class="cs-button-solid">Call {{phone}}</a>
+        <a href="#services" class="cs-button-transparent">See services</a>
+      </div>
+    </div>
+{{hero_media_html}}
+  </div>
+</section>
+
+<main>
+  <section class="section" id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="section-intro">{{intro}}</p>
+      <ul class="services">
+{{services_html}}
+      </ul>
+    </div>
+  </section>
+
+{{about_html}}
+
+{{steps_html}}
+
+{{c_reviews_html}}
+
+  <section class="section{{c_area_alt}}" id="area">
+    <div class="wrap split">
+{{area_html}}
+{{hours_html}}
+    </div>
+  </section>
+
+  <section class="call-section" id="call">
+    <div class="wrap">
+      <h2>{{call_heading}}</h2>
+      <p class="call-intro">{{call_intro}}</p>
+      <a class="call-number" href="tel:{{tel}}">{{phone}}</a>
+      <p class="today-hours" id="today-hours" hidden></p>
+    </div>
+  </section>
+</main>
+
+<footer id="cs-footer-272">
+  <div class="cs-container">
+    <div class="cs-logo-group">
+      <p class="cs-logo">{{name}}</p>
+      <p class="cs-text">{{footer_blurb}}</p>
+    </div>
+    <ul class="cs-nav">
+      <li><span class="cs-header">On this page</span></li>
+{{footer_links_html}}
+    </ul>
+    <ul class="cs-contact">
+      <li><span class="cs-header">Contact</span></li>
+      {{c_footer_address_html}}
+      <li><a class="cs-contact-link" href="tel:{{tel}}">{{phone}}</a></li>
+    </ul>
+  </div>
+  <div class="cs-bottom">
+    <p>&copy; {{year}} {{name}}</p>
+    {{credit_html}}
+  </div>
+</footer>
+
+<div class="call-bar"><a class="btn" href="tel:{{tel}}">Call {{phone}}</a></div>
+
+<script src="script.js"></script>
+</body>
+</html>
