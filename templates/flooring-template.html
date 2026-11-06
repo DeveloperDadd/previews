@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Flooring Co. | Hardwood Flooring Refinishing &amp; Installation</title>
+<meta name="description" content="Premium hardwood flooring refinishing, installation and staircase restoration in Your City and surrounding towns.">
+<!--
+  FLOORING TEMPLATE
+  One self-contained file: all CSS is in the <style> block below, all JS at the bottom.
+  To customize:
+    1. Search for "Your Flooring Co.", "Your City", "Your County" and "(555) 555-0123" and replace them.
+    2. Change the brand colors in :root.
+    3. Swap image placeholders: each <div class="img ..." data-label="..."> can be replaced with
+       <img class="img" src="your-photo.jpg" alt="Describe the photo">.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-900: #0b1422;
+  --navy-800: #0f1a2b;
+  --navy-700: #16243a;
+  --navy-600: #1e3150;
+  --gold: #c9a24a;
+  --gold-light: #e2c47c;
+  --cream: #f6f1e7;
+  --paper: #ffffff;
+  --ink: #1b2433;
+  --muted: #5d6676;
+  --on-dark: #e7ebf2;
+  --on-dark-muted: #a9b3c4;
+  --line-dark: rgba(201, 162, 74, .28);
+  --radius: 10px;
+  --max: 72rem;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--on-dark);
+  background: var(--navy-800);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.2; margin: 0 0 .75rem; }
+p { margin: 0 0 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .8rem 1.6rem; border-radius: 6px;
+  font-weight: 700; font-size: .95rem; letter-spacing: .02em;
+  text-decoration: none; border: 2px solid var(--gold);
+  transition: background .2s, color .2s, transform .2s;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: var(--navy-900); }
+.btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.btn-outline { background: transparent; color: var(--gold-light); }
+.btn-outline:hover { background: var(--gold); color: var(--navy-900); }
+.btn-navy { background: var(--navy-700); color: var(--on-dark); border-color: var(--navy-600); }
+.btn-navy:hover { background: var(--navy-600); }
+
+/* ---------- Section headings ---------- */
+.kicker {
+  display: inline-flex; align-items: center; gap: .6rem;
+  color: var(--gold); font-size: .75rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; margin-bottom: .6rem;
+}
+.kicker::before, .kicker.both::after { content: ""; width: 28px; height: 1px; background: var(--gold); }
+.section { padding: 4.5rem 0; }
+.section-title { font-size: clamp(1.8rem, 5vw, 2.6rem); color: #fff; }
+.section-intro { color: var(--on-dark-muted); max-width: 46rem; }
+.center { text-align: center; }
+.center .section-intro { margin-left: auto; margin-right: auto; }
+
+/* ---------- Image placeholders (wood tones) ---------- */
+.img {
+  position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden;
+  object-fit: cover;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.18) 0 2px, transparent 2px 70px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 9px),
+    linear-gradient(135deg, #8a5a2b, #b07a3f 40%, #6e4520);
+}
+div.img::after {
+  content: attr(data-label);
+  position: absolute; left: .75rem; bottom: .6rem;
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.85); background: rgba(11,20,34,.55);
+  padding: .2rem .5rem; border-radius: 4px;
+}
+.img.light { background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 2px, transparent 2px 60px),
+    linear-gradient(135deg, #d8b98a, #c49a62 50%, #e3c9a0); }
+.img.dark { background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.25) 0 2px, transparent 2px 80px),
+    linear-gradient(135deg, #4a2c16, #6b3f1f 50%, #3a2210); }
+.img.grey { background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.1) 0 2px, transparent 2px 64px),
+    linear-gradient(135deg, #a9a49b, #cfc9bd 50%, #8f8a82); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11, 20, 34, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow .25s, border-color .25s;
+}
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,.35); border-color: var(--line-dark); }
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 2px solid var(--gold); display: grid; place-items: center;
+  font-family: var(--serif); font-weight: 700; color: var(--gold);
+}
+.brand-name { font-family: var(--serif); font-size: 1.1rem; color: #fff; line-height: 1.1; }
+.brand-name small { display: block; font-family: var(--sans); font-size: .62rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.nav { display: none; }
+.nav a { text-decoration: none; color: var(--on-dark); font-size: .92rem; padding: .4rem .2rem; }
+.nav a:hover { color: var(--gold-light); }
+.header-actions { display: flex; align-items: center; gap: .6rem; }
+.header-phone { display: none; }
+.menu-toggle {
+  width: 44px; height: 44px; border-radius: 6px; border: 1px solid var(--line-dark);
+  background: transparent; display: grid; place-items: center; cursor: pointer;
+}
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+  content: ""; display: block; width: 20px; height: 2px; background: var(--gold); position: relative; transition: transform .25s, background .25s;
+}
+.menu-toggle span::before { position: absolute; top: -6px; }
+.menu-toggle span::after { position: absolute; top: 6px; }
+.menu-open .menu-toggle span { background: transparent; }
+.menu-open .menu-toggle span::before { transform: translateY(6px) rotate(45deg); }
+.menu-open .menu-toggle span::after { transform: translateY(-6px) rotate(-45deg); }
+.mobile-nav {
+  display: none; flex-direction: column; padding: .5rem 1rem 1.25rem;
+  border-top: 1px solid var(--line-dark);
+}
+.menu-open .mobile-nav { display: flex; }
+.mobile-nav a { padding: .8rem 0; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+.mobile-nav .btn { margin-top: 1rem; }
+@media (min-width: 960px) {
+  .nav { display: flex; gap: 1.6rem; }
+  .header-phone { display: inline-flex; padding: .6rem 1.1rem; }
+  .menu-toggle, .mobile-nav, .menu-open .mobile-nav { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; text-align: center; padding: 4.5rem 0 5rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201,162,74,.16), transparent 60%),
+    linear-gradient(180deg, var(--navy-900), var(--navy-700));
+  overflow: hidden;
+}
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.hero h1 { font-size: clamp(2rem, 7vw, 3.6rem); color: #fff; max-width: 52rem; margin: 0 auto 1rem; }
+.hero .towns { color: var(--gold-light); font-size: .95rem; max-width: 40rem; margin: 0 auto 1rem; }
+.hero .lede { color: var(--on-dark-muted); max-width: 40rem; margin: 0 auto 1.8rem; }
+.hero-ctas { display: flex; flex-direction: column; align-items: center; gap: .8rem; margin-bottom: 2rem; }
+.hero-ctas .btn { min-width: 200px; }
+@media (min-width: 560px) { .hero-ctas { flex-direction: row; justify-content: center; } }
+.social-proof { display: flex; flex-direction: column; align-items: center; gap: .4rem; }
+.avatars { display: flex; }
+.avatars span {
+  width: 42px; height: 42px; border-radius: 50%; margin-left: -10px;
+  border: 2px solid var(--navy-800); display: grid; place-items: center;
+  font-weight: 700; font-size: .85rem; color: #fff;
+}
+.avatars span:first-child { margin-left: 0; }
+.avatars span:nth-child(1) { background: #7c5a3a; }
+.avatars span:nth-child(2) { background: #3f6b8c; }
+.avatars span:nth-child(3) { background: #8c3f52; }
+.avatars span:nth-child(4) { background: #4f7a4a; }
+.avatars span:nth-child(5) { background: #c9a24a; color: var(--navy-900); }
+.stars { color: var(--gold); letter-spacing: .15em; font-size: 1.1rem; }
+.social-proof small { color: var(--on-dark-muted); }
+.badge-licensed {
+  display: inline-flex; align-items: center; gap: .6rem; margin-top: 1.5rem;
+  border: 1px solid var(--line-dark); border-radius: 999px; padding: .5rem 1.1rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light);
+}
+.badge-licensed svg { width: 18px; height: 18px; }
+
+/* ---------- Main services (3 cards) ---------- */
+.main-services { background: linear-gradient(180deg, var(--navy-700), var(--navy-800)); }
+.card-grid { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+@media (min-width: 860px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+.svc-card {
+  background: linear-gradient(180deg, rgba(30,49,80,.6), rgba(15,26,43,.9));
+  border: 1px solid var(--line-dark); border-radius: 14px;
+  padding: 2.25rem 1.5rem 1.75rem; text-align: center;
+  transition: transform .25s, border-color .25s;
+}
+.svc-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+.svc-icon {
+  width: 84px; height: 84px; margin: 0 auto 1.25rem; border-radius: 16px;
+  display: grid; place-items: center;
+  background: rgba(201,162,74,.08); border: 1px solid var(--line-dark);
+}
+.svc-icon svg { width: 46px; height: 46px; }
+.svc-card h3 { color: var(--gold-light); font-size: 1.35rem; }
+.svc-card p { color: var(--on-dark-muted); font-size: .95rem; }
+.learn-more { color: var(--gold); font-weight: 700; font-size: .9rem; text-decoration: none; }
+.learn-more:hover { text-decoration: underline; }
+.svc-tags { display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,.07); }
+.svc-tags a { font-size: .78rem; color: var(--on-dark-muted); text-decoration: none; padding: .3rem .7rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); }
+.svc-tags a:hover { color: var(--gold-light); border-color: var(--gold); }
+
+/* ---------- Complete services (rows) ---------- */
+.complete { background: var(--navy-800); }
+.svc-rows { display: grid; gap: 1.25rem; margin-top: 2.25rem; }
+.svc-row {
+  display: grid; border-radius: 12px; overflow: hidden;
+  background: var(--navy-700); border: 1px solid rgba(255,255,255,.06);
+}
+.svc-row .img { border-radius: 0; aspect-ratio: 16 / 7; }
+.svc-row-body { padding: 1.25rem 1.4rem 1.4rem; }
+.svc-row h3 {
+  font-size: 1.15rem; color: #fff; display: flex; align-items: center; gap: .6rem;
+}
+.svc-row h3::before { content: ""; width: 4px; height: 1.2em; background: var(--gold); border-radius: 2px; }
+.svc-row p { color: var(--on-dark-muted); font-size: .94rem; margin: 0; }
+@media (min-width: 760px) {
+  .svc-row { grid-template-columns: 300px 1fr; align-items: center; }
+  .svc-row .img { height: 100%; aspect-ratio: auto; min-height: 170px; }
+  .svc-row-body { padding: 1.75rem 2rem; }
+}
+
+/* ---------- Stats band ---------- */
+.stats {
+  background:
+    linear-gradient(180deg, rgba(11,20,34,.9), rgba(11,20,34,.96)),
+    repeating-linear-gradient(90deg, #3a2410 0 3px, #5b3a1c 3px 90px);
+  border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark);
+  text-align: center;
+}
+.stat-grid { display: grid; gap: 2.25rem; }
+@media (min-width: 760px) { .stat-grid { grid-template-columns: repeat(3, 1fr); } }
+.stat-num { font-family: var(--serif); font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold); line-height: 1; }
+.stat-label { font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: .82rem; color: #fff; margin-top: .4rem; }
+.stat-sub { color: var(--on-dark-muted); font-size: .85rem; margin-top: .3rem; }
+.stats-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2.5rem; }
+.stats-note { color: var(--on-dark-muted); font-size: .9rem; max-width: 44rem; margin: 1.5rem auto 0; }
+
+/* ---------- Why refinish ---------- */
+.why { background: var(--navy-800); }
+.why-grid { display: grid; gap: 2.25rem; margin-top: 2rem; align-items: center; }
+@media (min-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; } }
+.why .img { aspect-ratio: 4 / 3; }
+.why-points { display: grid; gap: 1.5rem; }
+.why-point { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; }
+.why-point .ico {
+  width: 48px; height: 48px; border-radius: 10px; display: grid; place-items: center;
+  background: rgba(201,162,74,.1); border: 1px solid var(--line-dark);
+}
+.why-point .ico svg { width: 24px; height: 24px; }
+.why-point h3 { font-size: 1.15rem; color: var(--gold-light); margin-bottom: .35rem; }
+.why-point p { color: var(--on-dark-muted); font-size: .94rem; margin: 0; }
+.why .btn { margin-top: 1.75rem; }
+
+/* ---------- Credentials ---------- */
+.credentials { background: var(--navy-700); text-align: center; }
+.cred-title { display: flex; align-items: center; justify-content: center; gap: 1rem; color: var(--gold-light); font-size: 1.5rem; }
+.cred-title::before, .cred-title::after { content: ""; flex: 0 1 80px; height: 1px; background: var(--gold); }
+.cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+@media (min-width: 760px) { .cred-grid { grid-template-columns: repeat(3, 1fr); } }
+.cred {
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--on-dark);
+}
+.cred-seal {
+  width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid var(--gold); background: radial-gradient(circle, rgba(201,162,74,.18), transparent 70%);
+}
+.cred-seal svg { width: 34px; height: 34px; }
+.cred-wide {
+  margin-top: 2rem; display: inline-flex; align-items: center; gap: .6rem;
+  border: 1px solid var(--line-dark); border-radius: 999px; padding: .6rem 1.4rem;
+  font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light);
+}
+
+/* ---------- Gallery ---------- */
+.gallery { background: linear-gradient(180deg, var(--navy-800), var(--navy-900)); }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; margin-top: 2rem; }
+@media (min-width: 760px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+.g-item {
+  padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--radius); overflow: hidden;
+  display: block; width: 100%;
+}
+.g-item .img { aspect-ratio: 1; transition: transform .4s; }
+.g-item:hover .img { transform: scale(1.04); }
+.g-item.tall { grid-row: span 2; }
+.g-item.tall .img { aspect-ratio: auto; height: 100%; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  align-items: center; justify-content: center; padding: 1rem;
+  background: rgba(5, 10, 18, .9);
+}
+.lightbox.open { display: flex; }
+.lightbox-inner { width: min(900px, 100%); }
+.lightbox-inner .img, .lightbox-inner img { aspect-ratio: 16 / 10; width: 100%; height: auto; }
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1rem; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--gold); background: var(--navy-800); color: var(--gold); font-size: 1.5rem; cursor: pointer;
+}
+.lightbox-caption { text-align: center; color: var(--on-dark-muted); margin-top: .75rem; }
+
+/* ---------- Process (light section) ---------- */
+.process { background: var(--cream); color: var(--ink); }
+.process .section-title { color: var(--navy-800); }
+.process .section-intro { color: var(--muted); }
+.steps { display: grid; gap: 1.25rem; margin-top: 2.5rem; counter-reset: step; }
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step {
+  background: var(--paper); border-radius: 12px; padding: 1.75rem 1.4rem;
+  border-top: 4px solid var(--gold); box-shadow: 0 8px 24px rgba(15,26,43,.08);
+}
+.step-num {
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--navy-800); color: var(--gold); font-family: var(--serif); font-weight: 700; font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.step h3 { font-size: 1.15rem; color: var(--navy-800); }
+.step p { color: var(--muted); font-size: .94rem; margin: 0; }
+
+/* ---------- Final CTA ---------- */
+.final-cta {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(201,162,74,.18), transparent 60%),
+    var(--navy-900);
+}
+.final-cta .section-title { max-width: 40rem; margin-left: auto; margin-right: auto; }
+.final-cta .hero-ctas { margin: 1.75rem 0 0; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: #070d17; color: var(--on-dark-muted); padding: 3.5rem 0 1.5rem; font-size: .92rem; }
+.footer-grid { display: grid; gap: 2rem; }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.site-footer h4 { color: var(--gold-light); font-family: var(--serif); font-size: 1.05rem; margin: 0 0 .8rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--gold-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); margin-top: 2.5rem; padding-top: 1.25rem; text-align: center; font-size: .82rem; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .svc-card:hover { transform: none; }
+}
+.no-js .reveal { opacity: 1; transform: none; }
+</style>
+</head>
+<body class="no-js">
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Your Flooring Co. home">
+      <span class="brand-mark" aria-hidden="true">YF</span>
+      <span class="brand-name">Your Flooring Co.<small>Hardwood Specialists</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#why">Why Refinish</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-gold header-phone" href="tel:+15555550123">(555) 555-0123</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#why">Why Refinish</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-gold" href="tel:+15555550123">Call (555) 555-0123</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker both">Your County's Trusted Flooring Experts</p>
+    <h1>Premium Hardwood Flooring Refinishing &amp; Installation in Your County, ST</h1>
+    <p class="towns">Serving Town One, Town Two, Town Three, Town Four, Town Five and all of Your County</p>
+    <p class="lede">From full sanding and staining to stair restorations, Your Flooring Co. delivers high-end craftsmanship that brings out the natural beauty of your home's hardwood floors.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="tel:+15555550123">Call Now</a>
+      <a class="btn btn-outline" href="#contact">Get a Quote</a>
+    </div>
+    <div class="social-proof">
+      <div class="avatars" aria-hidden="true"><span>J</span><span>M</span><span>A</span><span>R</span><span>G</span></div>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <small>Rated 5.0 from 120 reviews</small>
+    </div>
+    <div class="badge-licensed">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      Licensed &amp; Insured · Lic. #0000000
+    </div>
+  </div>
+</section>
+
+<!-- ========== MAIN SERVICES ========== -->
+<section class="section main-services" id="services">
+  <div class="wrap center">
+    <p class="kicker both reveal">Our Main Services</p>
+    <div class="card-grid">
+      <article class="svc-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M6 30l18-10 18 10-18 10z"/><path d="M12 26.7l18 10M18 23.3l18 10M30 23.3l-18 10"/></svg>
+        </div>
+        <h3>Installation</h3>
+        <p>Hardwood floor installation for new homes, remodels and additions, built on a careful subfloor prep and a precise layout.</p>
+        <a class="learn-more" href="#complete">Learn More →</a>
+        <div class="svc-tags"><a href="#complete">New Floors</a><a href="#complete">Custom Inlays</a></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#c9a24a" stroke-width="2"><rect x="8" y="30" width="32" height="8" rx="1"/><path d="M14 30V18h14l6 6v6"/><circle cx="18" cy="12" r="3"/><path d="M28 18v-6h6"/></svg>
+        </div>
+        <h3>Refinishing</h3>
+        <p>Restore worn, scratched or dull floors with dust-controlled sanding, custom stain colors and durable finishes.</p>
+        <a class="learn-more" href="#complete">Learn More →</a>
+        <div class="svc-tags"><a href="#complete">Staining</a><a href="#complete">Re-coat</a></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M6 40h8v-8h8v-8h8v-8h8V8h4"/><path d="M6 40h36"/></svg>
+        </div>
+        <h3>Staircase Restoration</h3>
+        <p>Refresh or replace stair treads, risers and railings so your staircase matches the beauty of your new floors.</p>
+        <a class="learn-more" href="#complete">Learn More →</a>
+        <div class="svc-tags"><a href="#complete">Stair Refinishing</a><a href="#complete">Railings</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPLETE SERVICES ========== -->
+<section class="section complete" id="complete">
+  <div class="wrap">
+    <p class="kicker reveal">Our Services</p>
+    <h2 class="section-title reveal">Complete Hardwood Flooring Services</h2>
+    <p class="section-intro reveal">Beyond refinishing, Your Flooring Co. offers a full range of hardwood flooring services for homeowners across Your County. Whatever your floors need, our team brings the expertise and craftsmanship to deliver exceptional results.</p>
+    <div class="svc-rows">
+      <article class="svc-row reveal">
+        <!-- Replace with: <img class="img" src="staining.jpg" alt="Custom stain being applied to oak floor"> -->
+        <div class="img dark" data-label="Photo: custom staining"></div>
+        <div class="svc-row-body">
+          <h3>Custom Staining</h3>
+          <p>From natural tones to rich espresso, we test stain samples right on your floor so you can see exactly how the color looks in your light before we commit.</p>
+        </div>
+      </article>
+      <article class="svc-row reveal">
+        <div class="img" data-label="Photo: floor sanding"></div>
+        <div class="svc-row-body">
+          <h3>Hardwood Floor Sanding</h3>
+          <p>Professional dust-controlled sanding removes old finish, stains and surface damage, leaving a smooth, even surface ready for a fresh finish.</p>
+        </div>
+      </article>
+      <article class="svc-row reveal">
+        <div class="img light" data-label="Photo: board repair"></div>
+        <div class="svc-row-body">
+          <h3>Hardwood Floor Repair</h3>
+          <p>Damaged, warped or missing boards are replaced and woven in seamlessly, so repairs blend in with the rest of your floor.</p>
+        </div>
+      </article>
+      <article class="svc-row reveal">
+        <div class="img grey" data-label="Photo: full restoration"></div>
+        <div class="svc-row-body">
+          <h3>Full Floor Restoration</h3>
+          <p>Complete restoration of neglected or heavily worn floors: deep repairs, sanding, staining and multiple finish coats to bring them back to life.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="section stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="reveal">
+        <div class="stat-num"><span class="count" data-target="15">0</span>+</div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-sub">Serving Your County homeowners</div>
+      </div>
+      <div class="reveal">
+        <div class="stat-num"><span class="count" data-target="5">0</span>/5</div>
+        <div class="stat-label">Google Reviews</div>
+        <div class="stat-sub">Rated 5 stars by local clients</div>
+      </div>
+      <div class="reveal">
+        <div class="stat-num"><span class="count" data-target="100">0</span>%</div>
+        <div class="stat-label">Satisfaction Guaranteed</div>
+        <div class="stat-sub">We're not done until you love it</div>
+      </div>
+    </div>
+    <div class="stats-cta reveal">
+      <a class="btn btn-navy" href="tel:+15555550123">(555) 555-0123</a>
+      <a class="btn btn-gold" href="#contact">Get a Quote</a>
+    </div>
+    <p class="stats-note reveal">We are a locally owned business with over 15 years of hands-on experience, committed to quality work and honest, upfront pricing on every project.</p>
+  </div>
+</section>
+
+<!-- ========== WHY REFINISH ========== -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <p class="kicker reveal">Why Choose Us</p>
+    <h2 class="section-title reveal">Why Refinish Instead of Replace?</h2>
+    <div class="why-grid">
+      <div class="img grey reveal" data-label="Photo: refinished living room"></div>
+      <div>
+        <div class="why-points">
+          <div class="why-point reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <div><h3>Save Thousands vs. Replacement</h3><p>Hardwood floors are one of the most valuable features in a home. Refinishing costs a fraction of replacement and delivers a look that's just as stunning.</p></div>
+          </div>
+          <div class="why-point reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+            <div><h3>Quality Finishes That Last</h3><p>We use premium oil- and water-based finishes built to stand up to kids, pets and everyday traffic for years to come.</p></div>
+          </div>
+          <div class="why-point reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+            <div><h3>Licensed &amp; Insured</h3><p>Your Flooring Co. is fully licensed and insured, so you can have complete peace of mind while we work in your home.</p></div>
+          </div>
+        </div>
+        <a class="btn btn-gold reveal" href="#contact">Get a Free Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CREDENTIALS ========== -->
+<section class="section credentials">
+  <div class="wrap">
+    <h2 class="cred-title reveal">Our Credentials</h2>
+    <div class="cred-grid">
+      <div class="cred reveal">
+        <span class="cred-seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#c9a24a"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span>
+        Google 5-Star Rated
+      </div>
+      <div class="cred reveal">
+        <span class="cred-seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 000-7.8z"/></svg></span>
+        Customer Favorite
+      </div>
+      <div class="cred reveal">
+        <span class="cred-seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+        Licensed &amp; Insured
+      </div>
+    </div>
+    <div class="cred-wide reveal">✓ 100% Satisfaction Guarantee</div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <p class="kicker reveal">Portfolio</p>
+    <h2 class="section-title reveal">Our Gallery</h2>
+    <p class="section-intro reveal">A look at recent refinishing, installation and staircase projects. Click any photo to view it larger.</p>
+    <!-- Each tile: replace the inner div with <img class="img" src="..." alt="...">. The lightbox copies whatever is inside. -->
+    <div class="gallery-grid">
+      <button class="g-item tall reveal" type="button"><div class="img dark" data-label="Project 1"></div></button>
+      <button class="g-item reveal" type="button"><div class="img" data-label="Project 2"></div></button>
+      <button class="g-item reveal" type="button"><div class="img light" data-label="Project 3"></div></button>
+      <button class="g-item reveal" type="button"><div class="img grey" data-label="Project 4"></div></button>
+      <button class="g-item reveal" type="button"><div class="img" data-label="Project 5"></div></button>
+      <button class="g-item reveal" type="button"><div class="img dark" data-label="Project 6"></div></button>
+      <button class="g-item reveal" type="button"><div class="img light" data-label="Project 7"></div></button>
+      <button class="g-item reveal" type="button"><div class="img grey" data-label="Project 8"></div></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section class="section process" id="process">
+  <div class="wrap center">
+    <p class="kicker both reveal">How It Works</p>
+    <h2 class="section-title reveal">Our Process in Four Simple Steps</h2>
+    <p class="section-intro reveal">We keep things straightforward so you always know what's happening and when, from the first call to the final walkthrough.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><h3>Free Consultation</h3><p>We visit your home, inspect your floors and talk through colors, finishes and timing.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h3>Clear Estimate</h3><p>You get a detailed, upfront quote with no hidden fees and a schedule that works for you.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h3>Expert Craftsmanship</h3><p>Our team protects your home, then sands, repairs, stains and finishes with care.</p></div>
+      <div class="step reveal"><div class="step-num">4</div><h3>Final Walkthrough</h3><p>We walk the finished floors with you and share care tips to keep them looking beautiful.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="section final-cta" id="contact">
+  <div class="wrap">
+    <p class="kicker both reveal">Get Started</p>
+    <h2 class="section-title reveal">Ready to Bring Your Floors Back to Life?</h2>
+    <p class="section-intro reveal">Call today for a free, no-obligation estimate anywhere in Your County.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-gold" href="tel:+15555550123">Call (555) 555-0123</a>
+      <a class="btn btn-outline" href="mailto:hello@yourflooringco.com">Email Us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">YF</span><span class="brand-name">Your Flooring Co.<small>Hardwood Specialists</small></span></a>
+        <p style="margin-top:1rem">Premium hardwood flooring refinishing, installation and staircase restoration for homeowners throughout Your County.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15555550123">(555) 555-0123</a></li>
+          <li><a href="mailto:hello@yourflooringco.com">hello@yourflooringco.com</a></li>
+          <li>123 Main Street, Your City, ST 00000</li>
+          <li>Mon–Sat: 7am – 6pm</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Town One</li><li>Town Two</li><li>Town Three</li><li>Town Four</li><li>Town Five</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year">2026</span> Your Flooring Co. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
+  <div class="lightbox-inner">
+    <div id="lightboxContent"></div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  document.body.classList.remove("no-js");
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Sticky header shadow
+  var header = document.getElementById("header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+  document.querySelectorAll("#mobileNav a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Count-up numbers
+  function countUp(el) {
+    var target = parseInt(el.getAttribute("data-target"), 10) || 0;
+    if (reduceMotion) { el.textContent = target; return; }
+    var start = null, duration = 1400;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Reveal on scroll + trigger counters
+  var reveals = document.querySelectorAll(".reveal");
+  var counters = document.querySelectorAll(".count");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        countUp(e.target);
+        co.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { co.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("visible"); });
+    counters.forEach(function (el) { el.textContent = el.getAttribute("data-target"); });
+  }
+
+  // Gallery lightbox
+  var lightbox = document.getElementById("lightbox");
+  var lbContent = document.getElementById("lightboxContent");
+  var lbCaption = document.getElementById("lightboxCaption");
+  var lbClose = document.getElementById("lightboxClose");
+  var lastFocus = null;
+  function openLightbox(item) {
+    var media = item.querySelector(".img");
+    lbContent.innerHTML = "";
+    lbContent.appendChild(media.cloneNode(true));
+    lbCaption.textContent = media.getAttribute("alt") || media.getAttribute("data-label") || "";
+    lastFocus = item;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll(".g-item").forEach(function (item) {
+    item.addEventListener("click", function () { openLightbox(item); });
+  });
+  lbClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (lightbox.classList.contains("open")) closeLightbox();
+      else if (header.classList.contains("menu-open")) setMenu(false);
+    }
+  });
+})();
+</script>
+</body>
+</html>
