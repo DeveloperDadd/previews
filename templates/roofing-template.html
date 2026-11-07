@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Roofing Co. | Metal Roofing Contractors in Your City, ST</title>
+<meta name="description" content="Metal roofing, asphalt shingle roofing and roof repairs for homes across Your City and Your County.">
+<!--
+  ROOFING TEMPLATE
+  One self-contained file: all CSS is in the <style> block below, all JS at the bottom.
+  To customize:
+    1. Search for "Your Roofing Co.", "Your City", "Your County", "Your Region", "Town One",
+       "(555) 555-0123" (also "+15555550123" in tel: links) and "hello@yourcompany.com" and replace them.
+    2. Change the brand colors and fonts in :root.
+    3. Swap image placeholders: each <div class="img ..." data-label="..."> can be replaced with
+       <img class="img" src="your-photo.jpg" alt="Describe the photo">.
+    4. Testimonials are SAMPLE text. Replace them with real reviews from your customers.
+    5. The newsletter form has no backend. Set its action="" to your email service and remove the
+       demo handler in the script.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-950: #060e18;
+  --navy-900: #0a1624;
+  --navy-800: #0f1f33;
+  --navy-700: #172c45;
+  --navy-600: #22405f;
+  --red: #d61f2c;          /* buttons: white text passes contrast */
+  --red-hover: #b81a26;
+  --red-bright: #ff3b47;   /* small accents on dark backgrounds */
+  --white: #ffffff;
+  --text: #e8edf3;
+  --muted: #a7b3c2;
+  --line: rgba(255,255,255,.1);
+  --radius: 4px;
+  --max: 74rem;
+  --head: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --body: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--navy-900); color: var(--text); font-family: var(--body); font-size: 1rem; line-height: 1.65; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--head); font-weight: 700; line-height: 1.1; text-transform: uppercase; margin: 0 0 1rem; color: var(--white); }
+p { margin: 0 0 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+:focus-visible { outline: 3px solid var(--red-bright); outline-offset: 3px; }
+
+/* ---------- Buttons ---------- */
+.btn-group { display: inline-flex; align-items: stretch; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 48px; padding: .7rem 1.5rem; border: 0; border-radius: var(--radius);
+  font-family: var(--body); font-weight: 700; font-size: .95rem; text-decoration: none; cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.btn-red { background: var(--red); color: var(--white); }
+.btn-red:hover { background: var(--red-hover); }
+.btn-arrow {
+  width: 48px; min-height: 48px; display: grid; place-items: center; background: var(--white); color: var(--navy-900);
+  border-radius: 0 var(--radius) var(--radius) 0; text-decoration: none; transition: background .2s;
+}
+.btn-group .btn { border-radius: var(--radius) 0 0 var(--radius); }
+.btn-arrow svg { width: 18px; height: 18px; }
+.btn-group:hover .btn-arrow { background: #e4e8ee; }
+.btn-group:hover .btn { background: var(--red-hover); }
+
+/* ---------- Headings ---------- */
+.kicker {
+  display: block; font-family: var(--head); font-weight: 600; font-size: .82rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--red-bright); margin-bottom: .6rem;
+}
+.section { padding: 4.5rem 0; }
+.section-title { font-size: clamp(1.9rem, 6vw, 2.8rem); }
+.lead { color: var(--muted); }
+
+/* ---------- Image placeholders ---------- */
+.img {
+  position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; object-fit: cover;
+  background:
+    repeating-linear-gradient(100deg, rgba(0,0,0,.25) 0 2px, transparent 2px 22px),
+    linear-gradient(160deg, #4a5866, #2c3743 55%, #1a222b);
+}
+div.img::after {
+  content: attr(data-label); position: absolute; left: .75rem; bottom: .6rem;
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: rgba(6,14,24,.7); padding: .2rem .5rem; border-radius: 3px;
+}
+.img.wood { background: repeating-linear-gradient(90deg, rgba(0,0,0,.18) 0 2px, transparent 2px 26px), linear-gradient(150deg, #b77a45, #8a552b 55%, #5e3a1d); }
+.img.sky { background: linear-gradient(180deg, #8fb3d6 0%, #c9dbeb 45%, #5f6e5a 46%, #3d4a39 100%); }
+.img.shingle { background: repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 2px, transparent 2px 18px), repeating-linear-gradient(90deg, rgba(0,0,0,.15) 0 2px, transparent 2px 30px), linear-gradient(160deg, #6b6f75, #4b4f55); }
+.img.dusk { background: linear-gradient(180deg, #1b2b44 0%, #4b5d7a 45%, #2a2d33 46%, #15171b 100%); }
+
+/* ---------- Top bar + header ---------- */
+.topbar { background: var(--navy-950); color: var(--muted); font-size: .82rem; border-bottom: 1px solid var(--line); }
+.topbar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .25rem 1.25rem; padding-top: .45rem; padding-bottom: .45rem; }
+.topbar .info-row { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.topbar span { display: inline-flex; align-items: center; gap: .4rem; }
+.topbar svg { width: 14px; height: 14px; color: var(--red-bright); }
+.social { display: none; gap: .5rem; }
+.social a { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-700); text-decoration: none; font-size: .7rem; font-weight: 700; }
+.social a:hover { background: var(--red); }
+@media (min-width: 700px) { .social { display: flex; } }
+
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(10,22,36,.95); backdrop-filter: blur(8px); transition: box-shadow .25s; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,.45); }
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.brand-mark svg { width: 46px; height: 34px; }
+.brand-name { font-family: var(--head); font-weight: 700; font-size: 1.25rem; line-height: 1; letter-spacing: .04em; text-transform: uppercase; color: var(--white); }
+.brand-name small { display: block; font-size: .62rem; letter-spacing: .32em; color: var(--muted); margin-top: .2rem; }
+
+.nav { display: none; }
+.nav > ul { display: flex; align-items: center; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav a, .nav .dd-toggle {
+  font-family: var(--head); font-weight: 600; font-size: .92rem; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; color: var(--white); background: none; border: 0; padding: .5rem 0; cursor: pointer;
+}
+.nav a.active { color: var(--red-bright); }
+.nav a:hover, .nav .dd-toggle:hover { color: var(--red-bright); }
+.has-dd { position: relative; }
+.dd { position: absolute; top: 100%; left: -1rem; min-width: 230px; list-style: none; margin: 0; padding: .5rem 0; background: var(--navy-800); border-top: 3px solid var(--red); box-shadow: 0 12px 30px rgba(0,0,0,.4); display: none; }
+.has-dd.open .dd { display: block; }
+.dd a { display: block; padding: .55rem 1rem; text-transform: none; letter-spacing: 0; font-family: var(--body); font-weight: 500; }
+.header-cta { display: none; }
+.menu-toggle { width: 46px; height: 46px; border-radius: var(--radius); border: 1px solid var(--line); background: transparent; display: grid; place-items: center; cursor: pointer; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { content: ""; display: block; width: 22px; height: 2px; background: var(--white); position: relative; transition: transform .25s, background .25s; }
+.menu-toggle span::before { position: absolute; top: -7px; }
+.menu-toggle span::after { position: absolute; top: 7px; }
+.menu-open .menu-toggle span { background: transparent; }
+.menu-open .menu-toggle span::before { transform: translateY(7px) rotate(45deg); }
+.menu-open .menu-toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav { display: none; flex-direction: column; padding: .25rem 1rem 1.25rem; border-top: 1px solid var(--line); }
+.menu-open .mobile-nav { display: flex; }
+.mobile-nav a { padding: .8rem 0; text-decoration: none; border-bottom: 1px solid var(--line); font-weight: 500; }
+.mobile-nav a.sub { padding-left: 1rem; color: var(--muted); }
+.mobile-nav .btn { margin-top: 1rem; border-bottom: 0; }
+@media (min-width: 960px) {
+  .nav { display: block; }
+  .header-cta { display: inline-flex; }
+  .menu-toggle, .mobile-nav, .menu-open .mobile-nav { display: none; }
+  .has-dd:hover .dd, .has-dd:focus-within .dd { display: block; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center; padding: 4rem 0 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(214,31,44,.12), transparent 55%), linear-gradient(180deg, var(--navy-950), var(--navy-800));
+}
+.hero h1 { font-size: clamp(2.2rem, 8vw, 4rem); max-width: 50rem; margin: 0 auto 1rem; }
+.hero .lead { max-width: 40rem; margin: 0 auto 1.75rem; color: #c9d3df; }
+.hero-img { margin-top: 3rem; }
+.hero-img .img { aspect-ratio: 16 / 8; max-width: 60rem; margin: 0 auto; border-radius: 6px 6px 0 0; }
+@media (max-width: 599px) { .hero-img .img { aspect-ratio: 4 / 3; } }
+
+/* ---------- Services ---------- */
+.services-head { display: grid; gap: 1rem 3rem; align-items: end; }
+@media (min-width: 860px) { .services-head { grid-template-columns: 1fr 1fr; } }
+.svc-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 700px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+.svc { text-decoration: none; display: block; }
+.svc .img { aspect-ratio: 1; border-radius: 4px; transition: transform .4s; }
+.svc:hover .img { transform: translateY(-4px); }
+.svc h3 { font-size: 1.05rem; margin: .9rem 0 .3rem; letter-spacing: .04em; }
+.svc p { color: var(--muted); font-size: .92rem; margin: 0; }
+
+/* ---------- Two-column feature sections ---------- */
+.split { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; gap: 4rem; } .split.flip > :first-child { order: 2; } }
+.split .img { border-radius: 4px; }
+.split p { color: var(--muted); }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+.duo .img { aspect-ratio: 4 / 3; border-radius: 4px; }
+.alt-bg { background: var(--navy-800); }
+
+/* ---------- Stats ---------- */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--line); }
+.stat-num { font-family: var(--head); font-weight: 700; font-size: clamp(2.2rem, 7vw, 3rem); line-height: 1; color: var(--white); }
+.stat-label { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--red-bright); margin-top: .35rem; line-height: 1.3; }
+
+/* ---------- Tabs (why choose us) ---------- */
+.tabs-grid { display: grid; gap: 2rem; margin-top: 2rem; }
+@media (min-width: 900px) { .tabs-grid { grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: stretch; } }
+.tab-list { display: grid; gap: .75rem; align-content: start; }
+.tab {
+  display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 64px; padding: .9rem 1rem; text-align: left;
+  background: var(--navy-800); border: 1px solid var(--line); border-radius: 4px; color: var(--white); cursor: pointer;
+  font: 600 1rem/1.3 var(--body); transition: background .2s, border-color .2s;
+}
+.tab .ico { width: 40px; height: 40px; flex: none; border-radius: 4px; display: grid; place-items: center; background: var(--white); color: var(--navy-900); }
+.tab .ico svg { width: 20px; height: 20px; }
+.tab .go { margin-left: auto; color: var(--red-bright); }
+.tab .go svg { width: 16px; height: 16px; }
+.tab[aria-selected="true"] { background: var(--navy-700); border-color: var(--red); }
+.tab[aria-selected="true"] .ico { background: var(--red); color: var(--white); }
+.tab:hover { border-color: var(--red); }
+.tab-panels { position: relative; min-height: 360px; border-radius: 4px; overflow: hidden; }
+.tab-panels .img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+.tab-panel {
+  position: absolute; left: 1rem; right: 1rem; bottom: 1rem; max-width: 26rem; padding: 1.4rem;
+  background: rgba(6,14,24,.92); border-left: 4px solid var(--red); border-radius: 4px;
+}
+.tab-panel h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+.tab-panel p { color: var(--muted); font-size: .94rem; margin: 0; }
+
+/* ---------- Testimonials ---------- */
+.testimonials { text-align: center; background: var(--navy-800); }
+.testimonials .lead { max-width: 42rem; margin: 0 auto; }
+.t-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; text-align: left; }
+@media (min-width: 860px) { .t-grid { grid-template-columns: repeat(3, 1fr); } }
+.t-card {
+  position: relative; padding: 2.25rem 1.5rem 1.5rem; border-radius: 4px;
+  background: linear-gradient(180deg, #3b4b60, #24344a 60%, #1a2a3f);
+  border: 1px solid var(--line); display: flex; flex-direction: column;
+}
+.t-card .quote { font-family: Georgia, serif; font-size: 4rem; line-height: .6; color: var(--red-bright); height: 2rem; }
+.t-card p { color: #dfe6ee; flex: 1; }
+.t-card .stars { color: #f7b500; letter-spacing: .12em; margin-bottom: .6rem; }
+.t-name { font-family: var(--head); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--white); }
+.t-role { font-size: .82rem; color: var(--muted); }
+
+/* ---------- CTA ---------- */
+.cta { position: relative; overflow: hidden; background: var(--navy-950); }
+.cta .split { gap: 2rem; }
+.cta .img { aspect-ratio: 16 / 11; }
+.cta p { color: var(--muted); }
+
+/* ---------- Info strip + footer ---------- */
+.info-strip { background: var(--navy-800); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 2.25rem 0; }
+.info-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 760px) { .info-grid { grid-template-columns: repeat(3, 1fr); } }
+.info { display: flex; gap: 1rem; align-items: flex-start; }
+.info .ico { width: 46px; height: 46px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--red); color: var(--red-bright); }
+.info .ico svg { width: 20px; height: 20px; }
+.info h3 { font-size: .9rem; letter-spacing: .1em; margin: 0 0 .2rem; }
+.info p { margin: 0; color: var(--muted); font-size: .94rem; }
+.info a { text-decoration: none; }
+.info a:hover { color: var(--white); text-decoration: underline; }
+
+.site-footer { background: var(--navy-950); color: var(--muted); padding: 3.5rem 0 1.25rem; font-size: .94rem; }
+.footer-grid { display: grid; gap: 2.25rem; }
+@media (min-width: 860px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.3fr; } }
+.footer-brand .brand-mark svg { width: 92px; height: 66px; }
+.footer-brand .brand-name { font-size: 1.6rem; }
+.footer-brand p { margin-top: 1rem; max-width: 24rem; }
+.site-footer h4 { font-family: var(--head); font-size: .95rem; letter-spacing: .12em; text-transform: uppercase; color: var(--white); margin: 0 0 .9rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--white); text-decoration: underline; }
+.newsletter { display: flex; margin-top: .9rem; }
+.newsletter input {
+  flex: 1; min-width: 0; min-height: 48px; padding: .6rem .85rem; border: 1px solid var(--line); border-right: 0;
+  border-radius: var(--radius) 0 0 var(--radius); background: var(--white); font: inherit; color: var(--navy-900);
+}
+.newsletter .btn { border-radius: 0 var(--radius) var(--radius) 0; padding: .6rem 1.1rem; }
+.news-status { margin-top: .6rem; color: var(--white); font-weight: 500; }
+.footer-bottom { border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; font-size: .82rem; }
+.footer-bottom nav { display: flex; gap: 1.25rem; }
+
+/* ---------- Floating help bubble ---------- */
+.help { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; display: flex; align-items: flex-end; gap: .6rem; }
+.help-note {
+  position: relative; max-width: 200px; padding: .7rem 2rem .7rem .9rem; background: var(--white); color: var(--navy-900);
+  border-radius: 8px; font-size: .85rem; line-height: 1.35; box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.help-note button { position: absolute; top: .2rem; right: .2rem; width: 28px; height: 28px; border: 0; background: none; cursor: pointer; font-size: 1.1rem; color: #667; }
+.help-btn { width: 56px; height: 56px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.help-btn svg { width: 24px; height: 24px; }
+.help-btn:hover { background: var(--red-hover); }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .svc:hover .img { transform: none; }
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="social" aria-label="Social media">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">ig</a>
+    </div>
+    <div class="info-row">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>123 Main Street, Your City, ST 00000</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon–Fri: 8:00 AM – 5:00 PM</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Your Roofing Co. home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 46 34" fill="none"><path d="M2 20L23 3l21 17" stroke="#fff" stroke-width="3"/><path d="M8 20v12h30V20" stroke="#a7b3c2" stroke-width="2"/><path d="M14 14v-5h5" stroke="#d61f2c" stroke-width="3"/><path d="M12 26h6M22 26h6M32 26h2" stroke="#a7b3c2" stroke-width="2"/></svg>
+      </span>
+      <span class="brand-name">Your Roofing Co.<small>Roofing LLC</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a class="active" href="#top">Home</a></li>
+        <li class="has-dd" id="servicesDd">
+          <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="servicesMenu">Services ▾</button>
+          <ul class="dd" id="servicesMenu">
+            <li><a href="#services">Standing Seam Metal Roofing</a></li>
+            <li><a href="#services">Asphalt Shingle Roofing</a></li>
+            <li><a href="#services">Roof Repairs</a></li>
+            <li><a href="#services">Free Estimates</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">Service Areas</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="btn-group header-cta">
+      <a class="btn btn-red" href="tel:+15555550123">(555) 555-0123</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#top">Home</a>
+    <a href="#services">Services</a>
+    <a class="sub" href="#services">Standing Seam Metal Roofing</a>
+    <a class="sub" href="#services">Asphalt Shingle Roofing</a>
+    <a class="sub" href="#services">Roof Repairs</a>
+    <a href="#about">Service Areas</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact Us</a>
+    <a class="btn btn-red" href="tel:+15555550123">Call (555) 555-0123</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker reveal">Welcome to Your Roofing Co.</span>
+    <h1 class="reveal">Expert Metal Roofing Contractors for Your Region Homes</h1>
+    <p class="lead reveal">Skilled local roofers with years of experience in premium metal roofing, offering a full range of services to protect your home and add lasting value.</p>
+    <div class="btn-group reveal">
+      <a class="btn btn-red" href="#contact">Get A Quote</a>
+      <a class="btn-arrow" href="#contact" aria-label="Get a quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div>
+    <div class="hero-img reveal">
+      <!-- Replace with: <img class="img" src="house.jpg" alt="Modern home with a new standing seam metal roof"> -->
+      <div class="img sky" data-label="Photo: home with new metal roof"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <div class="reveal">
+        <span class="kicker">Our Services</span>
+        <h2 class="section-title" style="margin:0">Expert Roofing Solutions for Your Region Homes</h2>
+      </div>
+      <p class="lead reveal" style="margin:0">At Your Roofing Co., we're Your County's trusted roofing contractors, specializing in premium metal roofing and complete roofing services. Our team delivers craftsmanship built to stand up to local weather and dependable service you can count on.</p>
+    </div>
+    <div class="svc-grid">
+      <a class="svc reveal" href="#contact">
+        <div class="img wood" data-label="Photo: standing seam roof"></div>
+        <h3>Standing Seam Metal Roofing</h3>
+        <p>Concealed-fastener metal panels that shed snow, resist wind and can last 50+ years.</p>
+      </a>
+      <a class="svc reveal" href="#contact">
+        <div class="img shingle" data-label="Photo: shingle roof"></div>
+        <h3>Asphalt Shingle Roofing</h3>
+        <p>Architectural shingles installed to manufacturer specs, in a wide range of colors.</p>
+      </a>
+      <a class="svc reveal" href="#contact">
+        <div class="img" data-label="Photo: roof repair"></div>
+        <h3>Roof Repairs</h3>
+        <p>Leaks, flashing, storm damage and worn sections fixed quickly and properly.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE (PREMIER) ========== -->
+<section class="section alt-bg" id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="img dusk reveal" data-label="Photo: metal roof at dusk"></div>
+      <div class="reveal">
+        <span class="kicker">Why Choose Your Roofing Co.?</span>
+        <h2 class="section-title">Your Region's Premier Metal Roofing Contractors</h2>
+        <p>Your Roofing Co. is a locally trusted roofing company focused on premium metal roofing systems. Our certified installers understand what local winters do to a roof, and we build every system to handle snow load, ice and high winds.</p>
+        <p>What sets us apart is our commitment to quality and honesty. We provide clear written estimates, detailed workmanship warranties and realistic timelines, so you know exactly what you're getting from start to finish.</p>
+        <div class="btn-group">
+          <a class="btn btn-red" href="tel:+15555550123">Call Us Today</a>
+          <a class="btn-arrow" href="tel:+15555550123" aria-label="Call us today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="img reveal" data-label="Photo: finished project"></div>
+      <div class="img wood reveal" data-label="Photo: install in progress"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHO WE ARE + STATS ========== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <span class="kicker reveal">Who We Are</span>
+    <h2 class="section-title reveal">Local Roofing Experts Serving Your Region</h2>
+    <div class="split" style="margin-top:2rem">
+      <div class="img wood reveal" data-label="Photo: crew on roof" style="aspect-ratio:4/5"></div>
+      <div class="reveal">
+        <p>Your Roofing Co. is a family-owned company founded on a simple idea: homeowners deserve a roof that's done right the first time. We specialize in standing seam metal roofing and also handle shingle replacement and repairs.</p>
+        <p>Since day one we've earned trust by showing up when we say we will, communicating clearly and standing behind our work. Our team is fully licensed and insured (Lic. #0000000), and we serve Town One, Town Two, Town Three and the rest of Your County.</p>
+        <div class="stats">
+          <div><div class="stat-num"><span class="count" data-target="475">0</span></div><div class="stat-label">Repeat Customers</div></div>
+          <div><div class="stat-num"><span class="count" data-target="2">0</span>K</div><div class="stat-label">Satisfied Customers</div></div>
+          <div><div class="stat-num"><span class="count" data-target="37">0</span></div><div class="stat-label">Professional Team</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US (TABS) ========== -->
+<section class="section alt-bg">
+  <div class="wrap">
+    <span class="kicker reveal">Why Choose Us</span>
+    <h2 class="section-title reveal">We Build for Your Region's Harsh Climate</h2>
+    <div class="tabs-grid">
+      <div class="tab-list reveal" role="tablist" aria-label="Why choose us">
+        <button class="tab" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>
+          Our Mission &amp; Approach
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </button>
+        <button class="tab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10v5c0 2 3 3.5 6 3.5s6-1.5 6-3.5v-5"/></svg></span>
+          Education &amp; Experience
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </button>
+        <button class="tab" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          Local Expertise &amp; Reliability
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </button>
+      </div>
+      <div class="tab-panels reveal">
+        <div class="img dusk" data-label="Photo: roof detail"></div>
+        <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <h3>Our Mission &amp; Approach</h3>
+          <p>Our mission is simple: install roofs that protect families for decades. We inspect thoroughly, recommend only what you need and treat your property with respect from tear-off to cleanup.</p>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+          <h3>Education &amp; Experience</h3>
+          <p>Our installers are manufacturer-trained and keep up with the latest metal roofing systems and building codes, so every roof is installed to spec and backed by warranty.</p>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+          <h3>Local Expertise &amp; Reliability</h3>
+          <p>We live and work here. We know local weather, local codes and local suppliers, and we're right down the road if you ever need us after the job is done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS (sample text: replace with real reviews) ========== -->
+<section class="section testimonials" id="testimonials">
+  <div class="wrap">
+    <span class="kicker reveal">Testimonials</span>
+    <h2 class="section-title reveal">Trusted by Your Region Homeowners</h2>
+    <p class="lead reveal">Homeowners across Your County trust us for honest advice, quality craftsmanship and roofs that hold up season after season.</p>
+    <div class="t-grid">
+      <figure class="t-card reveal" style="margin:0">
+        <div class="quote" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote style="margin:0"><p>Sample review: We had a leak during a spring storm and the crew came out the same day. They patched it, explained our options with no pressure, and later installed a new metal roof that looks fantastic.</p></blockquote>
+        <figcaption><div class="t-name">Customer Name</div><div class="t-role">Homeowner, Town One</div></figcaption>
+      </figure>
+      <figure class="t-card reveal" style="margin:0">
+        <div class="quote" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote style="margin:0"><p>Sample review: They replaced our old shingle roof with standing seam metal. The team was on time, respectful of our property and left the yard cleaner than they found it. Highly recommend.</p></blockquote>
+        <figcaption><div class="t-name">Customer Name</div><div class="t-role">Homeowner, Town Two</div></figcaption>
+      </figure>
+      <figure class="t-card reveal" style="margin:0">
+        <div class="quote" aria-hidden="true">“</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote style="margin:0"><p>Sample review: From the estimate to the final walkthrough, everything was clear and on schedule. The quality of the work is outstanding and the price matched the quote exactly.</p></blockquote>
+        <figcaption><div class="t-name">Customer Name</div><div class="t-role">Homeowner, Town Three</div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="section cta">
+  <div class="wrap split flip">
+    <div class="img wood reveal" data-label="Photo: completed roof"></div>
+    <div class="reveal">
+      <span class="kicker">Ready to Protect Your Home?</span>
+      <h2 class="section-title">Your Region's Trusted Roof Contractor</h2>
+      <p>Don't wait for the next storm to damage your roof. Contact Your Roofing Co. today for metal roofing installation, repairs and replacements. Our licensed team provides free estimates and emergency service throughout Your County.</p>
+      <div class="btn-group">
+        <a class="btn btn-red" href="tel:+15555550123">Get Your Free Estimate</a>
+        <a class="btn-arrow" href="tel:+15555550123" aria-label="Call for a free estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== CONTACT INFO STRIP ========== -->
+<section class="info-strip" id="contact" aria-label="Contact information">
+  <div class="wrap info-grid">
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+      <div><h3>Location</h3><p>123 Main Street<br>Your City, ST 00000</p></div>
+    </div>
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><h3>Working Hours</h3><p>Monday – Friday<br>8:00 AM – 5:00 PM</p></div>
+    </div>
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
+      <div><h3>Contact</h3><p>P: <a href="tel:+15555550123">(555) 555-0123</a><br>E: <a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Your Roofing Co. home" style="flex-direction:column;align-items:flex-start">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 46 34" fill="none"><path d="M2 20L23 3l21 17" stroke="#fff" stroke-width="3"/><path d="M8 20v12h30V20" stroke="#a7b3c2" stroke-width="2"/><path d="M14 14v-5h5" stroke="#d61f2c" stroke-width="3"/><path d="M12 26h6M22 26h6M32 26h2" stroke="#a7b3c2" stroke-width="2"/></svg></span>
+          <span class="brand-name">Your Roofing Co.<small>Roofing LLC</small></span>
+        </a>
+        <p>Protect your home with premium metal roofing from Your Roofing Co. We specialize in standing seam metal roofs, asphalt shingles and expert repairs for homes across Your County.</p>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Standing Seam Metal</a></li>
+          <li><a href="#services">Asphalt Shingle</a></li>
+          <li><a href="#services">Roof Repair</a></li>
+          <li><a href="#contact">Free Estimates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Updates</h4>
+        <p style="margin:0">Seasonal roof care tips, maintenance reminders and special offers, straight to your inbox.</p>
+        <!-- Set action="" to your email service and remove the demo handler in the script below. -->
+        <form class="newsletter" id="newsletter" action="#" method="post" novalidate>
+          <label class="sr-only" for="newsEmail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+          <input id="newsEmail" name="email" type="email" placeholder="Email" autocomplete="email" required>
+          <button class="btn btn-red" type="submit">Subscribe</button>
+        </form>
+        <p class="news-status" id="newsStatus" role="status" hidden></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Your Roofing Co. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== FLOATING HELP BUBBLE ========== -->
+<div class="help" id="help">
+  <div class="help-note" id="helpNote">
+    Hi there! Have a question? Give us a call.
+    <button type="button" id="helpClose" aria-label="Dismiss message">×</button>
+  </div>
+  <a class="help-btn" href="tel:+15555550123" aria-label="Call Your Roofing Co."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></a>
+</div>
+
+<script>
+(function () {
+  document.body.classList.remove("no-js");
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Sticky header shadow
+  var header = document.getElementById("header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+  document.querySelectorAll("#mobileNav a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  // Services dropdown (click/keyboard; hover handled in CSS)
+  var dd = document.getElementById("servicesDd");
+  var ddBtn = dd.querySelector(".dd-toggle");
+  function setDd(open) {
+    dd.classList.toggle("open", open);
+    ddBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  ddBtn.addEventListener("click", function (e) { e.stopPropagation(); setDd(!dd.classList.contains("open")); });
+  dd.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setDd(false); }); });
+  document.addEventListener("click", function (e) { if (!dd.contains(e.target)) setDd(false); });
+
+  // Tabs (arrow keys move between tabs)
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectTab(tab); });
+    tab.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); selectTab(tabs[(i + 1) % tabs.length], true); }
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); selectTab(tabs[(i - 1 + tabs.length) % tabs.length], true); }
+    });
+  });
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Count-up numbers
+  function countUp(el) {
+    var target = parseInt(el.getAttribute("data-target"), 10) || 0;
+    if (reduceMotion) { el.textContent = target; return; }
+    var start = null, duration = 1400;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Reveal on scroll + trigger counters
+  var reveals = document.querySelectorAll(".reveal");
+  var counters = document.querySelectorAll(".count");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        countUp(e.target);
+        co.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { co.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("visible"); });
+    counters.forEach(function (el) { el.textContent = el.getAttribute("data-target"); });
+  }
+
+  // Newsletter: demo handler. Replace with your real email service.
+  var news = document.getElementById("newsletter");
+  var newsStatus = document.getElementById("newsStatus");
+  news.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!news.checkValidity()) { news.reportValidity(); return; }
+    newsStatus.textContent = "Thanks for subscribing!";
+    newsStatus.hidden = false;
+    news.reset();
+  });
+
+  // Help bubble dismiss
+  document.getElementById("helpClose").addEventListener("click", function () {
+    document.getElementById("helpNote").remove();
+  });
+
+  // Escape closes menus
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (header.classList.contains("menu-open")) setMenu(false);
+    if (dd.classList.contains("open")) { setDd(false); ddBtn.focus(); }
+  });
+})();
+</script>
+</body>
+</html>
