@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Painting Co. | Interior &amp; Exterior Painting in Your City, ST</title>
+<meta name="description" content="Interior, exterior, cabinet and commercial painting for homes and businesses in Your City and surrounding towns.">
+<!--
+  PAINTING TEMPLATE
+  One self-contained file: all CSS is in the <style> block below, all JS at the bottom.
+  To customize:
+    1. Search for "Your Painting Co.", "Your City", "Your County", "Town One" and "(555) 555-0123"
+       (also "+15555550123" in tel: links) and replace them.
+    2. Change the brand colors and fonts in :root.
+    3. Swap image placeholders: each <div class="img ..." data-label="..."> can be replaced with
+       <img class="img" src="your-photo.jpg" alt="Describe the photo">.
+       The hero and service cards use background placeholders; give them a real photo with
+       style="background-image: url('photo.jpg')" on the .hero-bg / .svc-bg element.
+    4. The estimate form has no backend. Point its action="" at your form handler
+       (e.g. Formspree, Netlify Forms, or your own endpoint) and remove the demo handler in the script.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-900: #0b1f17;
+  --green-800: #10291f;
+  --green-700: #173a2c;
+  --green-600: #22503d;
+  --orange: #c44d0a;        /* buttons: white text passes contrast */
+  --orange-hover: #a8420a;
+  --orange-bright: #f26b1d; /* icons and accents on dark backgrounds */
+  --paper: #ffffff;
+  --stone: #efefec;
+  --ink: #1a1f1c;
+  --muted: #59625d;
+  --line: #dcdfdb;
+  --on-dark: #eef3ef;
+  --on-dark-muted: #b4c2ba;
+  --radius: 6px;
+  --max: 72rem;
+  --head: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1rem; line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--head); font-weight: 700; line-height: 1.08; margin: 0 0 .9rem; letter-spacing: .005em; }
+p { margin: 0 0 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+:focus-visible { outline: 3px solid var(--orange-bright); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 48px; padding: .75rem 1.6rem; border-radius: var(--radius); border: 0;
+  font-family: var(--head); font-size: 1.05rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; transition: background .2s, transform .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-orange { background: var(--orange); color: #fff; }
+.btn-orange:hover { background: var(--orange-hover); }
+.btn-green { background: var(--green-800); color: #fff; }
+.btn-green:hover { background: var(--green-600); }
+
+/* ---------- Section headings ---------- */
+.kicker {
+  display: block; font-family: var(--head); font-size: .85rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--orange); margin-bottom: .5rem;
+}
+.on-dark .kicker { color: var(--orange-bright); }
+.section { padding: 4.5rem 0; }
+.section-title { font-size: clamp(2rem, 6vw, 3rem); }
+.section-intro { color: var(--muted); max-width: 46rem; }
+.on-dark { background: var(--green-800); color: var(--on-dark); }
+.on-dark .section-intro { color: var(--on-dark-muted); }
+
+/* ---------- Image placeholders ---------- */
+.img, .hero-bg, .svc-bg {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,.18), transparent 55%),
+    linear-gradient(160deg, #8fa39a, #5b7068 55%, #3b4c45);
+}
+.img { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; object-fit: cover; }
+div.img::after {
+  content: attr(data-label); position: absolute; left: .75rem; bottom: .6rem;
+  font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: rgba(11,31,23,.6); padding: .2rem .5rem; border-radius: 4px;
+}
+
+/* ---------- Top bar + header ---------- */
+.topbar { background: var(--green-900); color: var(--on-dark-muted); font-size: .85rem; }
+.topbar .wrap { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: .25rem 1.5rem; padding-top: .4rem; padding-bottom: .4rem; }
+.topbar span { display: inline-flex; align-items: center; gap: .4rem; }
+.topbar svg { width: 14px; height: 14px; color: var(--orange-bright); }
+.topbar .hide-sm { display: none; }
+@media (min-width: 640px) { .topbar .hide-sm { display: inline-flex; } }
+
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--paper); transition: box-shadow .25s; }
+.site-header.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.12); }
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-mark {
+  width: 44px; height: 44px; border-radius: 8px; background: var(--green-800);
+  display: grid; place-items: center; color: #fff;
+}
+.brand-mark svg { width: 26px; height: 26px; }
+.brand-name { font-family: var(--head); font-size: 1.3rem; font-weight: 800; line-height: 1; text-transform: uppercase; color: var(--green-800); }
+.brand-name small { display: block; font-size: .68rem; letter-spacing: .3em; color: var(--orange); margin-top: .15rem; }
+
+.nav { display: none; }
+.nav > ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+.nav a, .nav button.dd-toggle {
+  font-family: var(--head); font-weight: 700; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase;
+  text-decoration: none; color: var(--green-800); background: none; border: 0; padding: .5rem 0; cursor: pointer;
+}
+.nav a:hover, .nav button.dd-toggle:hover { color: var(--orange); }
+.has-dd { position: relative; }
+.dd {
+  position: absolute; top: 100%; left: -1rem; min-width: 220px; list-style: none; margin: 0; padding: .5rem 0;
+  background: var(--paper); border-top: 3px solid var(--orange); box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  display: none;
+}
+.has-dd.open .dd { display: block; }
+.dd a { display: block; padding: .55rem 1rem; text-transform: none; letter-spacing: 0; font-family: var(--body); font-weight: 500; }
+.menu-toggle {
+  width: 46px; height: 46px; border-radius: var(--radius); border: 1px solid var(--line);
+  background: var(--paper); display: grid; place-items: center; cursor: pointer;
+}
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+  content: ""; display: block; width: 22px; height: 2px; background: var(--green-800); position: relative; transition: transform .25s, background .25s;
+}
+.menu-toggle span::before { position: absolute; top: -7px; }
+.menu-toggle span::after { position: absolute; top: 7px; }
+.menu-open .menu-toggle span { background: transparent; }
+.menu-open .menu-toggle span::before { transform: translateY(7px) rotate(45deg); }
+.menu-open .menu-toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav { display: none; flex-direction: column; padding: .25rem 1rem 1.25rem; border-top: 1px solid var(--line); }
+.menu-open .mobile-nav { display: flex; }
+.mobile-nav a { padding: .8rem 0; text-decoration: none; border-bottom: 1px solid var(--line); font-weight: 600; color: var(--green-800); }
+.mobile-nav a.sub { padding-left: 1rem; font-weight: 500; color: var(--muted); }
+.mobile-nav .btn { margin-top: 1rem; border-bottom: 0; color: #fff; }
+@media (min-width: 900px) {
+  .nav { display: block; }
+  .menu-toggle, .mobile-nav, .menu-open .mobile-nav { display: none; }
+  .has-dd:hover .dd, .has-dd:focus-within .dd { display: block; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; color: #fff; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,31,23,.78), rgba(11,31,23,.92));
+}
+.hero .wrap { position: relative; display: grid; gap: 2.5rem; padding-top: 3.5rem; padding-bottom: 4rem; }
+@media (min-width: 960px) { .hero .wrap { grid-template-columns: 1.15fr .85fr; align-items: center; padding-top: 5rem; padding-bottom: 5.5rem; } }
+.hero .kicker { color: var(--orange-bright); }
+.hero h1 { font-size: clamp(2.3rem, 7vw, 3.6rem); text-transform: none; }
+.hero p.lede { color: #dbe5df; max-width: 36rem; font-size: 1.05rem; }
+.hero .btn { margin: .5rem 0 1.75rem; }
+.proof { display: flex; align-items: center; gap: .9rem; }
+.avatars { display: flex; }
+.avatars span {
+  width: 40px; height: 40px; border-radius: 50%; margin-left: -10px; border: 2px solid var(--green-800);
+  display: grid; place-items: center; font-weight: 600; font-size: .8rem; color: #fff;
+}
+.avatars span:first-child { margin-left: 0; }
+.avatars span:nth-child(1) { background: #8a5a44; }
+.avatars span:nth-child(2) { background: #3f6b8c; }
+.avatars span:nth-child(3) { background: #8c3f52; }
+.avatars span:nth-child(4) { background: #5d7a4a; }
+.avatars span:nth-child(5) { background: var(--orange); }
+.stars { color: #f7b500; letter-spacing: .12em; }
+.proof small { display: block; color: #cfdad3; font-size: .82rem; line-height: 1.35; }
+
+/* Estimate form card */
+.form-card {
+  background: var(--paper); color: var(--ink); border-radius: 10px; padding: 1.75rem 1.4rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+.form-card h2 { font-size: clamp(1.7rem, 5vw, 2.1rem); color: var(--green-800); margin-bottom: .5rem; }
+.form-card > p { color: var(--muted); font-size: .92rem; }
+.form-grid { display: grid; gap: .9rem; }
+@media (min-width: 480px) { .form-grid { grid-template-columns: 1fr 1fr; } .form-grid .full { grid-column: 1 / -1; } }
+.field label { display: block; font-size: .82rem; font-weight: 600; margin-bottom: .25rem; color: var(--green-800); }
+.field input, .field textarea {
+  width: 100%; min-height: 46px; padding: .65rem .8rem; border: 1px solid var(--line); border-radius: var(--radius);
+  font: inherit; color: var(--ink); background: #fafaf8;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: 2px solid var(--orange-bright); outline-offset: 0; border-color: transparent; }
+.form-card .btn { width: 100%; margin-top: 1rem; }
+.consent { display: flex; gap: .6rem; align-items: flex-start; margin-top: .9rem; font-size: .78rem; color: var(--muted); line-height: 1.45; }
+.consent input { width: 20px; height: 20px; margin-top: .1rem; flex: none; accent-color: var(--orange); }
+.form-status { margin-top: .9rem; font-weight: 600; color: var(--green-600); }
+
+/* ---------- About ---------- */
+.about { background: var(--stone); }
+.about-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.about .img { aspect-ratio: 4 / 5; }
+.about h2 { color: var(--green-800); }
+.about p { color: var(--muted); }
+
+/* ---------- Services ---------- */
+.svc-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .svc-grid { grid-template-columns: repeat(6, 1fr); } .svc { grid-column: span 2; } .svc:nth-child(4) { grid-column: 2 / span 2; } }
+.svc {
+  position: relative; min-height: 340px; border-radius: 8px; overflow: hidden; display: flex; align-items: flex-end;
+  text-decoration: none; color: #fff; isolation: isolate;
+}
+.svc-bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; transition: transform .5s; }
+.svc::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(11,31,23,.15) 0%, rgba(11,31,23,.92) 62%); }
+.svc:hover .svc-bg { transform: scale(1.05); }
+.svc-body { padding: 1.5rem 1.4rem; }
+.svc h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+.svc p { font-size: .92rem; color: #d6e0da; margin: 0 0 .8rem; }
+.svc .more { font-family: var(--head); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .88rem; color: var(--orange-bright); }
+.svc-bg.v2 { background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,.2), transparent 55%), linear-gradient(160deg, #c9c2b3, #8f8778 55%, #5d574c); }
+.svc-bg.v3 { background: radial-gradient(ellipse at 40% 30%, rgba(255,255,255,.18), transparent 55%), linear-gradient(160deg, #7f97ad, #52687c 55%, #34444f); }
+.svc-bg.v4 { background: radial-gradient(ellipse at 60% 20%, rgba(255,255,255,.15), transparent 55%), linear-gradient(160deg, #a3a9ad, #6d7479 55%, #42484c); }
+.svc-bg.v5 { background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.2), transparent 55%), linear-gradient(160deg, #b8a58e, #826f58 55%, #54473a); }
+
+/* ---------- Why choose us ---------- */
+.why h2 { color: var(--green-800); max-width: 48rem; }
+.why .btn { margin-top: .5rem; }
+.why-grid { display: grid; gap: 2rem 3rem; margin-top: 3rem; }
+@media (min-width: 760px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+.why-item .ico { width: 44px; height: 44px; color: var(--green-600); margin-bottom: .6rem; }
+.why-item h3 { font-size: 1.45rem; color: var(--green-800); margin-bottom: .4rem; }
+.why-item p { color: var(--muted); margin: 0; }
+
+/* ---------- Steps ---------- */
+.steps { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step {
+  display: flex; flex-direction: column; padding: 1.6rem 1.4rem; border-radius: 8px;
+  background: var(--green-700); border: 1px solid rgba(255,255,255,.08);
+}
+.step h3 { font-size: 1.4rem; color: #fff; }
+.step p { color: var(--on-dark-muted); font-size: .94rem; flex: 1; }
+.step-num { font-family: var(--head); font-weight: 800; font-size: 3.6rem; line-height: 1; color: var(--orange-bright); margin-top: 1rem; }
+
+/* ---------- FAQ ---------- */
+.faq { text-align: center; }
+.faq h2 { color: var(--green-800); }
+.faq-list { max-width: 52rem; margin: 2.5rem auto 0; text-align: left; display: grid; gap: .75rem; }
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
+.faq-q {
+  width: 100%; min-height: 56px; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: .9rem 1.2rem; background: none; border: 0; cursor: pointer; text-align: left;
+  font: 600 1rem/1.4 var(--body); color: var(--green-800);
+}
+.faq-q .chev { flex: none; width: 20px; height: 20px; transition: transform .25s; }
+.faq-item.open .faq-q { background: var(--green-800); color: #fff; }
+.faq-item.open .chev { transform: rotate(180deg); }
+.faq-a { padding: 1rem 1.2rem 1.2rem; color: var(--muted); }
+.faq-a p { margin: 0; }
+
+/* ---------- Info strip + footer ---------- */
+.info-strip { background: var(--green-700); color: var(--on-dark); padding: 2.5rem 0; }
+.info-grid { display: grid; gap: 1.75rem; }
+@media (min-width: 760px) { .info-grid { grid-template-columns: repeat(3, 1fr); } }
+.info { display: flex; gap: 1rem; align-items: flex-start; }
+.info .ico { width: 48px; height: 48px; flex: none; border-radius: 50%; display: grid; place-items: center; background: rgba(242,107,29,.15); color: var(--orange-bright); }
+.info .ico svg { width: 22px; height: 22px; }
+.info h3 { font-size: 1.25rem; margin: 0 0 .2rem; }
+.info p { margin: 0; color: var(--on-dark-muted); font-size: .95rem; }
+.info a { text-decoration: none; }
+.info a:hover { color: #fff; text-decoration: underline; }
+
+.site-footer { background: var(--green-900); color: var(--on-dark-muted); padding: 3.5rem 0 1.25rem; font-size: .94rem; }
+.footer-grid { display: grid; gap: 2.25rem; }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
+.footer-brand .brand-mark { width: 64px; height: 64px; background: var(--green-700); }
+.footer-brand .brand-mark svg { width: 38px; height: 38px; }
+.footer-brand .brand-name { color: #fff; font-size: 1.8rem; }
+.footer-brand p { margin-top: 1rem; max-width: 26rem; }
+.site-footer h4 { font-family: var(--head); font-size: 1.2rem; color: #fff; margin: 0 0 .8rem; letter-spacing: .04em; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: #fff; text-decoration: underline; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08); margin-top: 2.5rem; padding-top: 1.25rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; font-size: .82rem;
+}
+.footer-bottom nav { display: flex; gap: 1.25rem; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover { transform: none; }
+  .svc:hover .svc-bg { transform: none; }
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Your City, ST</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon–Fri: 8:00 AM – 5:00 PM</span>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Your Painting Co. home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M4 14L16 4l12 10v2H4z"/><rect x="8" y="17" width="16" height="11" rx="1" opacity=".55"/><path d="M14 20h4v8h-4z"/></svg>
+      </span>
+      <span class="brand-name">Your Painting Co.<small>Painting</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li class="has-dd" id="servicesDd">
+          <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="servicesMenu">Services ▾</button>
+          <ul class="dd" id="servicesMenu">
+            <li><a href="#services">Exterior Painting</a></li>
+            <li><a href="#services">Interior Painting</a></li>
+            <li><a href="#services">Cabinet Painting</a></li>
+            <li><a href="#services">Commercial Painting</a></li>
+            <li><a href="#services">Power Washing</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#top">Home</a>
+    <a href="#services">Services</a>
+    <a class="sub" href="#services">Exterior Painting</a>
+    <a class="sub" href="#services">Interior Painting</a>
+    <a class="sub" href="#services">Cabinet Painting</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-orange" href="tel:+15555550123">Call (555) 555-0123</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO + ESTIMATE FORM ========== -->
+<section class="hero">
+  <!-- Add a real photo: style="background-image: url('house.jpg')" -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">House Painting · Your City, ST</span>
+      <h1>Painting Company in Your City, ST for Interiors, Exteriors, and More</h1>
+      <p class="lede">Finding a painter who shows up on time, keeps you in the loop and leaves a flawless finish shouldn't be hard. Your Painting Co. handles interior repaints, exterior projects, cabinet refinishing and commercial work throughout Your County.</p>
+      <a class="btn btn-orange" href="#estimate">Get Your Free Estimate</a>
+      <div class="proof">
+        <div class="avatars" aria-hidden="true"><span>K</span><span>D</span><span>L</span><span>M</span><span>+</span></div>
+        <div>
+          <div class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <small>Trusted by local homeowners<br>Rated 5 stars on Google</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal" id="estimate">
+      <h2>Get Your Free Painting Estimate Today</h2>
+      <p>Tell us a little about your project. We respond within one business day with next steps and a time to visit.</p>
+      <!-- Set action="" to your form handler and remove the demo handler in the script below. -->
+      <form id="estimateForm" action="#" method="post" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="fname">First name</label><input id="fname" name="first_name" autocomplete="given-name" required></div>
+          <div class="field"><label for="lname">Last name</label><input id="lname" name="last_name" autocomplete="family-name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Tell us about your project"></textarea></div>
+        </div>
+        <button class="btn btn-orange" type="submit">Submit Message</button>
+        <label class="consent"><input type="checkbox" name="consent" required> By filling out this form you agree to receive emails, calls and text messages from Your Painting Co. about your request. Message and data rates may apply.</label>
+        <p class="form-status" id="formStatus" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+  <div class="wrap about-grid">
+    <div class="img reveal" data-label="Photo: crew at work"></div>
+    <div class="reveal">
+      <span class="kicker">About Your Painting Co.</span>
+      <h2 class="section-title">Built on Transparency. Driven by Results.</h2>
+      <p>Your Painting Co. was started to give homeowners a painting contractor they can actually rely on. Too many people have dealt with missed appointments, vague quotes and corners cut on prep. We set out to do things differently.</p>
+      <p>With years of professional painting experience, we combine careful preparation, quality materials and clear communication on every project, whether it's a single bedroom or the whole exterior. You'll always know what's happening, what it costs and when we'll be done.</p>
+      <a class="btn btn-green" href="#why">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section on-dark" id="services">
+  <div class="wrap">
+    <span class="kicker reveal">Our Services</span>
+    <h2 class="section-title reveal">Painting Services for Every Part of Your Property</h2>
+    <div class="svc-grid">
+      <a class="svc reveal" href="#estimate">
+        <div class="svc-bg" aria-hidden="true"></div>
+        <div class="svc-body">
+          <h3>Exterior Painting</h3>
+          <p>Weather takes a toll on siding and trim. We prep every surface, repair problem spots and use coatings rated for your climate so the finish lasts.</p>
+          <span class="more">Learn More →</span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#estimate">
+        <div class="svc-bg v2" aria-hidden="true"></div>
+        <div class="svc-body">
+          <h3>Interior Painting</h3>
+          <p>A fresh coat changes how a room feels. We protect your floors and furniture, then deliver clean lines on walls, ceilings, trim and doors.</p>
+          <span class="more">Learn More →</span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#estimate">
+        <div class="svc-bg v3" aria-hidden="true"></div>
+        <div class="svc-body">
+          <h3>Cabinet Painting</h3>
+          <p>Update your kitchen without a full remodel. Our sprayed cabinet finishes are smooth, durable and made to stand up to daily use.</p>
+          <span class="more">Learn More →</span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#estimate">
+        <div class="svc-bg v4" aria-hidden="true"></div>
+        <div class="svc-body">
+          <h3>Commercial Painting</h3>
+          <p>Offices, retail spaces and rental units painted on a schedule that keeps your business running, including evening and weekend work.</p>
+          <span class="more">Learn More →</span>
+        </div>
+      </a>
+      <a class="svc reveal" href="#estimate">
+        <div class="svc-bg v5" aria-hidden="true"></div>
+        <div class="svc-body">
+          <h3>Power Washing</h3>
+          <p>Remove dirt, mildew and grime from siding, decks and walkways. It's the perfect prep for paint, or a quick refresh on its own.</p>
+          <span class="more">Learn More →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <span class="kicker reveal">Why Choose Your Painting Co.</span>
+    <h2 class="section-title reveal">The Painting Contractor Your City Homeowners Can Count On</h2>
+    <p class="section-intro reveal">We know you have options when it comes to painting. Here's why homeowners and businesses across Your County keep calling us back.</p>
+    <a class="btn btn-orange reveal" href="#about">Read More</a>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <h3>Transparent Pricing</h3>
+        <p>No surprise charges. Your written estimate spells out exactly what's included, and the price you approve is the price you pay.</p>
+      </div>
+      <div class="why-item reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+        <h3>Meticulous Preparation</h3>
+        <p>Great paint jobs are won in the prep. We clean, scrape, patch, sand and prime so the finish looks better and lasts longer.</p>
+      </div>
+      <div class="why-item reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <h3>Clear Communication</h3>
+        <p>We return calls promptly, confirm every appointment and keep you updated from the first visit to the final walkthrough.</p>
+      </div>
+      <div class="why-item reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+        <h3>Licensed and Insured</h3>
+        <p>Your Painting Co. is fully licensed and insured (Lic. #0000000), so your home and your investment are protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STEPS ========== -->
+<section class="section on-dark" id="process">
+  <div class="wrap">
+    <span class="kicker reveal">How It Works</span>
+    <h2 class="section-title reveal">Simple Steps to Your Next Painting Project</h2>
+    <div class="steps">
+      <div class="step reveal"><h3>Schedule Your Estimate</h3><p>Call or fill out the form and we'll set up a time to see your space and talk through your goals.</p><div class="step-num">01</div></div>
+      <div class="step reveal"><h3>Get a Clear Quote</h3><p>You'll receive a detailed written quote covering materials, scope and timeline, so you can decide with confidence.</p><div class="step-num">02</div></div>
+      <div class="step reveal"><h3>Prep and Painting</h3><p>We protect your home, prep every surface and apply quality coatings with care and attention to detail.</p><div class="step-num">03</div></div>
+      <div class="step reveal"><h3>Final Walkthrough</h3><p>We review the finished work together and touch up anything you notice before we call the job complete.</p><div class="step-num">04</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <span class="kicker reveal">FAQ</span>
+    <h2 class="section-title reveal">Painting FAQs</h2>
+    <div class="faq-list">
+      <div class="faq-item open reveal">
+        <button class="faq-q" type="button" aria-expanded="true">What does professional house painting typically cost?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>It depends on the size of the space, the condition of the surfaces and the amount of prep needed. After a quick visit we'll give you a written, itemized quote with no hidden fees.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">How long does a painting project take?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>Most interior rooms take one to two days. Full exteriors usually take three to seven days depending on size, prep and weather. Your quote includes a timeline.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">Do I need to leave my home during interior painting?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>Usually not. We work room by room, use low-odor paints and keep your living areas clean and usable throughout the project.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">How do you handle surface preparation?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>We clean, scrape loose paint, fill holes and cracks, sand glossy surfaces, caulk gaps and spot-prime repairs before any finish coats go on.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">What kind of paint do you use?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>We use premium paints from trusted brands, chosen for the surface and conditions. We're happy to match a specific brand or color you already love.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">Can you paint cabinets instead of replacing them?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>Yes. Cabinet painting costs a fraction of new cabinets. We clean, degloss, prime and spray a durable finish for a smooth, factory-like look.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">Do you offer commercial painting services?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>We do. We paint offices, storefronts and rental properties, and we can schedule around your business hours to keep disruption low.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button" aria-expanded="false">What areas do you serve?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a" hidden><p>We serve Your City and the surrounding towns in Your County, including Town One, Town Two, Town Three and Town Four.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== CONTACT INFO STRIP ========== -->
+<section class="info-strip" id="contact" aria-label="Contact information">
+  <div class="wrap info-grid">
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+      <div><h3>Location</h3><p>Your City, ST</p></div>
+    </div>
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><h3>Working Hours</h3><p>Monday – Friday: 8:00 AM – 5:00 PM</p></div>
+    </div>
+    <div class="info reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
+      <div><h3>Contact</h3><p><a href="tel:+15555550123">(555) 555-0123</a><br><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Your Painting Co. home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M4 14L16 4l12 10v2H4z"/><rect x="8" y="17" width="16" height="11" rx="1" opacity=".55"/><path d="M14 20h4v8h-4z"/></svg></span>
+          <span class="brand-name">Your Painting Co.<small>Painting</small></span>
+        </a>
+        <p>Professional interior and exterior painting for homes and businesses in Your City and Your County. Licensed, insured and committed to quality craftsmanship.</p>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Interior Services</a></li>
+          <li><a href="#services">Exterior Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15555550123">(555) 555-0123</a></li>
+          <li><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></li>
+          <li>Your City, ST</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Your Painting Co. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.body.classList.remove("no-js");
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Sticky header shadow
+  var header = document.getElementById("header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+  document.querySelectorAll("#mobileNav a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  // Desktop services dropdown (click/keyboard; hover handled in CSS)
+  var dd = document.getElementById("servicesDd");
+  var ddBtn = dd.querySelector(".dd-toggle");
+  function setDd(open) {
+    dd.classList.toggle("open", open);
+    ddBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  ddBtn.addEventListener("click", function (e) { e.stopPropagation(); setDd(!dd.classList.contains("open")); });
+  dd.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setDd(false); }); });
+  document.addEventListener("click", function (e) { if (!dd.contains(e.target)) setDd(false); });
+
+  // FAQ accordion (one open at a time)
+  var items = document.querySelectorAll(".faq-item");
+  items.forEach(function (item) {
+    var btn = item.querySelector(".faq-q");
+    var ans = item.querySelector(".faq-a");
+    btn.addEventListener("click", function () {
+      var willOpen = !item.classList.contains("open");
+      items.forEach(function (other) {
+        other.classList.remove("open");
+        other.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+        other.querySelector(".faq-a").hidden = true;
+      });
+      if (willOpen) {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        ans.hidden = false;
+      }
+    });
+  });
+
+  // Estimate form: demo handler. Replace with your real form handler.
+  var form = document.getElementById("estimateForm");
+  var status = document.getElementById("formStatus");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    status.textContent = "Thanks! We'll be in touch within one business day.";
+    status.hidden = false;
+    form.reset();
+  });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  // Escape closes menus
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (header.classList.contains("menu-open")) setMenu(false);
+    if (dd.classList.contains("open")) { setDd(false); ddBtn.focus(); }
+  });
+})();
+</script>
+</body>
+</html>
