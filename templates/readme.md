@@ -45,3 +45,14 @@ To customize it:
 2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
 3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero, add `style="background-image: url('photo.jpg')"` to `.hero-bg`.
 4. Replace the sample reviews with real ones, and drop the golf course section if it doesn't apply.
+
+## concrete-template.html
+
+A black, construction-yellow and cream one-page site for a concrete contractor, with heavy condensed headings. Sections: header with a yellow "discuss your project" block, full-height hero, scrolling yellow services ticker, numbered service cards, meet the owner, a reviews carousel, a recent-projects photo grid with lightbox, contact list and footer.
+
+To customize it:
+
+1. Replace `Your Company Co.`, `Your City`, `Owner Name`, `Lic. #0000000`, `(555) 555-0123` / `+15555550123` and `hello@yourcompany.com`. The round badge logo uses the initials `YCC`.
+2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
+3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero, add `style="background-image: url('photo.jpg')"` to `.hero-bg`.
+4. Replace the sample reviews with real ones. Add more `.rev-slide` blocks and the counter updates automatically.
