@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Company Co. | Custom Home Builder in Your City, ST</title>
+<meta name="description" content="Custom home builds, additions, renovations and new developments in Your City and Your County. Licensed, insured and on time.">
+<!--
+  HOME BUILDER TEMPLATE
+  One self-contained file: all CSS is in the <style> block below, all JS at the bottom.
+  To customize:
+    1. Search for "Your Company Co.", "Your City", "Your County", "Town One", "123 Main Street",
+       "Lic. #0000000", "(555) 555-0123" (also "+15555550123" in tel: links) and "hello@yourcompany.com".
+    2. Change the brand colors and font in :root.
+    3. Swap image placeholders: each <div class="img ..." data-label="..."> can be replaced with
+       <img class="img" src="your-photo.jpg" alt="Describe the photo">.
+       The hero uses a background placeholder: add style="background-image: url('photo.jpg')" to .hero-bg.
+    4. Reviews are SAMPLE text. Replace them with real reviews from your customers.
+    5. The estimate form has no backend. Set its action="" to your form handler (Formspree, Netlify Forms,
+       your own endpoint) and remove the demo handler in the script.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1f4a2e;
+  --green-dark: #163822;
+  --green-light: #2d6a42;
+  --orange: #e8802a;       /* decorative + large text on dark */
+  --orange-text: #b85f12;  /* orange text on white */
+  --orange-hover: #d06e1a;
+  --bg: #f6f5f1;
+  --white: #ffffff;
+  --ink: #1d2620;
+  --muted: #5d6a61;
+  --line: #e2e1da;
+  --on-dark: #dbe6de;
+  --radius: 10px;
+  --max: 74rem;
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 1rem; line-height: 1.65; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-weight: 800; line-height: 1.12; letter-spacing: -.02em; margin: 0 0 .9rem; }
+p { margin: 0 0 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.center { text-align: center; }
+
+/* ---------- Buttons + kickers ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 48px; padding: .75rem 1.4rem; border: 2px solid transparent; border-radius: 6px;
+  font: 800 .78rem/1 var(--font); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn svg { width: 16px; height: 16px; }
+.btn-green { background: var(--green); color: var(--white); }
+.btn-green:hover { background: var(--green-light); }
+.btn-orange { background: var(--orange); color: var(--green-dark); }
+.btn-orange:hover { background: var(--orange-hover); }
+.btn-outline { border-color: rgba(255,255,255,.85); color: var(--white); background: transparent; }
+.btn-outline:hover { background: var(--white); color: var(--green); }
+.btn-white { background: var(--white); color: var(--green); }
+.btn-white:hover { background: var(--bg); }
+.kicker { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--orange-text); margin-bottom: .5rem; }
+.dark .kicker { color: var(--orange); }
+.section { padding: 4.5rem 0; }
+.section-title { font-size: clamp(1.8rem, 5.5vw, 2.6rem); }
+.lead { color: var(--muted); max-width: 40rem; }
+.center .lead { margin-left: auto; margin-right: auto; }
+.dark { background: var(--green); color: var(--white); }
+
+/* ---------- Image placeholders ---------- */
+.img {
+  position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; object-fit: cover;
+  background:
+    radial-gradient(ellipse at 70% 15%, rgba(255,255,255,.4), transparent 45%),
+    linear-gradient(180deg, #9fc0db 0%, #cfe0ec 40%, #b9a58a 41%, #8d7a63 58%, #5f8a46 59%, #3f6a31 100%);
+}
+div.img::after {
+  content: attr(data-label); position: absolute; left: .7rem; top: .6rem;
+  font-size: .66rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: rgba(22,56,34,.7); padding: .2rem .5rem; border-radius: 4px;
+}
+.img.dusk { background: radial-gradient(ellipse at 70% 15%, rgba(255,200,140,.45), transparent 45%), linear-gradient(180deg, #45597a 0%, #c08a6a 40%, #6b5a4c 41%, #4b3f36 60%, #2f4a2a 61%, #213a1e 100%); }
+.img.wood { background: repeating-linear-gradient(90deg, rgba(0,0,0,.18) 0 3px, transparent 3px 36px), repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 3px, transparent 3px 44px), linear-gradient(160deg, #e0b882, #c39360 55%, #a07448); }
+.img.interior { background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.5), transparent 50%), linear-gradient(180deg, #ece7df 0%, #d8d0c4 60%, #9c8b78 61%, #7e6e5e 100%); }
+.img.white { background: radial-gradient(ellipse at 70% 15%, rgba(255,255,255,.5), transparent 45%), linear-gradient(180deg, #a8c6de 0%, #d7e5ef 38%, #eeeeea 39%, #d5d4ce 62%, #6a9450 63%, #4a7337 100%); }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--white); transition: box-shadow .25s; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(22,56,34,.12); }
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-mark { width: 42px; height: 42px; border-radius: 8px; background: var(--green); color: var(--white); display: grid; place-items: center; flex: none; }
+.brand-mark svg { width: 24px; height: 24px; }
+.brand-name { font-weight: 800; font-size: 1.05rem; line-height: 1.1; color: var(--green); }
+.brand-name small { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--orange-text); }
+.nav { display: none; }
+.nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; font-weight: 600; font-size: .92rem; padding: .5rem 0; }
+.nav a:hover { color: var(--green-light); }
+.header-cta { display: none; }
+.menu-toggle { width: 46px; height: 46px; border-radius: 6px; border: 1px solid var(--line); background: var(--white); display: grid; place-items: center; cursor: pointer; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { content: ""; display: block; width: 22px; height: 2px; background: var(--green); position: relative; transition: transform .25s, background .25s; }
+.menu-toggle span::before { position: absolute; top: -7px; }
+.menu-toggle span::after { position: absolute; top: 7px; }
+.menu-open .menu-toggle span { background: transparent; }
+.menu-open .menu-toggle span::before { transform: translateY(7px) rotate(45deg); }
+.menu-open .menu-toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav { display: none; flex-direction: column; padding: .25rem 1rem 1.25rem; border-top: 1px solid var(--line); }
+.menu-open .mobile-nav { display: flex; }
+.mobile-nav a { padding: .85rem 0; text-decoration: none; border-bottom: 1px solid var(--line); font-weight: 600; }
+.mobile-nav .btn { margin-top: 1rem; border-bottom: 2px solid transparent; }
+@media (min-width: 960px) {
+  .nav { display: block; }
+  .header-cta { display: inline-flex; }
+  .menu-toggle, .mobile-nav, .menu-open .mobile-nav { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; color: var(--white); overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  background-image: radial-gradient(ellipse at 75% 10%, rgba(255,220,170,.35), transparent 45%), linear-gradient(180deg, #5b6f8c 0%, #b48a6c 42%, #6d5c4d 43%, #4c4037 62%, #36552e 63%, #26401f 100%);
+}
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(22,56,34,.94) 0%, rgba(22,56,34,.8) 50%, rgba(22,56,34,.45) 100%); }
+.hero .wrap { position: relative; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+.pill { display: inline-flex; align-items: center; gap: .45rem; padding: .45rem .9rem; border-radius: 999px; background: rgba(232,128,42,.18); border: 1px solid rgba(232,128,42,.55); color: #ffd2a8; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2.3rem, 8vw, 4rem); max-width: 16ch; }
+.hero h1 span { color: var(--orange); display: block; }
+.hero p { max-width: 36rem; color: var(--on-dark); font-size: 1.05rem; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+
+/* ---------- Announcement bar ---------- */
+.announce { background: var(--green-light); color: var(--white); }
+.announce .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem 1.5rem; padding-top: 1rem; padding-bottom: 1rem; text-align: center; font-weight: 600; font-size: .92rem; }
+.announce .btn { min-height: 44px; padding: .6rem 1.1rem; }
+
+/* ---------- Trust cards ---------- */
+.trust { padding: 3rem 0 1rem; }
+.trust-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .trust-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+.trust-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: 0 4px 16px rgba(22,56,34,.05); }
+.trust-card .ico { width: 46px; height: 46px; border-radius: 10px; display: grid; place-items: center; background: #e6efe8; color: var(--green); margin-bottom: 1rem; }
+.trust-card .ico svg { width: 22px; height: 22px; }
+.trust-card h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.trust-card p { font-size: .9rem; color: var(--muted); margin: 0; }
+
+/* ---------- Services ---------- */
+.svc-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; text-align: left; }
+@media (min-width: 700px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+.svc-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 16px rgba(22,56,34,.05); transition: transform .25s, box-shadow .25s; }
+.svc-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(22,56,34,.12); }
+.svc-card .img { aspect-ratio: 16 / 9; }
+.svc-body { padding: 1.4rem 1.4rem 1.5rem; }
+.svc-body h3 { font-size: 1.2rem; margin-bottom: .4rem; }
+.svc-body p { color: var(--muted); font-size: .94rem; }
+.arrow-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; font-size: .85rem; color: var(--orange-text); text-decoration: none; }
+.arrow-link:hover { text-decoration: underline; }
+
+/* ---------- Stats ---------- */
+.stats { padding: 3.5rem 0; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 1rem; text-align: center; }
+@media (min-width: 860px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat-num { font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.stat-num .suf { color: var(--orange); }
+.stat-label { font-size: .82rem; color: var(--on-dark); margin-top: .4rem; }
+
+/* ---------- Projects ---------- */
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 2.5rem; }
+@media (min-width: 860px) { .proj-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+.tile { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: var(--radius); overflow: hidden; cursor: zoom-in; background: none; text-align: left; font: inherit; color: var(--white); }
+.tile .img { aspect-ratio: 4 / 3; transition: transform .5s; }
+.tile:hover .img { transform: scale(1.05); }
+.tile::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 45%, rgba(22,56,34,.9)); }
+.tile-cap { position: absolute; left: .9rem; right: .9rem; bottom: .8rem; z-index: 2; }
+.tile-cap strong { display: block; font-size: .95rem; line-height: 1.25; }
+.tile-cap small { font-size: .74rem; color: var(--on-dark); }
+
+/* ---------- About ---------- */
+.about-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.about-photo { position: relative; }
+.about-photo .img { aspect-ratio: 4 / 4.2; border-radius: var(--radius); }
+.years-badge { position: absolute; right: -.5rem; bottom: -1.25rem; width: 108px; height: 108px; border-radius: 14px; background: var(--orange); color: var(--green-dark); display: grid; place-items: center; text-align: center; box-shadow: 0 12px 28px rgba(0,0,0,.2); }
+.years-badge strong { display: block; font-size: 2rem; line-height: 1; font-weight: 800; }
+.years-badge span { font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+@media (min-width: 900px) { .years-badge { right: -1.5rem; } }
+.checks { list-style: none; padding: 0; margin: 1.25rem 0 1.75rem; display: grid; gap: .65rem; }
+.checks li { display: flex; gap: .7rem; align-items: flex-start; font-weight: 500; }
+.checks svg { width: 20px; height: 20px; flex: none; margin-top: .15rem; color: var(--green-light); }
+
+/* ---------- Reviews ---------- */
+.rating-pill { display: inline-flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: center; padding: .5rem 1rem; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: .85rem; font-weight: 600; margin-top: .5rem; }
+.stars { color: #e0a100; letter-spacing: .1em; }
+.rev-grid { display: grid; gap: 1.25rem; margin-top: 2.5rem; text-align: left; }
+@media (min-width: 700px) { .rev-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .rev-grid { grid-template-columns: repeat(3, 1fr); } }
+.review { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(22,56,34,.05); }
+.review blockquote { margin: .75rem 0 1.25rem; color: var(--muted); font-size: .94rem; flex: 1; }
+.review figcaption { display: flex; align-items: center; gap: .75rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: #e6efe8; color: var(--green); display: grid; place-items: center; font-weight: 800; flex: none; }
+.review strong { display: block; font-size: .92rem; }
+.review small { color: var(--muted); font-size: .8rem; }
+
+/* ---------- Estimate ---------- */
+.estimate-grid { display: grid; gap: 1.5rem; margin-top: 2.5rem; text-align: left; }
+@media (min-width: 900px) { .estimate-grid { grid-template-columns: .85fr 1.15fr; align-items: start; } }
+.info-card { background: var(--green); color: var(--white); border-radius: var(--radius); padding: 1.75rem 1.5rem; }
+.info-card h3 { font-size: 1.2rem; }
+.info-list { list-style: none; padding: 0; margin: 0 0 1.75rem; display: grid; gap: 1rem; }
+.info-list li { display: flex; gap: .8rem; align-items: flex-start; }
+.info-list .ico { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,.1); display: grid; place-items: center; flex: none; color: var(--orange); }
+.info-list .ico svg { width: 18px; height: 18px; }
+.info-list small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--on-dark); }
+.info-list a { text-decoration: none; font-weight: 600; }
+.info-list a:hover { text-decoration: underline; }
+.info-card .checks { margin: .75rem 0 0; }
+.info-card .checks svg { color: var(--orange); }
+.info-card .checks li { font-size: .92rem; color: var(--on-dark); }
+.form-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem 1.5rem; box-shadow: 0 10px 30px rgba(22,56,34,.08); }
+.form-grid { display: grid; gap: 1rem; }
+@media (min-width: 560px) { .form-grid { grid-template-columns: 1fr 1fr; } .form-grid .full { grid-column: 1 / -1; } }
+.field label { display: block; font-size: .82rem; font-weight: 700; margin-bottom: .3rem; }
+.field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 6px; background: #fbfbf9; font: inherit; color: var(--ink); }
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--green-light); outline-offset: 0; border-color: transparent; }
+.form-card .btn { width: 100%; margin-top: 1.25rem; }
+.form-note { font-size: .78rem; color: var(--muted); text-align: center; margin: .75rem 0 0; }
+.form-status { margin: 1rem 0 0; padding: .8rem 1rem; border-radius: 6px; background: #e6efe8; color: var(--green); font-weight: 700; }
+
+/* ---------- CTA band ---------- */
+.cta-band { background: var(--green-light); color: var(--white); text-align: center; padding: 3.5rem 0; }
+.cta-band h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
+.cta-band p { color: var(--on-dark); }
+.cta-band .hero-ctas { justify-content: center; margin-top: 1.25rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--green-dark); color: var(--on-dark); padding: 3.5rem 0 1.25rem; font-size: .92rem; }
+.footer-grid { display: grid; gap: 2.25rem; }
+@media (min-width: 860px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; } }
+.site-footer .brand-name { color: var(--white); }
+.site-footer .brand-name small { color: var(--orange); }
+.site-footer .brand-mark { background: var(--green-light); }
+.footer-about p { margin-top: 1rem; max-width: 24rem; }
+.social { display: flex; gap: .5rem; }
+.social a { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.08); text-decoration: none; font-size: .75rem; font-weight: 800; }
+.social a:hover { background: var(--orange); color: var(--green-dark); }
+.site-footer h4 { color: var(--white); font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 .9rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.site-footer a { text-decoration: none; }
+.site-footer ul a:hover { color: var(--white); text-decoration: underline; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 2.5rem; padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; font-size: .8rem; }
+.footer-bottom nav { display: flex; gap: 1.25rem; }
+.footer-bottom a:hover { color: var(--white); text-decoration: underline; }
+
+/* ---------- Lightbox ---------- */
+.lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(12,28,18,.92); }
+.lightbox.open { display: flex; }
+.lightbox-inner { width: min(940px, 100%); }
+.lightbox-inner .img, .lightbox-inner img { aspect-ratio: 16 / 10; width: 100%; height: auto; border-radius: var(--radius); }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--orange); color: var(--green-dark); font-size: 1.5rem; cursor: pointer; }
+.lightbox-caption { text-align: center; color: var(--on-dark); margin-top: .75rem; font-weight: 600; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .svc-card:hover { transform: none; }
+  .tile:hover .img { transform: none; }
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Your Company Co. home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+      <span class="brand-name">Your Company Co.<small>Custom Homes</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-green header-cta" href="#contact">Free Estimate</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-green" href="#contact">Get Free Estimate</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <!-- Add a real photo: style="background-image: url('home.jpg')" -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="pill reveal"><span aria-hidden="true">★</span> Trusted Home Builder in Your City, ST</span>
+    <h1 class="reveal">We Build the Home <span>You've Always Imagined</span></h1>
+    <p class="reveal">Custom homes, additions, renovations and new developments built on time, on budget and to a standard you'll be proud of for decades. Serving families across Your County.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-green" href="#contact">Get Free Estimate</a>
+      <a class="btn btn-outline" href="tel:+15555550123"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ANNOUNCEMENT ========== -->
+<div class="announce">
+  <div class="wrap">
+    <span>🏡 Now booking new projects for next season. Build spots are limited.</span>
+    <a class="btn btn-orange" href="#contact">Schedule a Visit</a>
+  </div>
+</div>
+
+<!-- ========== TRUST CARDS ========== -->
+<section class="trust" aria-label="Why homeowners trust us">
+  <div class="wrap trust-grid">
+    <div class="trust-card reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+      <h3>Licensed &amp; Insured</h3>
+      <p>Fully licensed and insured (Lic. #0000000) for your complete peace of mind.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 8 5-3 5 3-1.5-8"/></svg></span>
+      <h3>Quality Guaranteed</h3>
+      <p>Premium materials and skilled craftsmanship, backed by our workmanship warranty.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <h3>On-Time Delivery</h3>
+      <p>Detailed schedules and regular updates keep your project moving as promised.</p>
+    </div>
+    <div class="trust-card reveal">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+      <h3>Transparent Pricing</h3>
+      <p>Clear, itemized estimates with no hidden fees or surprise change orders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section center" id="services">
+  <div class="wrap">
+    <span class="kicker reveal">What We Do</span>
+    <h2 class="section-title reveal">Our Services</h2>
+    <p class="lead reveal">From the first sketch to the final walkthrough, we handle every stage of building and improving your home.</p>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="img" data-label="Photo: custom home"></div>
+        <div class="svc-body">
+          <h3>Custom Home Builds</h3>
+          <p>Design and build a home that fits the way you live, with guidance on plans, finishes and budget at every step.</p>
+          <a class="arrow-link" href="#contact">Get a Quote →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img interior" data-label="Photo: home addition"></div>
+        <div class="svc-body">
+          <h3>Home Additions</h3>
+          <p>Add bedrooms, a second story or a bigger kitchen, seamlessly matched to your existing home.</p>
+          <a class="arrow-link" href="#contact">Get a Quote →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img dusk" data-label="Photo: renovation"></div>
+        <div class="svc-body">
+          <h3>Renovations &amp; Remodels</h3>
+          <p>Transform kitchens, baths and whole floors with thoughtful layouts and quality workmanship.</p>
+          <a class="arrow-link" href="#contact">Get a Quote →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img white" data-label="Photo: new development"></div>
+        <div class="svc-body">
+          <h3>New Developments</h3>
+          <p>Multi-home and community projects managed from site work through final inspection.</p>
+          <a class="arrow-link" href="#contact">Get a Quote →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="stats dark" aria-label="By the numbers">
+  <div class="wrap stat-grid">
+    <div class="reveal"><div class="stat-num"><span class="count" data-target="500">0</span><span class="suf">+</span></div><div class="stat-label">Homes Built</div></div>
+    <div class="reveal"><div class="stat-num"><span class="count" data-target="25">0</span><span class="suf">+</span></div><div class="stat-label">Years Experience</div></div>
+    <div class="reveal"><div class="stat-num"><span class="count" data-target="98">0</span><span class="suf">%</span></div><div class="stat-label">On-Time Completion</div></div>
+    <div class="reveal"><div class="stat-num"><span class="count" data-target="4.9" data-decimals="1">0</span><span class="suf">★</span></div><div class="stat-label">Google Rating</div></div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section center" id="projects">
+  <div class="wrap">
+    <span class="kicker reveal">Our Work</span>
+    <h2 class="section-title reveal">Recent Projects</h2>
+    <p class="lead reveal">Every home we build is crafted with care. Here are a few recent projects from around Your County.</p>
+    <div class="proj-grid">
+      <button class="tile reveal" type="button"><div class="img" data-label="Photo: residence"></div><span class="tile-cap"><strong>The Example Residence</strong><small>Custom Home · Town One</small></span></button>
+      <button class="tile reveal" type="button"><div class="img white" data-label="Photo: farmhouse"></div><span class="tile-cap"><strong>Farmhouse Build</strong><small>Custom Home · Town Two</small></span></button>
+      <button class="tile reveal" type="button"><div class="img dusk" data-label="Photo: lakeside homes"></div><span class="tile-cap"><strong>Lakeside Homes</strong><small>Development · Town Three</small></span></button>
+      <button class="tile reveal" type="button"><div class="img wood" data-label="Photo: addition framing"></div><span class="tile-cap"><strong>Second-Story Addition</strong><small>Addition · Town One</small></span></button>
+      <button class="tile reveal" type="button"><div class="img interior" data-label="Photo: kitchen"></div><span class="tile-cap"><strong>Modern Kitchen</strong><small>Renovation · Town Four</small></span></button>
+      <button class="tile reveal" type="button"><div class="img wood" data-label="Photo: community"></div><span class="tile-cap"><strong>Hillside Community</strong><small>Development · Town Two</small></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section" id="about" style="background:var(--white)">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <div class="img wood" data-label="Photo: crew framing"></div>
+      <div class="years-badge"><div><strong>25+</strong><span>Years</span></div></div>
+    </div>
+    <div class="reveal">
+      <span class="kicker">About Us</span>
+      <h2 class="section-title">A Family Business Built on Trust &amp; Craftsmanship</h2>
+      <p class="lead">Your Company Co. has been building homes in Your County for over two decades. What started as a small family crew has grown into a full-service builder, but we still treat every project like it's our own home.</p>
+      <p class="lead">We believe great homes come from clear communication, honest pricing and skilled people who care about the details.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Family owned and locally operated</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Hundreds of homes completed</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Dedicated project manager on every build</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Energy-efficient building practices</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Written workmanship warranty</li>
+      </ul>
+      <a class="btn btn-green" href="#contact">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS (sample text: replace with real reviews) ========== -->
+<section class="section center" id="reviews">
+  <div class="wrap">
+    <span class="kicker reveal">What Clients Say</span>
+    <h2 class="section-title reveal">Real Stories. Real Homes.</h2>
+    <div class="rating-pill reveal"><span class="stars" aria-hidden="true">★★★★★</span><span>4.9 · 200+ Google reviews</span></div>
+    <div class="rev-grid">
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: They built our dream home and the whole process was smooth from start to finish. Our project manager kept us updated every week.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Custom Home · Town One</small></span></figcaption></figure>
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: Our addition blends perfectly with the original house. The crew was respectful, tidy and finished right on schedule.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Addition · Town Two</small></span></figcaption></figure>
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: Honest pricing and no surprises. The estimate was detailed and the final cost matched it exactly.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Renovation · Town Three</small></span></figcaption></figure>
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: The kitchen remodel exceeded our expectations. Great design ideas and beautiful craftsmanship throughout.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Kitchen · Town Four</small></span></figcaption></figure>
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: As first-time builders we had a lot of questions. They walked us through every decision with patience.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Custom Home · Town Two</small></span></figcaption></figure>
+      <figure class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>Sample review: Quality work, great communication and a crew that clearly takes pride in what they do. Highly recommend.</blockquote><figcaption><span class="avatar" aria-hidden="true">C</span><span><strong>Customer Name</strong><small>Remodel · Town One</small></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FREE ESTIMATE ========== -->
+<section class="section center" id="contact" style="background:var(--white)">
+  <div class="wrap">
+    <span class="kicker reveal">Get a Quote</span>
+    <h2 class="section-title reveal">Get Your Free Estimate</h2>
+    <p class="lead reveal">Tell us about your project and we'll get back to you within one business day to set up a free consultation.</p>
+    <div class="estimate-grid">
+      <div class="info-card reveal">
+        <h3>Contact Information</h3>
+        <ul class="info-list">
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span><span><small>Phone</small><a href="tel:+15555550123">(555) 555-0123</a></span></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></span></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Office</small>123 Main Street, Your City, ST 00000</span></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Hours</small>Mon–Fri 7:00 AM – 5:00 PM</span></li>
+        </ul>
+        <h3>Why Choose Us?</h3>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Free, no-obligation estimates</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Licensed &amp; insured</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>25+ years of local experience</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Written warranty on all work</li>
+        </ul>
+      </div>
+      <div class="form-card reveal">
+        <!-- Set action="" to your form handler and remove the demo handler in the script below. -->
+        <form id="estimateForm" action="#" method="post" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field full"><label for="type">Type of project</label>
+              <select id="type" name="project_type">
+                <option value="">Select a project type</option>
+                <option>Custom home</option>
+                <option>Home addition</option>
+                <option>Renovation / remodel</option>
+                <option>New development</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full"><label for="details">Tell us about your project</label><textarea id="details" name="details" placeholder="Lot location, size, timeline, budget range..."></textarea></div>
+          </div>
+          <button class="btn btn-green" type="submit">Request My Free Estimate</button>
+          <p class="form-note">We respect your privacy and never share your information.</p>
+          <p class="form-status" id="formStatus" role="status" hidden></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="reveal">Ready to Build Your Dream Home?</h2>
+    <p class="reveal">Call today or request a free estimate. We'd love to hear about your project.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-white" href="tel:+15555550123">(555) 555-0123</a>
+      <a class="btn btn-orange" href="#contact">Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#top" aria-label="Your Company Co. home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+          <span class="brand-name">Your Company Co.<small>Custom Homes</small></span>
+        </a>
+        <p>Family-owned home builder serving Your County with custom homes, additions, renovations and new developments.</p>
+        <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="Google reviews">G</a></div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul><li><a href="#top">Home</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Custom Home Builds</a></li><li><a href="#services">Home Additions</a></li><li><a href="#services">Renovations</a></li><li><a href="#services">New Developments</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+15555550123">(555) 555-0123</a></li><li><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></li><li>123 Main Street<br>Your City, ST 00000</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Your Company Co. All rights reserved. Lic. #0000000</span>
+      <nav aria-label="Legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
+  <div class="lightbox-inner">
+    <div id="lightboxContent"></div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  document.body.classList.remove("no-js");
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Header shadow on scroll
+  var header = document.getElementById("header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+  document.querySelectorAll("#mobileNav a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Count-up numbers (data-decimals for values like 4.9)
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute("data-target")) || 0;
+    var dec = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+    if (reduceMotion) { el.textContent = target.toFixed(dec); return; }
+    var start = null, duration = 1400;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(dec);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Reveal on scroll + trigger counters
+  var reveals = document.querySelectorAll(".reveal");
+  var counters = document.querySelectorAll(".count");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        countUp(e.target);
+        co.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { co.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("visible"); });
+    counters.forEach(function (el) {
+      var dec = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+      el.textContent = parseFloat(el.getAttribute("data-target")).toFixed(dec);
+    });
+  }
+
+  // Project lightbox
+  var lightbox = document.getElementById("lightbox");
+  var lbContent = document.getElementById("lightboxContent");
+  var lbCaption = document.getElementById("lightboxCaption");
+  var lbClose = document.getElementById("lightboxClose");
+  var lastFocus = null;
+  function openLightbox(tile) {
+    lbContent.innerHTML = "";
+    lbContent.appendChild(tile.querySelector(".img").cloneNode(true));
+    lbCaption.textContent = tile.querySelector(".tile-cap strong").textContent;
+    lastFocus = tile;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll(".tile").forEach(function (tile) {
+    tile.setAttribute("aria-label", "View larger: " + tile.querySelector(".tile-cap strong").textContent);
+    tile.addEventListener("click", function () { openLightbox(tile); });
+  });
+  lbClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+
+  // Estimate form: demo handler. Replace with your real form handler.
+  var form = document.getElementById("estimateForm");
+  var status = document.getElementById("formStatus");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    status.textContent = "Thank you! We'll be in touch within one business day.";
+    status.hidden = false;
+    form.reset();
+  });
+
+  // Escape closes overlays
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (lightbox.classList.contains("open")) closeLightbox();
+    else if (header.classList.contains("menu-open")) setMenu(false);
+  });
+})();
+</script>
+</body>
+</html>

@@ -56,3 +56,15 @@ To customize it:
 2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
 3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero, add `style="background-image: url('photo.jpg')"` to `.hero-bg`.
 4. Replace the sample reviews with real ones. Add more `.rev-slide` blocks and the counter updates automatically.
+
+## home-builder-template.html
+
+A deep green, orange and off-white one-page site for a custom home builder. Sections: sticky header, hero with a two-tone headline, announcement bar, four trust cards, services cards, counting stats band, recent projects grid with lightbox, about with a years badge and checklist, sample reviews, a free-estimate section with contact card and form, call-to-action band and footer.
+
+To customize it:
+
+1. Replace `Your Company Co.`, `Your City`, `Your County`, the town names, `123 Main Street`, `Lic. #0000000`, `(555) 555-0123` / `+15555550123` and `hello@yourcompany.com`.
+2. Change the brand colors and font in the `:root` block at the top of the `<style>` tag.
+3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero, add `style="background-image: url('photo.jpg')"` to `.hero-bg`.
+4. Update the stats (`data-target` on each `.count`) and replace the sample reviews with real ones.
+5. The estimate form has no backend: set its `action` to your form handler and remove the demo submit handler in the script.
