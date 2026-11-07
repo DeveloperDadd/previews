@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Company Co. | Concrete Contractor in Your City, ST</title>
+<meta name="description" content="Concrete foundations, engineered and suspended slabs, additions, garage slabs, patios and steps in Your City and Your County.">
+<!--
+  CONCRETE CONTRACTOR TEMPLATE
+  One self-contained file: all CSS is in the <style> block below, all JS at the bottom.
+  To customize:
+    1. Search for "Your Company Co.", "Your City", "Your County", "Owner Name", "Lic. #0000000",
+       "(555) 555-0123" (also "+15555550123" in tel: links) and "hello@yourcompany.com" and replace them.
+    2. Change the brand colors and fonts in :root.
+    3. Swap image placeholders: each <div class="img ..." data-label="..."> can be replaced with
+       <img class="img" src="your-photo.jpg" alt="Describe the photo">.
+       The hero uses a background placeholder: add style="background-image: url('photo.jpg')" to .hero-bg.
+    4. Reviews are SAMPLE text. Replace them with real reviews from your customers.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #111111;
+  --charcoal: #1b1b1b;
+  --card: #222222;
+  --yellow: #f5b800;
+  --yellow-hover: #ffc824;
+  --cream: #efece4;
+  --cream-line: #d8d3c6;
+  --white: #ffffff;
+  --gray: #a6a6a6;
+  --gray-dark: #5c5a55;
+  --line: rgba(255,255,255,.14);
+  --max: 76rem;
+  --head: "Anton", Impact, "Arial Narrow", sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--black); color: var(--white); font-family: var(--body); font-size: 1rem; line-height: 1.65; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--head); font-weight: 400; text-transform: uppercase; line-height: 1; letter-spacing: .005em; margin: 0 0 1rem; }
+p { margin: 0 0 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+/* ---------- Labels + buttons ---------- */
+.label { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 1rem; }
+.label b { color: var(--yellow); font-weight: 700; }
+.light .label b { color: var(--black); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 48px; padding: .75rem 1.3rem; border: 2px solid transparent; border-radius: 0;
+  font: 700 .72rem/1 var(--body); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn-yellow { background: var(--yellow); color: var(--black); }
+.btn-yellow:hover { background: var(--yellow-hover); }
+.btn-outline { border-color: var(--white); color: var(--white); background: transparent; }
+.btn-outline:hover { background: var(--white); color: var(--black); }
+
+/* ---------- Sections ---------- */
+.section { padding: 5rem 0; }
+.light { background: var(--cream); color: var(--black); }
+.big-title { font-size: clamp(2.8rem, 11vw, 5.5rem); }
+.muted { color: var(--gray); }
+.light .muted { color: var(--gray-dark); }
+
+/* ---------- Image placeholders ---------- */
+.img {
+  position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; object-fit: cover;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,.18), transparent 50%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 2px, transparent 2px 60px),
+    linear-gradient(160deg, #8d8a84, #6b6862 50%, #3d3b38);
+}
+div.img::after {
+  content: attr(data-label); position: absolute; left: .75rem; top: .6rem;
+  font-size: .66rem; letter-spacing: .1em; text-transform: uppercase;
+  color: #fff; background: rgba(0,0,0,.55); padding: .2rem .5rem;
+}
+.img.forest { background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.25), transparent 45%), linear-gradient(180deg, #7a8a86 0%, #3d4a3c 35%, #2a3328 55%, #6e6a63 56%, #4a4743 100%); }
+.img.dusk { background: radial-gradient(ellipse at 70% 10%, rgba(255,210,140,.25), transparent 45%), linear-gradient(180deg, #4a4f5a 0%, #2b2f36 50%, #77736b 51%, #3c3a36 100%); }
+.img.wet { background: radial-gradient(ellipse at 40% 40%, rgba(255,255,255,.22), transparent 45%), linear-gradient(160deg, #5f625f, #444744 50%, #2a2c2a); }
+
+/* ---------- Header ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(17,17,17,.96); backdrop-filter: blur(6px); transition: box-shadow .25s; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,.5); }
+.header-row { display: flex; align-items: stretch; justify-content: space-between; min-height: 72px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.badge-logo {
+  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: var(--black); border: 2px solid var(--yellow); color: var(--white);
+  font-family: var(--head); font-size: .72rem; line-height: 1; text-align: center; letter-spacing: .04em;
+}
+.badge-logo svg { width: 24px; height: 24px; color: var(--yellow); display: block; margin: 0 auto 2px; }
+.brand-name { font-family: var(--head); font-size: 1.2rem; text-transform: uppercase; letter-spacing: .03em; }
+.nav { display: none; align-items: center; }
+.nav ul { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; padding: .5rem 0; }
+.nav a:hover { color: var(--yellow); }
+.header-cta {
+  display: none; flex-direction: column; justify-content: center; padding: 0 1.5rem; margin-right: -1rem;
+  background: var(--yellow); color: var(--black); text-decoration: none; text-align: center;
+  font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; line-height: 1.5;
+}
+.header-cta strong { font-size: .85rem; letter-spacing: .06em; }
+.header-cta:hover { background: var(--yellow-hover); }
+.menu-toggle { align-self: center; width: 46px; height: 46px; border: 1px solid var(--line); background: transparent; display: grid; place-items: center; cursor: pointer; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { content: ""; display: block; width: 22px; height: 2px; background: var(--white); position: relative; transition: transform .25s, background .25s; }
+.menu-toggle span::before { position: absolute; top: -7px; }
+.menu-toggle span::after { position: absolute; top: 7px; }
+.menu-open .menu-toggle span { background: transparent; }
+.menu-open .menu-toggle span::before { transform: translateY(7px) rotate(45deg); }
+.menu-open .menu-toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav { display: none; flex-direction: column; padding: .25rem 1rem 1.25rem; border-top: 1px solid var(--line); }
+.menu-open .mobile-nav { display: flex; }
+.mobile-nav a { padding: .85rem 0; text-decoration: none; border-bottom: 1px solid var(--line); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.mobile-nav .btn { margin-top: 1rem; border-bottom: 2px solid transparent; }
+@media (min-width: 960px) {
+  .nav, .header-cta { display: flex; }
+  .menu-toggle, .mobile-nav, .menu-open .mobile-nav { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: 86vh; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.2), transparent 45%), linear-gradient(180deg, #5e6b66 0%, #2d3a2c 40%, #222a21 58%, #7a766e 59%, #4b4843 100%);
+}
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.88) 100%); }
+.hero .wrap { position: relative; width: 100%; padding-top: 7rem; padding-bottom: 3.5rem; }
+.hero .label { color: var(--white); }
+.hero h1 { font-size: clamp(2.6rem, 9.5vw, 5.2rem); max-width: 16ch; }
+.hero p { max-width: 34rem; color: #dcdcdc; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.hero-badge { position: absolute; right: 1.5rem; top: 2rem; width: 110px; height: 110px; font-size: 1rem; display: none; }
+.hero-badge svg { width: 36px; height: 36px; }
+@media (min-width: 760px) { .hero-badge { display: grid; } }
+
+/* ---------- Ticker ---------- */
+.ticker { background: var(--yellow); color: var(--black); overflow: hidden; border-block: 2px solid var(--black); }
+.ticker-track { display: flex; width: max-content; animation: ticker 32s linear infinite; }
+.ticker ul { display: flex; list-style: none; margin: 0; padding: .85rem 0; }
+.ticker li { display: flex; align-items: center; gap: 1.5rem; padding-right: 1.5rem; font-family: var(--head); font-size: 1.05rem; text-transform: uppercase; white-space: nowrap; }
+.ticker li::after { content: "✦"; font-size: .8rem; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ---------- Services ---------- */
+.svc-head { display: grid; gap: 1rem; align-items: end; margin-bottom: 2.5rem; }
+@media (min-width: 860px) { .svc-head { grid-template-columns: auto 1fr 1fr; gap: 2.5rem; } .svc-head .label { margin: 0 0 1.2rem; } }
+.svc-head .big-title { margin: 0; }
+.svc-head p { margin: 0; max-width: 24rem; justify-self: end; }
+.svc-grid { display: grid; gap: .75rem; }
+@media (min-width: 640px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } .svc-card.wide { grid-column: span 2; } }
+.svc-card { position: relative; min-height: 340px; display: flex; align-items: flex-end; color: var(--white); overflow: hidden; isolation: isolate; background: var(--card); }
+.svc-card .img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; z-index: -2; transition: transform .5s; }
+.svc-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(17,17,17,.2) 0%, rgba(17,17,17,.95) 70%); }
+.svc-card:hover .img { transform: scale(1.04); }
+.svc-num { position: absolute; top: 1rem; right: 1rem; min-width: 34px; height: 30px; display: grid; place-items: center; padding: 0 .4rem; background: var(--yellow); color: var(--black); font-size: .7rem; font-weight: 700; }
+.svc-body { padding: 1.5rem; }
+.svc-card h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+.svc-card p { font-size: .9rem; color: #d2d2d2; margin: 0; max-width: 28rem; }
+
+/* ---------- Owner ---------- */
+.owner-grid { display: grid; gap: 3rem; }
+@media (min-width: 900px) { .owner-grid { grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: center; } .owner-copy { order: 2; } }
+.owner-photo { position: relative; }
+.owner-photo .img { aspect-ratio: 4 / 5; }
+.name-tag { position: absolute; left: -.25rem; bottom: 2.5rem; background: var(--yellow); color: var(--black); padding: .7rem 1.1rem; font-family: var(--head); font-size: 1.3rem; text-transform: uppercase; }
+.role-tag { position: absolute; right: 1rem; bottom: 1rem; background: var(--yellow); color: var(--black); padding: .4rem .7rem; font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.owner-copy p { color: #cfcfcf; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+.chips span { border: 1px solid var(--yellow); color: var(--yellow); padding: .5rem .75rem; font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+
+/* ---------- Reviews carousel ---------- */
+.rev-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 900px) { .rev-grid { grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; } }
+.rating { font-size: .85rem; color: var(--gray-dark); }
+.rating .stars { color: #c08f00; letter-spacing: .12em; margin-right: .35rem; }
+.rating a { color: var(--black); font-weight: 600; }
+.rev-controls { display: flex; align-items: center; gap: .75rem; margin-top: 1.75rem; }
+.rev-btn { width: 48px; height: 48px; border: 1px solid var(--black); background: transparent; color: var(--black); font-size: 1.1rem; cursor: pointer; transition: background .2s, color .2s; }
+.rev-btn:hover { background: var(--black); color: var(--yellow); }
+.rev-count { font-size: .78rem; font-weight: 700; letter-spacing: .12em; min-width: 4.5rem; text-align: center; }
+.rev-quote { margin: 0; font-size: clamp(1.35rem, 3.6vw, 2rem); font-weight: 700; line-height: 1.3; letter-spacing: -.01em; }
+.rev-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--black); }
+.rev-who { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.rev-idx { font-family: var(--head); font-size: 2rem; line-height: 1; }
+.rev-slide[hidden] { display: none; }
+
+/* ---------- Projects ---------- */
+.projects { background: var(--charcoal); }
+.proj-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 2.5rem; }
+.proj-head .big-title { margin: 0; }
+.proj-grid { display: grid; gap: .75rem; grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+.proj-grid .pump { grid-column: span 2; grid-row: span 2; }
+.proj-grid .forms { grid-column: span 2; grid-row: span 2; }
+@media (min-width: 860px) {
+  .proj-grid {
+    grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px;
+    grid-template-areas: "pump pump house finished" "pump pump forms forms" "ready support forms forms";
+  }
+  .proj-grid .pump { grid-area: pump; } .proj-grid .house { grid-area: house; } .proj-grid .finished { grid-area: finished; }
+  .proj-grid .forms { grid-area: forms; } .proj-grid .ready { grid-area: ready; } .proj-grid .support { grid-area: support; }
+}
+.tile { position: relative; padding: 0; border: 0; background: var(--card); cursor: zoom-in; overflow: hidden; text-align: left; color: var(--white); font: inherit; }
+.tile .img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; transition: transform .5s; }
+.tile::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.85)); }
+.tile:hover .img { transform: scale(1.05); }
+.tile-cap { position: absolute; left: 1rem; bottom: 1rem; right: 1rem; z-index: 2; }
+.tile-cap small { display: block; font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); margin-bottom: .3rem; }
+.tile-cap span { font-family: var(--head); font-size: 1.15rem; text-transform: uppercase; }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: end; } }
+.contact-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.contact-list li { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.contact-list small { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gray); margin-bottom: .25rem; }
+.contact-list a { font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; min-height: 32px; }
+.contact-list a:hover { color: var(--yellow); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--cream); color: var(--black); padding: 3.5rem 0 1.5rem; }
+.footer-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+.site-footer .badge-logo { width: 96px; height: 96px; background: var(--black); font-size: 1rem; }
+.site-footer .badge-logo svg { width: 34px; height: 34px; }
+.footer-links { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--cream-line); }
+.footer-links a { padding: 1rem 0; border-bottom: 1px solid var(--cream-line); text-decoration: none; font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.footer-links a:hover { color: var(--gray-dark); text-decoration: underline; }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--cream-line); font-size: .66rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.footer-bottom a { text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }
+
+/* ---------- Lightbox ---------- */
+.lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.92); }
+.lightbox.open { display: flex; }
+.lightbox-inner { width: min(960px, 100%); }
+.lightbox-inner .img, .lightbox-inner img { aspect-ratio: 16 / 10; width: 100%; height: auto; }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; width: 46px; height: 46px; border: 0; background: var(--yellow); color: var(--black); font-size: 1.5rem; cursor: pointer; }
+.lightbox-caption { text-align: center; color: var(--gray); margin-top: .75rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .svc-card:hover .img, .tile:hover .img { transform: none; }
+}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Your Company Co. home">
+      <span class="badge-logo" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h20L12 4z"/></svg>YCC</span></span>
+      <span class="brand-name">Your Company Co.</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#work">Our Work</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="tel:+15555550123">Discuss Your Project<strong>(555) 555-0123</strong></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#work">Our Work</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-yellow" href="tel:+15555550123">Call (555) 555-0123</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <!-- Add a real photo: style="background-image: url('jobsite.jpg')" -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <span class="badge-logo hero-badge" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h20L12 4z"/></svg>YCC</span></span>
+  <div class="wrap">
+    <span class="label reveal">Strong / Precise / From the Ground Up</span>
+    <h1 class="reveal">Trusted Concrete Contractor in Your City, ST</h1>
+    <p class="reveal">Foundations, slabs, additions, stairs and more, built with careful prep and dependable workmanship from the first form to the final finish.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-yellow" href="#contact">Start a Project</a>
+      <a class="btn btn-outline" href="#work">View Recent Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TICKER ========== -->
+<div class="ticker" aria-label="Services we offer">
+  <div class="ticker-track">
+    <ul>
+      <li>Concrete Foundations</li><li>Engineered Slabs</li><li>Suspended Slabs</li><li>Additions</li><li>Garage Slabs</li><li>Patios, Stairwells + Steps</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>Concrete Foundations</li><li>Engineered Slabs</li><li>Suspended Slabs</li><li>Additions</li><li>Garage Slabs</li><li>Patios, Stairwells + Steps</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<section class="section light" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <span class="label reveal"><b>01</b> / Services</span>
+      <h2 class="big-title reveal">Services</h2>
+      <p class="muted reveal">Concrete work that sets the stage for everything that follows, whether it's a new home, an addition or a multi-unit development.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card wide reveal">
+        <div class="img forest" data-label="Photo: foundation walls"></div>
+        <span class="svc-num">01</span>
+        <div class="svc-body"><h3>Concrete Foundations</h3><p>Strong, precise foundation systems built to support the entire project.</p></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img wet" data-label="Photo: engineered slab"></div>
+        <span class="svc-num">02</span>
+        <div class="svc-body"><h3>Engineered Slabs</h3><p>Reinforced slab systems built to engineered specifications for demanding projects.</p></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img" data-label="Photo: suspended slab"></div>
+        <span class="svc-num">03</span>
+        <div class="svc-body"><h3>Suspended Slabs</h3><p>Structural concrete slabs formed and reinforced above supporting spaces.</p></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img dusk" data-label="Photo: home addition"></div>
+        <span class="svc-num">04</span>
+        <div class="svc-body"><h3>Additions</h3><p>Structural concrete work that creates a solid base for expanded living space.</p></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img wet" data-label="Photo: garage slab"></div>
+        <span class="svc-num">05</span>
+        <div class="svc-body"><h3>Garage Slabs</h3><p>Prepared, formed and finished for dependable long-term use.</p></div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="img" data-label="Photo: concrete steps"></div>
+        <span class="svc-num">06</span>
+        <div class="svc-body"><h3>Patios, Stairwells + Steps</h3><p>Durable finished concrete for outdoor living spaces and safe, lasting access.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEET THE OWNER ========== -->
+<section class="section" id="about">
+  <div class="wrap owner-grid">
+    <div class="owner-copy reveal">
+      <span class="label"><b>02</b> / Meet the Owner</span>
+      <h2 class="big-title">Meet Owner Name</h2>
+      <p>Owner Name brings years of hands-on concrete experience to every job Your Company Co. takes on.</p>
+      <p>They started out on a local foundation crew, learned every part of the trade from forming to finishing, and eventually launched their own company to do the work their way: carefully and without shortcuts.</p>
+      <p>Known as a problem-solver and a fast, clean finisher, Owner Name takes pride in getting the work right, walking clients through each step and answering questions along the way.</p>
+      <div class="chips"><span>Fully Insured</span><span>Lic. #0000000</span><span>Free Estimates</span></div>
+    </div>
+    <div class="owner-photo reveal">
+      <div class="img dusk" data-label="Photo: owner on site"></div>
+      <span class="name-tag">Owner Name</span>
+      <span class="role-tag">Owner &amp; Lead Finisher</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS (sample text: replace with real reviews) ========== -->
+<section class="section light" id="reviews">
+  <div class="wrap rev-grid">
+    <div class="reveal">
+      <span class="label"><b>03</b> / Client Feedback</span>
+      <h2 class="big-title">Reviews</h2>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 from Google reviews<br><a href="#">Read reviews on Google</a></p>
+      <div class="rev-controls">
+        <button class="rev-btn" id="revPrev" type="button" aria-label="Previous review">←</button>
+        <span class="rev-count" id="revCount" aria-hidden="true">01 / 03</span>
+        <button class="rev-btn" id="revNext" type="button" aria-label="Next review">→</button>
+      </div>
+    </div>
+    <div class="reveal" aria-live="polite" id="revSlides">
+      <figure class="rev-slide" style="margin:0">
+        <blockquote class="rev-quote">“Sample review: A great company to work with. The owner answers calls and texts and is always there to answer questions. Their attention to detail is excellent, and the job site was kept clean.”</blockquote>
+        <figcaption class="rev-foot"><span class="rev-who">Customer Name · Google Review</span><span class="rev-idx">01</span></figcaption>
+      </figure>
+      <figure class="rev-slide" style="margin:0" hidden>
+        <blockquote class="rev-quote">“Sample review: Our foundation was poured right on schedule and passed inspection with no issues. Clear pricing up front and great communication the whole way through.”</blockquote>
+        <figcaption class="rev-foot"><span class="rev-who">Customer Name · Google Review</span><span class="rev-idx">02</span></figcaption>
+      </figure>
+      <figure class="rev-slide" style="margin:0" hidden>
+        <blockquote class="rev-quote">“Sample review: They replaced our crumbling front steps and poured a new patio. The finish is beautiful and the crew was respectful of our yard. Highly recommend.”</blockquote>
+        <figcaption class="rev-foot"><span class="rev-who">Customer Name · Google Review</span><span class="rev-idx">03</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RECENT PROJECTS ========== -->
+<section class="section projects" id="work">
+  <div class="wrap">
+    <div class="proj-head">
+      <h2 class="big-title reveal">Recent Projects</h2>
+      <span class="label reveal" style="margin:0"><b>04</b> / Recent Work</span>
+    </div>
+    <div class="proj-grid">
+      <button class="tile pump reveal" type="button"><div class="img dusk" data-label="Photo: pump truck"></div><span class="tile-cap"><small>Slab Preparation / 01</small><span>Pump Day</span></span></button>
+      <button class="tile house reveal" type="button"><div class="img wet" data-label="Photo: house slab"></div><span class="tile-cap"><small>Residential / 02</small><span>House Slab</span></span></button>
+      <button class="tile finished reveal" type="button"><div class="img" data-label="Photo: finished slab"></div><span class="tile-cap"><small>Flatwork / 03</small><span>Finished Slab</span></span></button>
+      <button class="tile forms reveal" type="button"><div class="img forest" data-label="Photo: forms set"></div><span class="tile-cap"><small>Foundation / 04</small><span>Forms in Place</span></span></button>
+      <button class="tile ready reveal" type="button"><div class="img wet" data-label="Photo: ready to pour"></div><span class="tile-cap"><small>Foundation / 05</small><span>Ready to Pour</span></span></button>
+      <button class="tile support reveal" type="button"><div class="img" data-label="Photo: structural support"></div><span class="tile-cap"><small>Suspended Slab / 06</small><span>Structural Support</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="label">Ready to Get Started?</span>
+      <h2 class="big-title" style="margin:0">Contact Your Company Co.</h2>
+    </div>
+    <ul class="contact-list reveal">
+      <li><small>Call Owner Name</small><a href="tel:+15555550123">(555) 555-0123</a></li>
+      <li><small>Email</small><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></li>
+      <li><small>Follow Our Work</small><a href="#">Facebook</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <a class="brand" href="#top" aria-label="Your Company Co. home">
+        <span class="badge-logo" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h20L12 4z"/></svg>YCC</span></span>
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#work">Work</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Your Company Co.</span>
+      <a href="#top">Back to Top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
+  <div class="lightbox-inner">
+    <div id="lightboxContent"></div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  document.body.classList.remove("no-js");
+
+  // Footer year
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Header shadow on scroll
+  var header = document.getElementById("header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+  document.querySelectorAll("#mobileNav a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+
+  // Reviews carousel
+  var slides = document.querySelectorAll(".rev-slide");
+  var count = document.getElementById("revCount");
+  var current = 0;
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function show(i) {
+    current = (i + slides.length) % slides.length;
+    slides.forEach(function (s, idx) { s.hidden = idx !== current; });
+    count.textContent = pad(current + 1) + " / " + pad(slides.length);
+  }
+  document.getElementById("revPrev").addEventListener("click", function () { show(current - 1); });
+  document.getElementById("revNext").addEventListener("click", function () { show(current + 1); });
+  document.getElementById("reviews").addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest(".rev-controls")) {
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    }
+  });
+  show(0);
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  // Project lightbox
+  var lightbox = document.getElementById("lightbox");
+  var lbContent = document.getElementById("lightboxContent");
+  var lbCaption = document.getElementById("lightboxCaption");
+  var lbClose = document.getElementById("lightboxClose");
+  var lastFocus = null;
+  function openLightbox(tile) {
+    lbContent.innerHTML = "";
+    lbContent.appendChild(tile.querySelector(".img").cloneNode(true));
+    lbCaption.textContent = tile.querySelector(".tile-cap span").textContent;
+    lastFocus = tile;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll(".tile").forEach(function (tile) {
+    tile.setAttribute("aria-label", "View larger: " + tile.querySelector(".tile-cap span").textContent);
+    tile.addEventListener("click", function () { openLightbox(tile); });
+  });
+  lbClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+
+  // Escape closes overlays
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (lightbox.classList.contains("open")) closeLightbox();
+    else if (header.classList.contains("menu-open")) setMenu(false);
+  });
+})();
+</script>
+</body>
+</html>
