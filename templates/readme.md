@@ -22,3 +22,15 @@ To customize it:
 2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
 3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero and service cards, add `style="background-image: url('photo.jpg')"` to the `.hero-bg` / `.svc-bg` element.
 4. The estimate form has no backend: set its `action` to your form handler and remove the demo submit handler in the script.
+
+## roofing-template.html
+
+A dark navy and red one-page site for a roofing contractor. Sections: top bar, header with a services dropdown, centered hero with a large photo, services, why choose us, who we are with counting stats, a tabbed "why choose us" panel, sample testimonials, call to action, contact info strip, footer with a newsletter signup, and a floating call bubble.
+
+To customize it:
+
+1. Replace `Your Roofing Co.`, `Your City`, `Your County`, `Your Region`, the town names, `(555) 555-0123` / `+15555550123` and `hello@yourcompany.com`.
+2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
+3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`.
+4. Replace the sample testimonials with real reviews.
+5. The newsletter form has no backend: set its `action` to your email service and remove the demo submit handler in the script.
