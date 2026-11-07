@@ -34,3 +34,14 @@ To customize it:
 3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`.
 4. Replace the sample testimonials with real reviews.
 5. The newsletter form has no backend: set its `action` to your email service and remove the demo submit handler in the script.
+
+## property-services-template.html
+
+A forest green, cream and lime one-page site for a local property services company (tree removal, dumpster rentals, excavation, cleanup). Uses a serif heading font. Sections: transparent header over a full-height hero, numbered services list, full-width equipment photo, excavation checklist, dumpster rentals with stats, photo collage with a "Proudly local" badge, about the owner, seasonal golf course maintenance, sample reviews, closing call to action and footer.
+
+To customize it:
+
+1. Replace `Your Company Co.`, `Your City`, `Your County`, the town names, `Owner Name`, `(555) 555-0123` / `+15555550123` and `hello@yourcompany.com`.
+2. Change the brand colors and fonts in the `:root` block at the top of the `<style>` tag.
+3. Swap each image placeholder (`<div class="img" data-label="...">`) for `<img class="img" src="photo.jpg" alt="...">`. For the hero, add `style="background-image: url('photo.jpg')"` to `.hero-bg`.
+4. Replace the sample reviews with real ones, and drop the golf course section if it doesn't apply.
