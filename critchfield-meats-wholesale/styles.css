@@ -1882,8 +1882,9 @@ body {
 }
 @media only screen and (min-width: 48rem) {
     #locations-2560 .cs-map-wrapper {
-        justify-content: flex-start;
-        padding-left: clamp(1rem, 3vw, 2.5rem);
+        /* card sits to the right of the pin so it doesn't cover Google's own place box at top left */
+        justify-content: flex-end;
+        padding-right: clamp(1rem, 3vw, 2.5rem);
         box-sizing: border-box;
     }
     #locations-2560 .cs-map {
