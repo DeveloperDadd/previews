@@ -355,7 +355,7 @@ FOOTER = f'''
             </li>
             <li class="cs-contact-li">
                 <a class="cs-contact-link cs-address" href="about.html#service-area">
-                    <span>Serving small businesses</span> anywhere in the U.S.
+                    <span>Serving all of the U.S.,</span> fully remote
                 </a>
             </li>
         </ul>
@@ -459,7 +459,7 @@ Q_INCLUDED = ('What do I get for $99 a month?', 'A custom 5-page website, hostin
 Q_48 = ('How fast can my website be live?', 'Within 48 hours of getting your info. Send me your business details, services and any photos or logo you have, and I build it, show it to you, and put it online.')
 Q_CONTRACT = ('Is there a contract?', 'No. It is month to month and you can cancel anytime. I would rather keep your business by doing good work than by locking you in.')
 Q_EDITS = ('What counts as a small edit?', 'Swapping or updating text, photos and videos on your pages: new hours, a new service, fresh project photos, a promo video. Text or call me with the change and I take care of it. There is no limit on how many you send.')
-Q_SPEED = ('What is the PageSpeed guarantee?', 'Google measures how fast your site loads and uses it when ranking search results. Your site is built to score 90 or higher on Google PageSpeed Insights. If it ever drops below that, I fix it at no extra cost.')
+Q_SPEED = ('What is the PageSpeed guarantee?', 'Your site scores 90+ on Google PageSpeed Insights. Google measures how fast your site loads and uses it when ranking search results, so a fast site helps you get found.')
 Q_START = ('How do I get started?', f'Call or text me at <a href="{TEL}">{PHONE_DISPLAY}</a>. We talk for a few minutes about your business, I tell you exactly what I need from you, and your site can be live within 48 hours.')
 Q_CONTENT = ('What do I need to send you?', 'Your business name, phone number, the services you offer, the area you serve, and any photos or logo you have. No photos yet? No problem. I design clean graphics around your brand so the site looks finished from day one.')
 Q_PAGES = ('Which five pages do I get?', 'Most businesses go with Home, About, Services, Contact and one more of their choice, like a Gallery, Reviews or FAQ page. We decide together based on what your customers need to see.')
@@ -638,7 +638,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">PageSpeed Guarantee</h3>
-                    <p class="cs-item-text">Built to score 90+ on Google PageSpeed Insights. If it ever slips, I fix it at no extra cost.</p>
+                    <p class="cs-item-text">Scores 90+ on Google PageSpeed Insights, so your site loads fast for customers and Google.</p>
                 </div>
             </li>
         </ul>
@@ -698,8 +698,7 @@ HOME_BODY = f'''
     <div class="cs-container">
         <div class="cs-image-group">
             <picture class="cs-picture">
-                <!-- Swap for the owner photo: assets/owner.jpg -->
-                <img loading="lazy" decoding="async" src="assets/portrait-placeholder.svg" alt="" width="630" height="630" aria-hidden="true">
+                <img loading="lazy" decoding="async" src="assets/clayton-square.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="630" height="630">
             </picture>
             <div class="cs-box">
                 <span class="cs-number">48h</span>
@@ -707,10 +706,10 @@ HOME_BODY = f'''
             </div>
         </div>
         <div class="cs-content">
-            <span class="cs-topper">About Critchfield Systems</span>
+            <span class="cs-topper">Meet Clayton Critchfield</span>
             <h2 class="cs-title">One Person, One Phone Number, No Runaround</h2>
             <p class="cs-text">
-                Critchfield Systems is a one-person web studio built for small businesses that need a great website without the agency price tag or the do-it-yourself headache. When you call or text, you talk to me, the person who actually builds and looks after your site.
+                I'm Clayton Critchfield, and Critchfield Systems is my one-person web studio built for small businesses that need a great website without the agency price tag or the do-it-yourself headache. When you call or text, you talk to me, the person who actually builds and looks after your site.
             </p>
             <ul class="cs-ul">
                 <li class="cs-li">Hand-built sites that load fast on any phone</li>
@@ -847,7 +846,7 @@ PRICING_BODY = hero_493('Pricing', 'One Simple Plan: $99/Month',
                     PageSpeed Guarantee
                 </h3>
                 <p class="cs-item-text">
-                    Built to score 90+ on Google PageSpeed Insights, and kept there.
+                    Scores 90+ on Google PageSpeed Insights.
                 </p>
             </li>
         </ul>
@@ -912,6 +911,17 @@ PRICING_BODY = hero_493('Pricing', 'One Simple Plan: $99/Month',
                     </p>
                 </div>
             </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="{icon('camera-white')}" alt="" width="32" height="32">
+                </picture>
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Professional Photography</h3>
+                    <p class="cs-item-text">
+                        No photo shoots. Send me the photos you have, and if you have none I design clean graphics around your brand.
+                    </p>
+                </div>
+            </li>
         </ul>
     </div>
 </section>
@@ -934,12 +944,11 @@ PRICING_BODY = hero_493('Pricing', 'One Simple Plan: $99/Month',
                     <img class="cs-icon" loading="lazy" decoding="async" src="{icon('zap')}" alt="" width="24" height="24" />
                 </picture>
                 <h3 class="cs-h3">Speed Guarantee</h3>
-                <p class="cs-item-text">Your site is built to score 90+ on Google PageSpeed Insights.</p>
+                <p class="cs-item-text">Scores 90+ on Google PageSpeed Insights.</p>
                 <ul class="cs-ul">
-                    <li class="cs-li">90+ PageSpeed score</li>
+                    <li class="cs-li">Scores 90+ on Google PageSpeed Insights</li>
                     <li class="cs-li">Fast on phones and computers</li>
-                    <li class="cs-li">Fixed at no cost if it slips</li>
-                    <li class="cs-li">Re-checked when edits are made</li>
+                    <li class="cs-li">Included with every site</li>
                 </ul>
                 <a href="{TEL}" class="cs-button-4">Call or Text</a>
                 <span class="cs-subtext">Included in $99/month</span>
@@ -1022,21 +1031,20 @@ ABOUT_OVR = HERO_493_OVR + """
 """ + CTA_OVR
 
 ABOUT_BODY = hero_493('About', 'The Person Behind Your Website',
-    'Critchfield Systems is a one-person web studio for small businesses. You get one point of contact, honest pricing and a website that actually works for you.') + f'''
+    'I&rsquo;m Clayton Critchfield. Critchfield Systems is my one-person web studio for small businesses. You get one point of contact, honest pricing and a website that actually works for you.') + f'''
 <!-- ============================================ -->
 <!--                    Story                     -->
 <!-- ============================================ -->
 <section id="sbsr-99">
     <div class="cs-container">
         <picture class="cs-picture">
-            <!-- Swap for the owner photo: assets/owner.jpg -->
-            <img loading="lazy" decoding="async" src="assets/portrait-placeholder.svg" alt="" width="500" height="552" aria-hidden="true">
+            <img loading="lazy" decoding="async" src="assets/clayton-portrait.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="500" height="552">
         </picture>
         <div class="cs-content">
             <span class="cs-topper">My Story</span>
             <h2 class="cs-title">Why I Started Critchfield Systems</h2>
             <p class="cs-text">
-                Too many good small businesses are stuck with no website, an outdated one, or a do-it-yourself builder they never have time to update. Agencies quote thousands of dollars up front and disappear after launch. I started Critchfield Systems to fix that: a professional website, kept fast and up to date, for one flat monthly price.
+                Hi, I'm Clayton Critchfield. Too many good small businesses are stuck with no website, an outdated one, or a do-it-yourself builder they never have time to update. Agencies quote thousands of dollars up front and disappear after launch. I started Critchfield Systems to fix that: a professional website, kept fast and up to date, for one flat monthly price.
             </p>
             <p class="cs-text">
                 I keep it simple on purpose. You call or text, I do the work, and you get back to running your business.
@@ -1112,8 +1120,8 @@ ABOUT_BODY = hero_493('About', 'The Person Behind Your Website',
 <section id="locations-1844" aria-labelledby="service-area-title">
     <div class="cs-area-intro" id="service-area">
         <span class="cs-topper">Service Area</span>
-        <h2 class="cs-title" id="service-area-title">Serving Small Businesses Anywhere in the U.S.</h2>
-        <p class="cs-text">Everything happens by phone, text and email, so where you are doesn't matter. If you can send a text, I can build your website.</p>
+        <h2 class="cs-title" id="service-area-title">All of the U.S., Fully Remote</h2>
+        <p class="cs-text">I work with small businesses in every state. Everything happens by phone, text and email, so where you are doesn&rsquo;t matter.</p>
     </div>
     <div class="cs-container">
         <ul class="cs-card-group">
@@ -1143,10 +1151,10 @@ ABOUT_BODY = hero_493('About', 'The Person Behind Your Website',
             </li>
             <li class="cs-item">
                 <h3 class="cs-h3">
-                    Phone &amp; Text First
+                    Call, Text or Email
                 </h3>
                 <p class="cs-item-text">
-                    {PHONE_DISPLAY}
+                    {PHONE_DISPLAY}<br>{EMAIL}
                 </p>
             </li>
         </ul>
@@ -1188,7 +1196,7 @@ CONTACT_OVR = HERO_493_OVR + """
 """
 
 CONTACT_BODY = hero_493('Contact', "Call or Text. I'll Take It from There.",
-    f'The fastest way to get your website started is a quick call or text to <a href="{TEL}">{PHONE_DISPLAY}</a>. No forms, no waiting on a sales team.') + f'''
+    f'The fastest way to get your website started is a quick call or text to <a href="{TEL}">{PHONE_DISPLAY}</a>, or email <a href="mailto:{EMAIL}">{EMAIL}</a>. No forms, no waiting on a sales team.') + f'''
 <!-- ============================================ -->
 <!--               Contact Cards                  -->
 <!-- ============================================ -->
@@ -1219,8 +1227,8 @@ CONTACT_BODY = hero_493('Contact', "Call or Text. I'll Take It from There.",
             </picture>
             <div class="cs-flex-group">
                 <span class="cs-header">Service Area</span>
-                <span class="cs-hours">Small businesses</span>
-                <span class="cs-hours">anywhere in the U.S.</span>
+                <span class="cs-hours">All of the U.S.</span>
+                <span class="cs-hours">Fully remote</span>
             </div>
         </li>
     </ul>
@@ -1313,7 +1321,7 @@ write('js/faq.js', FAQ_JS)
 D = 'Critchfield Systems builds professional 5-page websites for small businesses for $99/month: hosting, SSL, unlimited small edits and a PageSpeed guarantee. Live in 48 hours, no contract.'
 write('index.html', page('index.html', 'Small Business Websites for $99/Month | Critchfield Systems', D, 'home.css', HOME_BODY, faq=True))
 write('pricing.html', page('pricing.html', 'Pricing: $99/Month, No Contract | Critchfield Systems', 'One simple plan: a 5-page website, hosting, SSL, unlimited small edits and a PageSpeed guarantee for $99/month. No contract, cancel anytime.', 'pricing.css', PRICING_BODY, faq=True))
-write('about.html', page('about.html', 'About | Critchfield Systems', 'Critchfield Systems is a one-person web studio building fast, affordable websites for small businesses anywhere in the U.S.', 'about.css', ABOUT_BODY))
+write('about.html', page('about.html', 'About | Critchfield Systems', 'Critchfield Systems is a one-person web studio building fast, affordable websites for small businesses across the U.S., fully remote.', 'about.css', ABOUT_BODY))
 write('contact.html', page('contact.html', 'Contact | Critchfield Systems', f'Call or text {PHONE_DISPLAY} to get your $99/month small business website started. Live within 48 hours.', 'contact.css', CONTACT_BODY, faq=True))
 
 write('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')

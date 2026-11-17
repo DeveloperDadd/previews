@@ -54,5 +54,5 @@ SVG backgrounds are adapted from `backgrounds/background6` (waves) and `backgrou
 
 ## Owner photo
 
-The About sections use `assets/portrait-placeholder.svg`. Drop the photo in `assets/`
-and swap the `src` in the `sbsr-333` (Home) and `sbsr-99` (About) sections.
+`assets/clayton-square.webp` (Home about circle) and `assets/clayton-portrait.webp` (About story).
+Location data from the original photo was stripped.
