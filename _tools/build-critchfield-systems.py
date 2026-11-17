@@ -10,9 +10,9 @@ COMP = os.path.join(sys.argv[1] if len(sys.argv) > 1 else '../components', 'sect
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'critchfield-systems')
 
 # ---------------------------------------------------------------- contact
-PHONE_DISPLAY = '(555) 555-0123'      # TODO: real number
-PHONE_E164 = '+15555550123'           # TODO: real number
-EMAIL = 'hello@critchfieldsystems.com'  # TODO: confirm inbox
+PHONE_DISPLAY = '(859) 270-7050'
+PHONE_E164 = '+18592707050'
+EMAIL = 'critchfieldsystems@gmail.com'
 TEL = f'tel:{PHONE_E164}'
 SMS = f'sms:{PHONE_E164}'
 SITE = 'https://critchfieldsystems.com'
