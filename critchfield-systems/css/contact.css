@@ -1,0 +1,595 @@
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-493 {
+        /* Centers button */
+        text-align: center;
+        /* 200px - 300px - leaving extra space for the navigation */
+        padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
+        padding-bottom: 12.5rem;
+        /* prevents the topper line from causing an overflow */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    #hero-493 .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    #hero-493 .cs-background:before {
+        /* Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #001f3f;
+        opacity: 0.7;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+    }
+    #hero-493 .cs-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    #hero-493 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* changes at tablet */
+        gap: 3rem;
+    }
+    #hero-493 .cs-content {
+        width: 100%;
+        max-width: 39.375rem;
+    }
+    #hero-493 .cs-topper {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.2em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: #fff;
+        display: inline-block;
+        position: relative;
+    }
+    #hero-493 .cs-topper:before {
+        /* left yellow line */
+        content: "";
+        /* 70px - 100px */
+        width: clamp(4.375rem, 5vw, 6.25rem);
+        height: 2px;
+        margin-right: 1.75rem;
+        background: var(--primary);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+    }
+    #hero-493 .cs-topper:after {
+        /* right yellow line */
+        content: "";
+        /* 70px - 100px */
+        width: clamp(4.375rem, 5vw, 6.25rem);
+        height: 2px;
+        margin-left: 1.75rem;
+        background: var(--primary);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+    }
+    #hero-493 .cs-title {
+        /* 39px - 61px */
+        font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-align: center;
+        max-width: 51.8125rem;
+        /* 16px - 24px */
+        margin: 0 auto clamp(1rem, 4vw, 1.5rem) 0;
+        color: #fff;
+        position: relative;
+    }
+    #hero-493 .cs-text {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 1.95vw, 1.25rem);
+        line-height: 1.5em;
+        text-align: center;
+        width: 100%;
+        /* 464px - 622px */
+        max-width: clamp(29rem, 60vw, 38.785rem);
+        margin: 0 auto 0;
+        margin-bottom: 2.25rem;
+        color: #fff;
+    }
+    #hero-493 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #1a1a1a;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #hero-493 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #hero-493 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+
+/*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #contact-strip-324 {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+    }
+    #contact-strip-324 .cs-stat-group {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: 37.5rem;
+        margin: auto;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    #contact-strip-324 .cs-item {
+        list-style: none;
+        width: 18.125rem;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contact-strip-324 .cs-item:hover .cs-picture {
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transform: scale(1.05);
+    }
+    #contact-strip-324 .cs-picture {
+        width: 5rem;
+        height: 5rem;
+        /* 12px - 20px */
+        margin-right: clamp(0.75rem, 3vw, 1.25rem);
+        border-radius: 50%;
+        border: 1px solid #bababa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* prevents flexbox from squishing it */
+        flex: none;
+        transition:
+            background-color 0.3s,
+            box-shadow 0.3s,
+            transform 0.6s;
+    }
+    #contact-strip-324 .cs-flex-group {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    #contact-strip-324 .cs-icon {
+        width: 1.75rem;
+        height: auto;
+    }
+    #contact-strip-324 .cs-header {
+        font-size: 1.25rem;
+        color: var(--headerColor);
+        font-weight: 900;
+        line-height: 1.2em;
+        margin: 0;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+    #contact-strip-324 .cs-link,
+    #contact-strip-324 .cs-hours {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-decoration: none;
+        color: #767676;
+        display: block;
+    }
+    #contact-strip-324 .cs-link:hover {
+        text-decoration: underline;
+    }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+    #contact-strip-324 .cs-stat-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+        row-gap: 2rem;
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #contact-strip-324 .cs-stat-group {
+        max-width: 80rem;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Process           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #process-687 {
+    padding: var(--sectionPadding);
+    /* Centers button */
+    text-align: center;
+    background-color: var(--primary);
+    position: relative;
+    z-index: 1;
+  }
+  #process-687 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #process-687 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #process-687 .cs-title,
+  #process-687 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #process-687 .cs-text {
+    opacity: .8;
+  }
+  #process-687 .cs-card-group {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 1.25rem;
+    row-gap: 2.5rem;
+  }
+  #process-687 .cs-item {
+    list-style: none;
+    width: 100%;
+    max-width: 25.8125rem;
+  }
+  #process-687 .cs-picture {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    background-color: #fdfaf8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #process-687 .cs-icon {
+    width: auto;
+    height: 2.375rem;
+    display: block;
+  }
+  #process-687 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 3vw, 1.5625rem);
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+  #process-687 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+  }
+  #process-687 .cs-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.02;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #process-687 .cs-card-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-1263 {
+        padding: var(--sectionPadding);
+        background-color: #14142b;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    #faq-1263 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* 40px - 48px */
+        gap: clamp(2.5rem, 5vw, 3rem);
+    }
+    #faq-1263 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #faq-1263 .cs-title {
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+    }
+    #faq-1263 .cs-faq-group {
+        width: 100%;
+        max-width: 52.875rem;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* 16px - 20px */
+        gap: clamp(1rem, 2.4vw, 1.25rem);
+    }
+    #faq-1263 .cs-faq-item {
+        list-style: none;
+        width: 100%;
+        background-color: #303044;
+        border-radius: 0.5rem;
+        padding: 0;
+        box-sizing: border-box;
+        transition: border-bottom 0.3s;
+    }
+    #faq-1263 .cs-faq-item.active .cs-button {
+        color: var(--primary);
+    }
+    #faq-1263 .cs-faq-item.active .cs-button:before {
+        background-color: var(--primary);
+        transform: rotate(315deg);
+    }
+    #faq-1263 .cs-faq-item.active .cs-button:after {
+        background-color: var(--primary);
+        transform: rotate(-315deg);
+    }
+    #faq-1263 .cs-faq-item.active .cs-item-p {
+        height: auto;
+        margin-top: 0.75rem;
+        /* 16px - 24px */
+        padding-top: 0.75rem;
+        padding-bottom: 1.5rem;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+    }
+    #faq-1263 .cs-faq-item.active .cs-item-p:before {
+        /* border top */
+        content: "";
+        height: 1px;
+        background: #7d799c;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    #faq-1263 .cs-button {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.2em;
+        text-align: left;
+        font-weight: bold;
+        width: 100%;
+        padding: 1.5rem 1.5rem 0;
+        border: none;
+        background: transparent;
+        color: var(--bodyTextColorWhite);
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        /* 16px - 24px */
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        position: relative;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+    #faq-1263 .cs-button:hover {
+        cursor: pointer;
+    }
+    #faq-1263 .cs-button:before {
+        /* left line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--bodyTextColorWhite);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 67%;
+        right: 1.1875rem;
+        transform: rotate(45deg);
+        /* animate the transform from the left side of the x axis, and the center of the y */
+        transform-origin: left center;
+        transition: transform 0.5s;
+    }
+    #faq-1263 .cs-button:after {
+        /* right line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--bodyTextColorWhite);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 67%;
+        right: 1rem;
+        transform: rotate(-45deg);
+        /* animate the transform from the right side of the x axis, and the center of the y */
+        transform-origin: right center;
+        transition: transform 0.5s;
+    }
+    #faq-1263 .cs-button-text {
+        width: 90%;
+        padding: 0;
+        display: block;
+    }
+    #faq-1263 .cs-item-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        width: 100%;
+        height: 0;
+        margin: 0;
+        /* 16px - 24px */
+        padding: 0 1.5rem 1.5rem;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        opacity: 0;
+        color: var(--bodyTextColor);
+        /* clips the text so it doesn't show up */
+        overflow: hidden;
+        position: relative;
+        transition:
+            opacity 0.3s,
+            padding-bottom 0.3s,
+            padding-top 0.3s;
+    }
+    #faq-1263 .cs-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #faq-1263 .cs-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* ---- Critchfield Systems brand overrides ---- */
+
+#hero-493 .cs-background:before { background: var(--deep); opacity: 0.35; }
+#hero-493 .cs-topper:before, #hero-493 .cs-topper:after { background: var(--primaryLight); }
+#hero-493 .cs-text a { color: #fff; font-weight: 700; }
+
+/* contact cards */
+#contact-strip-324 { background-color: var(--ice); }
+#contact-strip-324 .cs-item { box-shadow: 0 1rem 2rem -1rem rgba(11, 35, 80, .3); }
+#contact-strip-324 .cs-header { color: var(--primary); font-weight: 700; }
+#contact-strip-324 .cs-link { color: var(--headerColor); font-weight: 600; overflow-wrap: anywhere; }
+#contact-strip-324 .cs-flex-group { min-width: 0; }
+#contact-strip-324 .cs-hours { color: var(--bodyTextColor); }
+#contact-strip-324 .cs-icon { width: 2.25rem; height: auto; }
+/* what happens next - blue band (10% accent used as a single band) */
+#process-687 { background-color: var(--primary); }
+#process-687 .cs-topper { color: #fff; opacity: .9; }
+#process-687 .cs-title, #process-687 .cs-text { color: #fff; }
+#process-687 .cs-picture { background-color: #fff; box-shadow: 0 1rem 2rem -0.75rem rgba(6, 22, 51, .5); }
+#process-687 .cs-background { opacity: 1; }
+/* short faq - navy (30%) */
+#faq-1263 { background-color: var(--secondary); }
+#faq-1263 .cs-topper { color: var(--primaryLight); }
+#faq-1263 .cs-faq-item { background-color: rgba(255, 255, 255, .06); }
+#faq-1263 .cs-faq-item.active .cs-button { color: var(--primaryLight); }
+#faq-1263 .cs-item-p a { color: var(--primaryLight); font-weight: 700; }

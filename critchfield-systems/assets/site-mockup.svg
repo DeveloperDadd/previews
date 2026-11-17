@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 418" width="590" height="418"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0070D3"/><stop offset="1" stop-color="#0B2350"/></linearGradient><linearGradient id="hb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0B2350"/><stop offset="1" stop-color="#0070D3"/></linearGradient><filter id="s" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter></defs>
+<rect width="590" height="418" fill="url(#bg)"/>
+<g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2"><circle cx="560" cy="30" r="40"/><circle cx="560" cy="30" r="80"/><circle cx="560" cy="30" r="120"/><circle cx="560" cy="30" r="160"/><circle cx="560" cy="30" r="200"/><circle cx="560" cy="30" r="240"/><circle cx="560" cy="30" r="280"/><circle cx="560" cy="30" r="320"/><circle cx="560" cy="30" r="360"/><circle cx="560" cy="30" r="400"/><circle cx="560" cy="30" r="440"/><circle cx="560" cy="30" r="480"/><circle cx="560" cy="30" r="520"/><circle cx="560" cy="30" r="560"/></g>
+<g filter="url(#s)"><rect x="48" y="52" width="400" height="300" rx="14" fill="#fff"/></g>
+<rect x="48" y="52" width="400" height="34" rx="14" fill="#E8EEF6"/><rect x="48" y="72" width="400" height="14" fill="#E8EEF6"/>
+<circle cx="70" cy="69" r="5" fill="#ff5f57"/><circle cx="86" cy="69" r="5" fill="#febc2e"/><circle cx="102" cy="69" r="5" fill="#28c840"/>
+<rect x="124" y="61" width="240" height="16" rx="8" fill="#fff"/><text x="136" y="73" font-family="Arial,sans-serif" font-size="10" fill="#0070D3">&#128274; yourbusiness.com</text>
+<rect x="64" y="100" width="368" height="104" rx="8" fill="url(#hb)"/>
+<rect x="82" y="122" width="170" height="14" rx="4" fill="#fff"/><rect x="82" y="144" width="130" height="10" rx="4" fill="#fff" opacity=".6"/>
+<rect x="82" y="170" width="84" height="22" rx="4" fill="#22C3FF"/>
+<rect x="64" y="216" width="114" height="70" rx="8" fill="#F1F5FA"/><rect x="191" y="216" width="114" height="70" rx="8" fill="#F1F5FA"/><rect x="318" y="216" width="114" height="70" rx="8" fill="#F1F5FA"/>
+<circle cx="84" cy="236" r="9" fill="#0070D3" opacity=".85"/><circle cx="211" cy="236" r="9" fill="#0070D3" opacity=".85"/><circle cx="338" cy="236" r="9" fill="#0070D3" opacity=".85"/>
+<rect x="76" y="254" width="80" height="7" rx="3" fill="#C9D5E5"/><rect x="203" y="254" width="80" height="7" rx="3" fill="#C9D5E5"/><rect x="330" y="254" width="80" height="7" rx="3" fill="#C9D5E5"/>
+<rect x="76" y="267" width="60" height="7" rx="3" fill="#DCE5F0"/><rect x="203" y="267" width="60" height="7" rx="3" fill="#DCE5F0"/><rect x="330" y="267" width="60" height="7" rx="3" fill="#DCE5F0"/>
+<rect x="64" y="298" width="368" height="40" rx="8" fill="#F1F5FA"/>
+<g filter="url(#s)"><rect x="400" y="150" width="142" height="236" rx="20" fill="#061633"/></g>
+<rect x="408" y="166" width="126" height="206" rx="12" fill="#fff"/>
+<rect x="416" y="176" width="110" height="64" rx="6" fill="url(#hb)"/><rect x="424" y="190" width="70" height="9" rx="3" fill="#fff"/><rect x="424" y="206" width="50" height="7" rx="3" fill="#fff" opacity=".6"/><rect x="424" y="220" width="40" height="12" rx="3" fill="#22C3FF"/>
+<rect x="416" y="250" width="110" height="34" rx="6" fill="#F1F5FA"/><rect x="416" y="292" width="110" height="34" rx="6" fill="#F1F5FA"/>
+<rect x="416" y="336" width="110" height="26" rx="13" fill="#0070D3"/><text x="471" y="353" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff">CALL NOW</text>
+</svg>
