@@ -1,0 +1,441 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-559 {
+        padding: var(--sectionPadding);
+        /* 137px - 212px */
+        padding-top: clamp(8.5625rem, 25vw, 13.25rem);
+        /* clips the line from causing overflow issues for going off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    #banner-559 .cs-container {
+        text-align: center;
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #banner-559 .cs-int-topper {
+        font-size: var(--topperFontSize);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        margin: 0;
+        padding: 0 0 0 1.25rem;
+        color: var(--bodyTextColorWhite);
+        display: block;
+        position: relative;
+    }
+    #banner-559 .cs-int-topper:before {
+        /* yellow line */
+        content: "";
+        width: 50vw;
+        height: 2px;
+        background: var(--secondary);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+    }
+    #banner-559 .cs-int-title {
+        /* 39px - 61px */
+        font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+        position: relative;
+    }
+    #banner-559 .cs-breadcrumbs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner-559 .cs-link {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.2em;
+        text-decoration: none;
+        color: var(--bodyTextColorWhite);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner-559 .cs-link:last-of-type {
+        /* remove the chevron on the last list item */
+    }
+    #banner-559 .cs-link:last-of-type::after {
+        display: none;
+    }
+    #banner-559 .cs-link:after {
+        /* chevron - added as pseudo to make adding and removing them easier */
+        content: "";
+        width: 1.875rem;
+        height: 0.125rem;
+        /* 12px - 24px */
+        margin: 0 clamp(0.75rem, 2vw, 1.5rem);
+        background-color: #fff;
+    }
+    #banner-559 .cs-link.cs-active {
+        color: var(--secondary);
+    }
+    #banner-559 .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #banner-559 .cs-background:before {
+        /* background color overlay */
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: var(--primary);
+        opacity: 0.9;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #banner-559 .cs-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* Makes img tag act as a background image */
+        object-fit: cover;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-45 {
+        padding: var(--sectionPadding);
+        position: relative;
+        /* Prevents overflow from the image going off screen */
+        overflow: hidden;
+    }
+    #gallery-45 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #gallery-45 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #gallery-45 .cs-image-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 16px - 20px */
+        gap: clamp(1rem, 1.5vw, 1.25rem);
+    }
+    #gallery-45 .cs-item {
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1;
+        margin: 0;
+        position: relative;
+        display: block;
+    }
+    #gallery-45 .cs-item:hover .cs-hover-box {
+        opacity: 1;
+    }
+    #gallery-45 .cs-item:hover .cs-icon {
+        /* return to original position */
+        transform: rotateY(0);
+    }
+    #gallery-45 .cs-item:hover .cs-h3 {
+        opacity: 1;
+        /* Return to original position */
+        transform: translateY(0);
+    }
+    #gallery-45 .cs-item:hover .cs-hover-box-text {
+        opacity: 1;
+        /* Return to original position */
+        transform: translateY(0);
+    }
+    #gallery-45 .cs-picture {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+    #gallery-45 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    #gallery-45 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #gallery-45 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #gallery-45 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* In Between - 600px */
+@media only screen and (min-width: 37.5rem) {
+    #gallery-45 .cs-image-group {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+    }
+    #gallery-45 .cs-item {
+        grid-column: span 6;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #gallery-45 .cs-item {
+        grid-column: span 3;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-377 {
+        padding: var(--sectionPadding);
+    }
+    #gallery-377 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #gallery-377 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #gallery-377 .cs-gallery {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* 16px - 20px */
+        gap: clamp(1rem, 1.5vw, 1.25rem);
+    }
+    #gallery-377 .cs-item {
+        list-style: none;
+        width: 100%;
+        max-width: 21.875rem;
+        position: relative;
+    }
+    #gallery-377 .cs-image {
+        border-radius: 1.25rem;
+        width: 100%;
+        /* clips the image corners */
+        overflow: hidden;
+        aspect-ratio: 1.09333333;
+        display: block;
+        position: relative;
+    }
+    #gallery-377 .cs-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* makes it act like a background image */
+        object-fit: cover;
+    }
+    #gallery-377 .cs-hover-box {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 124, 251, 0.12);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 10;
+    }
+    #gallery-377 .cs-icon {
+        /* 40px - 72px */
+        width: clamp(2.5rem, 9.4vw, 4.5rem);
+        height: clamp(2.5rem, 9.4vw, 4.5rem);
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* pushes to the right */
+        order: 1;
+    }
+    #gallery-377 .cs-icon img {
+        /* 16px - 24px */
+        width: clamp(1rem, 3vw, 1.5rem);
+        height: auto;
+    }
+    #gallery-377 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin: 0;
+        color: #fff;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #gallery-377 .cs-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #gallery-377 .cs-item {
+        width: 48.5%;
+    }
+    #gallery-377 .cs-item:hover .cs-hover-box {
+        opacity: 1;
+    }
+    #gallery-377 .cs-item:hover .cs-icon,
+    #gallery-377 .cs-item:hover .cs-h3 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    #gallery-377 .cs-hover-box {
+        height: auto;
+        opacity: 0;
+        top: 1.5rem;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+        /* prevents the mouse from interacting with it */
+        pointer-events: none;
+        transition: opacity 0.6s;
+    }
+    #gallery-377 .cs-icon {
+        opacity: 0;
+        /* reset the order */
+        order: initial;
+        /* send it 10px up to animate from on hover */
+        transform: translateY(-0.625rem);
+        transition:
+            transform 0.6s,
+            opacity 0.6s;
+    }
+    #gallery-377 .cs-h3 {
+        opacity: 0;
+        /* send it 10px down to animate from on hover */
+        transform: translateY(0.625rem);
+        transition:
+            transform 0.6s,
+            opacity 0.6s;
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #gallery-377 .cs-item {
+        width: 23.7%;
+    }
+    #gallery-377 .cs-image {
+        /* 300px - 400px */
+        height: clamp(18.75rem, 30vw, 25rem);
+        aspect-ratio: 1;
+    }
+}
+
+/* ---- brand overrides ---- */
+
+#banner-559 .cs-background:before { background: var(--olive); opacity: .8; }
+#banner-559 .cs-int-topper { color: var(--sageMid); }
+#banner-559 .cs-link.cs-active { color: var(--sageMid); }
+
+#gallery-45 { background-color: #fff; }
+#gallery-377 { background-color: var(--sage); }
+#gallery-377 .cs-topper { color: var(--olive); }
+#gallery-377 .cs-content .cs-text { color: var(--olive); font-weight: 600; }
+#gallery-377 .cs-hover-box { background-color: rgba(59, 64, 19, .82); }

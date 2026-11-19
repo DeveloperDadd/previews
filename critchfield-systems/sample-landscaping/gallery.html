@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Gallery | Hollow Creek Lawn &amp; Landscape</title>
+    <meta name="description" content="Hollow Creek Lawn &amp; Landscape is a sample landscaping website built by Critchfield Systems.">
+    <!-- Sample site: kept out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#3B4013">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+<a class="cs-skip" href="#main">Skip to content</a>
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-top-bar">
+        <div class="cs-top-container">
+            <!--Nav Logo-->
+            <a href="index.html" class="cs-logo" aria-label="Return to Hollow Creek Lawn &amp; Landscape home page">
+                <img src="assets/logo.svg" alt="Hollow Creek Lawn &amp; Landscape" width="250" height="52" decoding="async">
+            </a>
+            <div class="cs-contact-group">
+                <a class="cs-contact-link" href="tel:+18595550168">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/phone-brown.svg" alt="" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Call Us Today</span>
+                        <span class="cs-link-content">(859) 555-0168</span>
+                    </div>
+                </a>
+                <a class="cs-contact-link cs-demo" href="https://critchfieldsystems.com">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/star-brown.svg" alt="" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Sample Website</span>
+                        <span class="cs-link-content">Built by Critchfield Systems. Get yours for $99/mo</span>
+                    </div>
+                </a>
+                <a href="tel:+18595550168" class="cs-button-2">Call Now</a>
+            </div>
+            <!--Dark Mode toggle-->
+            <!--<button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true">
+                    <path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" />
+                </svg>
+                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="" width="15" height="15">
+            </button>-->
+        </div>
+    </div>
+    <!--Wrapped the bottom container in a wrapper div so we can have a full width background color, and centered the container inside of it-->
+    <div class="cs-bottom-bar">
+        <div class="cs-container">
+            <!--Navigation List-->
+            <nav class="cs-nav" aria-label="main navigation">
+                <!--Mobile Nav Toggle-->
+                <button class="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                    <span class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1"></span>
+                        <span class="cs-line cs-line2"></span>
+                        <span class="cs-line cs-line3"></span>
+                    </span>
+                </button>
+                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a href="index.html" class="cs-li-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="about.html" class="cs-li-link">
+                                About
+                            </a>
+                        </li>
+                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                        <!-- Note: When copying this dropdown, update the id attribute with an appropriate name (e.g., "products-dropdown-toggle", "about-dropdown-toggle") and ensure the aria-labelledby attribute on the ul matches the button's id -->
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="services-dropdown" id="services-dropdown-toggle">
+                                Services
+                                <img class="cs-drop-icon" src="assets/icons/chevron-sage.svg" alt="" width="15" height="15" decoding="async" aria-hidden="true">
+                            </button>
+                            <ul class="cs-drop-ul" id="services-dropdown" aria-labelledby="services-dropdown-toggle">
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Lawn Care &amp; Mowing</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Landscape Design</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Hardscapes &amp; Patios</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#faq" class="cs-li-link cs-drop-link">Service FAQ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cs-li">
+                            <a href="gallery.html" class="cs-li-link cs-active" aria-current="page">
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="contact.html" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="services.html#faq" class="cs-li-link">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <a class="cs-call" href="tel:+18595550168">
+                <picture class="cs-wrapper">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/phone-olive.svg" alt="" width="24" height="24" aria-hidden="true">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-header">Free Estimates</span>
+                    <span class="cs-link-content">(859) 555-0168</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main id="main">
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-559">
+    <div class="cs-container">
+        <span class="cs-int-topper">Our Work</span>
+        <h1 class="cs-int-title">Project Gallery</h1>
+        <div class="cs-breadcrumbs">
+            <a href="index.html" class="cs-link">Home</a>
+            <a href="#main" class="cs-link cs-active" aria-current="page">Gallery</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Hero/dna-m.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Hero/dna.jpg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house2.jpg" alt="" width="1280" height="568" aria-hidden="true">
+    </picture>
+</div>
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-45">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Finished Properties</span>
+            <h2 class="cs-title">Recent Projects Around Lexington</h2>
+            <p class="cs-text">
+                Full yard renovations and ongoing maintenance from the past few seasons. Your property could be next.
+            </p>
+        </div>
+        <ul class="cs-image-group">
+            <!-- Image 1 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house1.jpg" alt="Front yard with fresh landscaping" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 2 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house2.jpg" alt="Modern home with new lawn" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 3 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/house3.jpg" alt="Landscaped front entry" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 4 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house4.jpg" alt="Backyard with new plantings" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 5 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house5.jpg" alt="Evening view of a landscaped home" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 6 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house6.jpg" alt="Finished front lawn and beds" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 7 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/house4.jpg" alt="Home with trimmed hedges" width="346" height="346">
+                    </picture>
+            </li>
+            <!-- Image 8 -->
+            <li class="cs-item">
+                <picture class="cs-picture">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/house5.jpg" alt="Front yard renovation" width="346" height="346">
+                    </picture>
+            </li>
+        </ul>
+        <a href="tel:+18595550168" class="cs-button-2">Call Now</a>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-377">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Up Close</span>
+            <h2 class="cs-title">The Details Make the Difference</h2>
+            <p class="cs-text">
+                Clean edges, healthy plants and stonework that lasts. Hover over a photo to see the service behind it.
+            </p>
+        </div>
+        <div class="cs-gallery">
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Planting</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Services/leaf.jpg" alt="Healthy shrub foliage" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Lawn Care</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Services/grass.jpg" alt="Thick green lawn" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Garden Beds</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Services/leaves.jpg" alt="Layered garden plants" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Walkways</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Services/path.jpg" alt="Stone garden path" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Sod Install</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/grass2.jpg" alt="New sod" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Ornamental Grasses</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/tall-grass.jpg" alt="Ornamental grass planting" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Garden Design</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/landscaping1.jpg" alt="Raised garden bed" width="305" height="400">
+                </picture>
+            </a>
+            <a class="cs-item" href="services.html#services">
+                <div class="cs-hover-box">
+                    <picture class="cs-icon" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/icons/arrow-white.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Hardscapes</h3>
+                </div>
+                <picture class="cs-image">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FLandscapes%2Frocks.jpg" alt="Natural stone accents" width="305" height="400">
+                </picture>
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-1294">
+    <div class="cs-container">       
+        <!-- Subscribe Form -->
+        <div id="cta-1294">
+            <div class="cs-content">
+                <h2 class="cs-title">Call today for a free estimate. Let&rsquo;s build the yard you&rsquo;ve been dreaming about.</h2>
+                <a href="tel:+18595550168" class="cs-button-2">Call Now</a>
+            </div>
+            <!--Background Image-->
+            <picture class="cs-background">
+                <source media="(max-width: 600px)" srcset="assets/cta-waves.svg">
+                <source media="(min-width: 601px)" srcset="assets/cta-waves.svg">
+                <img loading="lazy" decoding="async" src="assets/cta-waves.svg" alt="" width="1280" height="278" aria-hidden="true">
+            </picture>
+        </div>                
+        <div class="cs-wrapper">
+            <!-- Logo Group -->
+            <div class="cs-logo-group">
+                <a aria-label="go back to home" class="cs-logo" href="index.html">
+                    <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="assets/logo-light.svg" alt="Hollow Creek Lawn &amp; Landscape" width="250" height="52">
+                </a>
+                <p class="cs-text">
+                    Family-owned lawn care, landscape design and hardscaping for Central Kentucky homes since 2009.
+                </p>
+                <a href="mailto:office@hollowcreek.example" class="cs-link">
+                    <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/icons/mail-sage.svg" alt="" width="24" height="24">
+                    office@hollowcreek.example
+                </a>
+            </div>
+            <!-- Links -->
+            <ul class="cs-nav">
+                <li class="cs-nav-li">
+                    <span class="cs-header">Services</span>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="services.html#services">Lawn Care</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="services.html#services">Landscape Design</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="services.html#services">Hardscapes</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="services.html#services">Seasonal Cleanups</a>
+                </li>
+            </ul>
+            <ul class="cs-nav">
+                <li class="cs-nav-li">
+                    <span class="cs-header">About</span>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="about.html">Our Story</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="about.html#why">Why Hollow Creek</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="about.html#reviews">Reviews</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="gallery.html">Project Gallery</a>
+                </li>
+            </ul>
+            <ul class="cs-nav">
+                <li class="cs-nav-li">
+                    <span class="cs-header">Get in Touch</span>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="tel:+18595550168">Call (859) 555-0168</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="mailto:office@hollowcreek.example">Email Us</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="contact.html">Service Area</a>
+                </li>
+            </ul>
+            <ul class="cs-nav">
+                <li class="cs-nav-li">
+                    <span class="cs-header">Help</span>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="services.html#faq">FAQ</a>
+                </li>
+                <li class="cs-nav-li">
+                    <a class="cs-nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cs-bottom">
+        <span class="cs-copyright">&copy; <span id="cs-year">2026</span> 
+            <a class="cs-copyright-link" href="index.html">Hollow Creek Lawn &amp; Landscape.</a>
+            Sample site by <a class="cs-copyright-link cs-cs" href="https://critchfieldsystems.com">Critchfield Systems</a>.
+        </span>
+        <a href="services.html#faq" class="cs-copyright-link">FAQ</a>
+        <a href="contact.html" class="cs-copyright-link">Contact</a>
+    </div>
+    <!--Floating Cirlces-->
+    <div class="cs-floater-wrapper">
+        <div class="cs-floater" aria-hidden="true"></div>
+    </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+<script src="js/year.js" defer></script>
+</body>
+</html>

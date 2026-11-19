@@ -76,3 +76,21 @@ Photos are the placeholder photos that ship with the components (CodeStitch imag
 listed in the `IMG` table at the top of the build script. Pages are `noindex` and the phone
 number is a 555 number. There are no forms: every button is the same `.cs-button-4` "Call Now"
 button linking to the phone number (the build enforces this).
+
+## Landscaping sample (`/sample-landscaping/`)
+
+`critchfield-systems/sample-landscaping/` is a five-page demo for a fictional landscaping company,
+"Hollow Creek Lawn & Landscape", built by `_tools/build-sample-landscaping.py`. Palette (60-30-10):
+sage `#9DA65D` and its light tints, olive `#3B4013`, brown `#402C1A`. None of its sections are
+reused from the roofing sample:
+
+| Page | Sections |
+| --- | --- |
+| All | nav-1343 (top row carries the demo notice), footer-1294, button2 |
+| Home | hero-445, services-447, about-457, stats-479, reviews-510, stats-16 |
+| About | page-banner-559, about-466, why-choose-us-1631, reviews-2418 |
+| Services | page-banner-559, services-1131, steps-2128, faq-709, stats-16 |
+| Gallery | page-banner-559, gallery-45, gallery-377 |
+| Contact | page-banner-559, contact-325, steps-1172, locations-720 |
+
+Same rules as the roofing sample: noindex, 555 number, no forms, every button is "Call Now".
