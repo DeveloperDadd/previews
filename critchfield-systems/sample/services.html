@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roofing Services &amp; Pricing | Keystone Ridge Roofing</title>
+    <meta name="description" content="Keystone Ridge Roofing is a sample roofing website built by Critchfield Systems.">
+    <!-- Sample site: kept out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1C2530">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+<a class="cs-skip" href="#main">Skip to content</a>
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-top-bar">
+        <div class="cs-top-container">
+            <div class="cs-top-contact">
+                <a href="tel:+18595550142" class="cs-top-link">
+                    <img class="cs-link-icon" src="assets/icons/phone-light.svg" alt="" width="16" height="16" aria-hidden="true" decoding="async">
+                    Call us: <strong>(859) 555-0142</strong>
+                </a>
+                <a href="https://critchfieldsystems.com" class="cs-top-link cs-demo-link">
+                    <img class="cs-link-icon" src="assets/icons/star-light.svg" alt="" width="20" height="20" aria-hidden="true" decoding="async">
+                    Sample website built by Critchfield Systems. Get yours for $99/month &rarr;
+                </a>
+            </div>
+            <!-- social links go here once the client has profiles
+<div class="cs-top-social">
+                <a href="" class="cs-social-link" aria-label="Facebook">
+                    <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/face-grey.svg" alt="" width="12" height="12" aria-hidden="true" decoding="async">
+                </a>
+                <a href="" class="cs-social-link" aria-label="Twitter">
+                    <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/twit-grey.svg" alt="" width="12" height="12" aria-hidden="true" decoding="async">
+                </a>
+                <a href="" class="cs-social-link" aria-label="Instagram">
+                    <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/insta-grey.svg" alt="" width="12" height="12" aria-hidden="true" decoding="async">
+                </a>
+            </div> -->
+        </div>
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="index.html" class="cs-logo" aria-label="Return to Keystone Ridge Roofing home page">
+            <img src="assets/logo.svg" alt="Keystone Ridge Roofing" width="230" height="48" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1"></span>
+                    <span class="cs-line cs-line2"></span>
+                    <span class="cs-line cs-line3"></span>
+                </span>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a href="index.html" class="cs-li-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="about.html" class="cs-li-link">
+                            About
+                        </a>
+                    </li>
+                    <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                    <!-- Note: When copying this dropdown, update the id attribute with an appropriate name (e.g., "services-dropdown-toggle", "products-dropdown-toggle") and ensure the aria-labelledby attribute on the ul matches the button's id -->
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle cs-active" aria-haspopup="menu" aria-expanded="false" id="services-dropdown-toggle">
+                            Services
+                            <img class="cs-drop-icon" src="assets/icons/chevron-dark.svg" alt="" width="15" height="15" decoding="async" aria-hidden="true">
+                        </button>
+                        <ul class="cs-drop-ul" aria-labelledby="services-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="services.html#services" class="cs-li-link cs-drop-link">Roof Replacement</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="services.html#services" class="cs-li-link cs-drop-link">Roof Repair</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="services.html#services" class="cs-li-link cs-drop-link">Storm Damage</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="services.html#pricing" class="cs-li-link cs-drop-link">Inspections &amp; Pricing</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="cs-li">
+                        <a href="gallery.html" class="cs-li-link">
+                            Gallery
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="contact.html" class="cs-li-link">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="tel:+18595550142" class="cs-button-4 cs-nav-button">Free Estimate</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!--<button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" /></svg>
+            <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="" width="15" height="15">
+        </button>-->
+    </div>
+</header>
+
+<main id="main">
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-2285">
+    <div class="cs-container">
+        <h1 class="cs-int-title">Roofing Services</h1>
+        <p class="cs-text">
+            Replacement, repair, storm damage and more, all backed by our 10-year workmanship warranty.
+        </p>
+        <div class="cs-breadcrumbs">
+            <a href="index.html" class="cs-link">Home</a>
+            <a href="#main" class="cs-link cs-active" aria-current="page">Services</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction11.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction11.jpg">
+        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction11.jpg" alt="" width="1280" height="568" aria-hidden="true" fetchpriority="high">
+    </picture>
+</div>
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-282">
+    <span id="services"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Services</span>
+            <h2 class="cs-title">Complete Roofing Services for Your Home</h2>
+            <p class="cs-text">
+                Whatever your roof needs, one call covers it. Every service starts with a free inspection and a written, itemized estimate.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Roof Replacement</h3>
+                    <p class="cs-item-text">
+                        Full tear-off and replacement with architectural shingles, synthetic underlayment and new flashing.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Roof Repair</h3>
+                    <p class="cs-item-text">
+                        Leaks, lifted or missing shingles, cracked boots and damaged flashing repaired quickly and cleanly.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Storm Damage Restoration</h3>
+                    <p class="cs-item-text">
+                        Hail and wind damage inspections, emergency tarping and full insurance claim support.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Metal Roofing</h3>
+                    <p class="cs-item-text">
+                        Standing seam and metal shingle systems built to last 50 years with little maintenance.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Gutters &amp; Ventilation</h3>
+                    <p class="cs-item-text">
+                        Seamless gutters, guards, ridge vents and attic ventilation that protect your roof from the inside out.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="contact.html">
+                    <h3 class="cs-h3">Inspections &amp; Maintenance</h3>
+                    <p class="cs-item-text">
+                        Free inspections with photos, plus yearly tune-ups that catch small problems before they leak.
+                    </p>
+                    <span class="cs-fake-link">Get an Estimate
+                        <!--Svg Arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_114)">
+                            <path d="M4.16667 10.8333H13.475L9.40833 14.9C9.08333 15.225 9.08333 15.7583 9.40833 16.0833C9.73333 16.4083 10.2583 16.4083 10.5833 16.0833L16.075 10.5917C16.4 10.2667 16.4 9.74167 16.075 9.41667L10.5917 3.91667C10.2667 3.59167 9.74167 3.59167 9.41667 3.91667C9.09167 4.24167 9.09167 4.76667 9.41667 5.09167L13.475 9.16667H4.16667C3.70833 9.16667 3.33333 9.54167 3.33333 10C3.33333 10.4583 3.70833 10.8333 4.16667 10.8333Z" fill="#92038B"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_114-282-282">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-2551">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What to Expect</span>
+            <h2 class="cs-title">Your Roof, Start to Finish</h2>
+            <p class="cs-text">
+                Most replacements take one to two days. You&rsquo;ll know the price, the schedule and the materials before we ever set up a ladder.
+            </p>
+            <a href="tel:+18595550142" class="cs-button-4">Book a Free Inspection</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">01</span>
+                </div>
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Free Inspection &amp; Estimate</h3>
+                    <p class="cs-item-text">
+                        We inspect your roof, show you photos of what we find, and give you a written, itemized estimate. No pressure, no obligation.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">02</span>
+                </div>
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Scheduling &amp; Installation</h3>
+                    <p class="cs-item-text">
+                        We order materials, protect your landscaping, and our crew completes the work quickly with a project manager on site.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">03</span>
+                </div>
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Cleanup &amp; Final Walkthrough</h3>
+                    <p class="cs-item-text">
+                        We run a magnetic nail sweep, walk the finished roof with you, and register your warranty before we leave.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="cs-graphic" aria-hidden="true"></div>
+</section>
+<!-- ============================================ -->
+<!--                    Pricing                   -->
+<!-- ============================================ -->
+
+<section id="pricing-2562">
+    <span id="pricing"></span>
+	<div class="cs-container">
+		<div class="cs-content">
+			<div class="cs-content-flex">
+				<span class="cs-topper">Pricing</span>
+				<h2 class="cs-title">Honest, Upfront Pricing</h2>
+			</div>
+			<p class="cs-text">Every roof is different, so every job gets a written quote. These starting prices give you a realistic idea before we visit.</p>
+		</div>
+		<ul class="cs-card-group">
+			<li class="cs-item cs-available">
+				<picture class="cs-icon-wrapper">
+					<img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/home-accent.svg" alt="icon" width="24" height="24" />
+				</picture>
+				<h3 class="cs-h3">Roof Replacement</h3>
+                    <span class="cs-price">$8,900<small> starting</small></span>
+				<p class="cs-item-text">Full replacement for a typical 1,800 sq ft home with architectural shingles.</p>
+				<ul class="cs-ul">
+					<li class="cs-li">Complete tear-off and disposal</li>
+					<li class="cs-li">Synthetic underlayment and ice guard</li>
+					<li class="cs-li">New flashing, vents and drip edge</li>
+					<li class="cs-li">10-year workmanship warranty</li>
+				</ul>
+				<a href="tel:+18595550142" class="cs-button-4">Get My Quote</a>
+				<span class="cs-subtext">Financing available</span>
+			</li>
+
+			<li class="cs-item">
+				<picture class="cs-icon-wrapper">
+					<img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/tool-accent.svg" alt="icon" width="24" height="24" />
+				</picture>
+				<h3 class="cs-h3">Roof Repair</h3>
+                    <span class="cs-price">$350<small> starting</small></span>
+				<p class="cs-item-text">Leaks, missing shingles, flashing and pipe boot repairs.</p>
+				<ul class="cs-ul">
+					<li class="cs-li">Same-week scheduling</li>
+					<li class="cs-li">Matching shingles when available</li>
+					<li class="cs-li">2-year repair warranty</li>
+				</ul>
+				<a href="tel:+18595550142" class="cs-button-4">Schedule a Repair</a>
+				<span class="cs-subtext">Most repairs done in one visit</span>
+			</li>
+
+			<li class="cs-item">
+				<picture class="cs-icon-wrapper">
+					<img class="cs-icon" loading="lazy" decoding="async" src="assets/icons/search-accent.svg" alt="icon" width="24" height="24" />
+				</picture>
+				<h3 class="cs-h3">Roof Inspection</h3>
+                    <span class="cs-price">Free<small></small></span>
+				<p class="cs-item-text">A complete roof check with photos and an honest recommendation.</p>
+				<ul class="cs-ul">
+					<li class="cs-li">Shingles, flashing and gutters</li>
+					<li class="cs-li">Attic and ventilation check</li>
+					<li class="cs-li">Storm damage documentation</li>
+				</ul>
+				<a href="tel:+18595550142" class="cs-button-4">Book Inspection</a>
+				<span class="cs-subtext">No cost, no obligation</span>
+			</li>
+		</ul>
+	</div>
+</section>
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq-1109">
+    <span id="faq"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://nyc3.digitaloceanspaces.com/csimages2/Roofer/steps2.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://nyc3.digitaloceanspaces.com/csimages2/Roofer/steps2.jpg">
+                <img loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Roofer/steps2.jpg" alt="Roofers working on a residential roof" width="522" height="400">
+            </picture>
+        </div>
+        <div class="cs-flex-group">
+            <ul class="cs-faq-group">
+                <!-- Active class added as default -->
+                <li class="cs-faq-item active">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How long does a roof replacement take?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Most homes are finished in one to two days. Larger or steeper roofs can take a little longer, and we&rsquo;ll give you the schedule up front.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do you help with insurance claims?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Yes. We document storm damage with photos, meet your adjuster on site, and handle the paperwork so you can focus on your family.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Are you licensed and insured?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Yes. Keystone Ridge is fully licensed, carries general liability and workers&rsquo; compensation insurance, and is certified by major shingle manufacturers.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do you offer financing?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        We offer low monthly payment options for replacements so you don&rsquo;t have to put off a roof you need.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What warranty do you offer?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Every replacement includes our 10-year workmanship warranty plus the manufacturer&rsquo;s material warranty, registered in your name.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                    CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-2574">
+	<div class="cs-container">
+		<div class="cs-content">
+			<span class="cs-topper">Same-Week Inspections</span>
+			<h2 class="cs-title">Get a Free, Written Roofing Estimate</h2>
+			<a href="tel:+18595550142" class="cs-button-4">Call (859) 555-0142</a>
+		</div>
+		<ul class="cs-contact-list">
+			<li class="cs-item">
+				<span class="cs-heading">Email</span>
+				<a href="mailto:office@keystoneridge.example" class="cs-link">office@keystoneridge.example</a>
+			</li>
+			<li class="cs-item">
+				<span class="cs-heading">Phone</span>
+				<a href="tel:+18595550142" class="cs-link">(859) 555-0142</a>
+			</li>
+			<li class="cs-item">
+				<span class="cs-heading">Address</span>
+				<a href="contact.html#location" class="cs-link">1200 Summit Ridge Road, Lexington, KY 40502</a>
+			</li>
+		</ul>
+	</div>
+
+	<picture class="cs-background">
+		<img src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/house5.jpg" alt="" width="1920" height="654" decoding="async" loading="lazy" />
+	</picture>
+</section>
+
+</main>
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-2544">
+    <div class="cs-container">
+        <div class="cs-top">
+            <!--Subscribe-->
+            <div class="cs-subscribe-group">
+                <h2 class="cs-title">Get roof tips and seasonal maintenance reminders</h2>
+                <form class="cs-form" name="Footer Subscribe" method="post">
+                    <input class="cs-input" aria-label="email" name="email" type="email" placeholder="Your email" required>
+                    <button class="cs-button-4" name="submit" type="submit" data-submit="...Sending">Subscribe</button>
+                        <p class="cs-demo-note" role="status"></p>
+                </form>
+            </div>
+            <!--Sitemap-->
+            <div class="cs-ul-group">
+                <div class="cs-ul-wrapper">
+                    <span class="cs-header">Services</span>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Roof Installation
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Roof Replacement
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Roof Repairs
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Storm Damage Restoration
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Emergency Roofing
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#services">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Roof Inspections
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cs-ul-wrapper">
+                    <span class="cs-header">Resources</span>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#faq">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                FAQs
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="services.html#pricing">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Pricing &amp; Warranty
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="gallery.html">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Project Gallery
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="about.html">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="about.html#service-area">
+                                <img class="cs-arrow" aria-hidden="true" loading="lazy" decoding="async" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/roofing-arrow-right.svg" alt="arrow" width="20" height="20">
+                                Service Areas
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Contact Information-->
+        <ul class="cs-contact-group">
+            <li class="cs-contact-item">
+                <picture class="cs-wrapper">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/icons/pin-accent.svg" alt="location pin icon" width="32" height="32">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-header">Location</span>
+                    <a class="cs-contact-link" href="contact.html#location">1200 Summit Ridge Road,
+                        <br>
+                        Lexington, KY 40502</a>
+                </div>
+            </li>
+            <li class="cs-contact-item">
+                <picture class="cs-wrapper">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/icons/clock-accent.svg" alt="clock icon" width="32" height="32">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-header">Working Hours</span>
+                    <span class="cs-contact-link">Monday - Saturday: 7:00am - 6:00pm</span>
+                    <span class="cs-contact-link">Emergency tarping: 24/7</span>
+                </div>
+            </li>
+            <li class="cs-contact-item">
+                <picture class="cs-wrapper">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/icons/phone-accent.svg" alt="phone icon" width="32" height="32">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-header">Contact</span>
+                    <a class="cs-contact-link" href="tel:+18595550142">P: (859) 555-0142</a>
+                    <a class="cs-contact-link" href="mailto:office@keystoneridge.example">E: office@keystoneridge.example</a>
+                </div>
+            </li>
+        </ul>
+        <!--Bottom Copyright And Legal-->
+        <div class="cs-bottom">
+            <span class="cs-copyright">
+                &copy; <span id="cs-year">2026</span> Keystone Ridge Roofing. Sample site by <a class="cs-copyright-link" href="https://critchfieldsystems.com">Critchfield Systems</a>
+            </span>
+            <div class="cs-bottom-links">
+                <a class="cs-bottom-link" href="services.html#faq">FAQ</a>
+                <div class="cs-divider" aria-hidden="true">
+                </div>
+                <a class="cs-bottom-link" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+<script src="js/faq.js" defer></script>
+<script src="js/demo.js" defer></script>
+</body>
+</html>

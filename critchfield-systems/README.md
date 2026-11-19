@@ -56,3 +56,22 @@ SVG backgrounds are adapted from `backgrounds/background6` (waves) and `backgrou
 
 `assets/clayton-square.webp` (Home about circle) and `assets/clayton-portrait.webp` (About story).
 Location data from the original photo was stripped.
+
+## Sample site (`/sample/`)
+
+`critchfield-systems/sample/` is a five-page demo for a fictional roofing company,
+"Keystone Ridge Roofing", served at critchfieldsystems.com/sample/. It is built by
+`_tools/build-sample-site.py` from components-repo sections (copy swapped, markup untouched):
+
+| Page | Sections |
+| --- | --- |
+| All | nav-1722 (top bar carries the demo notice), footer-2544, button3 |
+| Home | hero-1061, services-2557, about-2555, steps-2549, reviews-2565, cta-2574 |
+| About | page-banner-2285, stats-2552, why-choose-us-2556, locations-2559, cta-2574 |
+| Services | page-banner-2285, services-282, steps-2551, pricing-2562, faq-1109, cta-2574 |
+| Gallery | page-banner-2285, gallery-406, reviews-1307, cta-2574 |
+| Contact | page-banner-2285, contact-1388, locations-2560 |
+
+Photos are the placeholder photos that ship with the components (CodeStitch image CDN),
+listed in the `IMG` table at the top of the build script. Pages are `noindex`, the phone
+number is a 555 number, and forms show a "this is a sample" note instead of sending.
