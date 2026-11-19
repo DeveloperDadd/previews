@@ -465,6 +465,9 @@ Q_CONTENT = ('What do I need to send you?', 'Your business name, phone number, t
 Q_PAGES = ('Which five pages do I get?', 'Most businesses go with Home, About, Services, Contact and one more of their choice, like a Gallery, Reviews or FAQ page. We decide together based on what your customers need to see.')
 Q_HOSTING = ('Are hosting and SSL really included?', 'Yes. Fast hosting and an SSL certificate are part of the $99 a month. There are no separate hosting bills and no surprise renewal fees from me.')
 Q_TECH = ('Do I need any tech skills?', 'None. You will never log into a page builder or touch code. When you want something changed, you call or text me and it gets done.')
+Q_WOM = ('I get all my work from word of mouth. Why do I need a website?', 'Because your referrals look you up before they call. When someone hears your name from a friend or neighbor, the first thing they do is search for you. A professional website shows them they found the right business and makes it easy to pick up the phone.')
+Q_FB = ('I already have a Facebook page.', 'Keep it. Why not have another lead source, and one that you own? Your website shows up on Google, it is yours instead of a social media platform&rsquo;s, and customers trust a business with a real website more.')
+Q_DOMAIN = ('What happens if I cancel? Who owns my domain?', 'Critchfield Systems owns the domain. If you cancel, no hard feelings. There is no contract, so you can walk away at any time.')
 Q_ECOM = ('Can you build an online store?', f'Not on this plan. The $99 plan is built for service businesses that want calls and texts. See <a href="pricing.html#what-i-dont-offer">what I don&rsquo;t offer</a> for the full list.')
 
 # ---------------------------------------------------------------- HOME
@@ -522,10 +525,10 @@ HOME_BODY = f'''
 <section id="hero-1349">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Websites for Small Businesses</span>
-            <h1 class="cs-title">A Professional Website for <span class="cs-price">$99/Month</span></h1>
+            <span class="cs-topper">Hand-Coded, Professional Design</span>
+            <h1 class="cs-title">Lexington, Kentucky Web Design</h1>
             <p class="cs-text">
-                Five pages, hosting, SSL and unlimited edits. Live within 48 hours, with no contract. Call or text and I take it from there.
+                Lexington web design that gets your business found on Google and makes you more money. We build 100% hand-coded websites, for just $99/month. Reach out for a free demo!
             </p>
             <a href="{TEL}" class="cs-button-4">Call or Text {PHONE_DISPLAY}</a>
         </div>
@@ -547,24 +550,20 @@ HOME_BODY = f'''
 		<ul class="cs-card-group">
 			<li class="cs-item">
 				<span class="cs-desc">Flat Monthly Price</span>
-				<span class="cs-number">
-					<span class="cs-color">$</span>99
-				</span>
-				<p class="cs-item-text">Everything included for one predictable monthly price.</p>
+				<span class="cs-number">$99</span>
+				<p class="cs-item-text">Less than one service call.</p>
 			</li>
 			<li class="cs-item">
 				<span class="cs-desc">Hours to Go Live</span>
-				<span class="cs-number">
-					48<span class="cs-color">h</span>
-				</span>
+				<span class="cs-number">48h</span>
 				<p class="cs-item-text">Your new site is online within two days of getting your info.</p>
 			</li>
 			<li class="cs-item">
-				<span class="cs-desc">Pages Included</span>
+				<span class="cs-desc">Guaranteed Page Score</span>
 				<span class="cs-number">
-					5
+					90+
 				</span>
-				<p class="cs-item-text">Room for your home page, services, about, contact and more.</p>
+				<p class="cs-item-text">Get found on Google. Increase your bottom line.</p>
 			</li>
 			<li class="cs-item">
 				<span class="cs-desc">Contracts</span>
@@ -583,7 +582,7 @@ HOME_BODY = f'''
 <section id="services-18" aria-labelledby="what-you-get-title">
     <div class="cs-section-head">
         <span class="cs-topper">What You Get</span>
-        <h2 id="what-you-get-title" class="cs-title">Everything Included for $99/Month</h2>
+        <h2 id="what-you-get-title" class="cs-title">A Tool to Build Trust, Capture Leads Before They Call</h2>
     </div>
     <div class="cs-container">
         <ul class="cs-card-group">
@@ -593,7 +592,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">A 5-Page Website</h3>
-                    <p class="cs-item-text">Custom-built pages that tell customers who you are, what you do and how to reach you, on every screen size.</p>
+                    <p class="cs-item-text">Build trust, inform your customers, make more. Less than the cost of one service call.</p>
                 </div>
             </li>
             <li class="cs-item">
@@ -602,7 +601,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">Live Within 48 Hours</h3>
-                    <p class="cs-item-text">No months-long projects. Send me your info and your site is online within two days.</p>
+                    <p class="cs-item-text">No back and forth with an agency. Send me your info and your site is online within two days.</p>
                 </div>
             </li>
             <li class="cs-item">
@@ -620,7 +619,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">SSL Security</h3>
-                    <p class="cs-item-text">The padlock in the address bar that tells visitors and Google your site is safe. Set up and renewed for you.</p>
+                    <p class="cs-item-text">No 'Not Secure' warning scaring your customers off.</p>
                 </div>
             </li>
             <li class="cs-item">
@@ -629,7 +628,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">Unlimited Small Edits</h3>
-                    <p class="cs-item-text">New text, photos or videos? Just text me the change. As many as you need, every month.</p>
+                    <p class="cs-item-text">New text, photos or videos? Just text me the change, I'll have it up the same day.</p>
                 </div>
             </li>
             <li class="cs-item">
@@ -638,7 +637,7 @@ HOME_BODY = f'''
                 </picture>
                 <div class="cs-text-group">
                     <h3 class="cs-h3">PageSpeed Guarantee</h3>
-                    <p class="cs-item-text">Scores 90+ on Google PageSpeed Insights, so your site loads fast for customers and Google.</p>
+                    <p class="cs-item-text">Your customers don't have time to wait, don't lead them to your competitor. A fast website will keep them dialed in</p>
                 </div>
             </li>
         </ul>
@@ -655,7 +654,7 @@ HOME_BODY = f'''
             <span class="cs-topper">How It Works</span>
             <h2 class="cs-title">Three Steps to Your New Website</h2>
             <p class="cs-text">
-                No forms, no meetings, no page builders. One conversation and your business is online.
+                No forms, no meetings, no page builders. One conversation and your business is online and making more.
             </p>
         </div>
         <ul class="cs-card-group">
@@ -707,9 +706,10 @@ HOME_BODY = f'''
         </div>
         <div class="cs-content">
             <span class="cs-topper">Meet Clayton Critchfield</span>
-            <h2 class="cs-title">One Person, One Phone Number, No Runaround</h2>
+            <h2 class="cs-title">One Person, No Runaround</h2>
             <p class="cs-text">
-                I'm Clayton Critchfield, and Critchfield Systems is my one-person web studio built for small businesses that need a great website without the agency price tag or the do-it-yourself headache. When you call or text, you talk to me, the person who actually builds and looks after your site.
+                I'm Clayton Critchfield, I help small businesses that need a great website without the agency price tag or the do-it-yourself headache. When you call or text, you talk to me, 
+				the person who actually builds and looks after your site.
             </p>
             <ul class="cs-ul">
                 <li class="cs-li">Hand-built sites that load fast on any phone</li>
@@ -732,12 +732,12 @@ HOME_BODY = f'''
             <h2 class="cs-title">Frequently Asked Questions</h2>
         </div>
         <div class="cs-flex-group">
-            <ul class="cs-faq-group">{faq_items([Q_INCLUDED, Q_48, Q_CONTRACT, Q_EDITS, Q_START])}
+            <ul class="cs-faq-group">{faq_items([Q_INCLUDED, Q_48, Q_CONTRACT, Q_EDITS, Q_WOM, Q_FB, Q_DOMAIN, Q_START])}
             </ul>
         </div>
     </div>
 </section>
-''' + cta('Ready When You Are', 'Get Your Business Online This Week')
+''' + cta('Ready When You Are', 'Your Customers Are Looking For Your Business Right Now')
 
 # ---------------------------------------------------------------- PRICING
 PRICING_SECTIONS = [
@@ -995,9 +995,9 @@ PRICING_BODY = hero_493('Pricing', 'One Simple Plan: $99/Month',
             <h2 class="cs-title">Frequently Asked Questions</h2>
         </div>
         <div class="cs-wrapper">
-            <ul class="cs-faq-group">{faq_items([Q_INCLUDED, Q_48, Q_CONTRACT, Q_EDITS, Q_SPEED], numbered=True, start=1)}
+            <ul class="cs-faq-group">{faq_items([Q_INCLUDED, Q_48, Q_CONTRACT, Q_EDITS, Q_SPEED, Q_WOM, Q_FB], numbered=True, start=1)}
             </ul>
-            <ul class="cs-faq-group">{faq_items([Q_CONTENT, Q_PAGES, Q_HOSTING, Q_TECH, Q_ECOM], numbered=True, start=6)}
+            <ul class="cs-faq-group">{faq_items([Q_CONTENT, Q_PAGES, Q_HOSTING, Q_TECH, Q_ECOM, Q_DOMAIN], numbered=True, start=8)}
             </ul>
         </div>
     </div>
@@ -1282,7 +1282,7 @@ CONTACT_BODY = hero_493('Contact', "Call or Text. I'll Take It from There.",
             <span class="cs-topper">Quick Answers</span>
             <h2 class="cs-title">Before You Reach Out</h2>
         </div>
-        <ul class="cs-faq-group">{faq_items([Q_START, Q_CONTENT, Q_48, Q_CONTRACT, ('Is it okay to just ask questions first?', 'Of course. Call or text with any questions. There is no obligation and no pushy sales pitch.')])}
+        <ul class="cs-faq-group">{faq_items([Q_START, Q_CONTENT, Q_48, Q_CONTRACT, Q_WOM, Q_FB, Q_DOMAIN, ('Is it okay to just ask questions first?', 'Of course. Call or text with any questions. There is no obligation and no pushy sales pitch.')])}
         </ul>
     </div>
     <picture class="cs-background">
