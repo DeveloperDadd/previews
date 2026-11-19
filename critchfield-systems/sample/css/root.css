@@ -1114,5 +1114,4 @@ button, input, textarea { font-family: inherit; }
 #cs-footer-2544 .cs-top { background-color: #fff; }
 #cs-footer-2544 .cs-copyright-link { color: var(--primary); font-weight: 700; }
 #cs-footer-2544 .cs-wrapper { background-color: #FFF4EC; }
-#cs-footer-2544 .cs-form .cs-button-4 { min-width: 0; padding: 0 1.75rem; }
-#cs-footer-2544 .cs-demo-note { flex-basis: 100%; }
+#cs-footer-2544 .cs-subscribe-group .cs-button-4 { align-self: flex-start; }

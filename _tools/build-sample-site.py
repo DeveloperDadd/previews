@@ -62,6 +62,13 @@ def css(path):
 def js(path):
     return open(os.path.join(COMP, path, 'script.js')).read()
 
+def call_now(h):
+    """The one button on this site: every .cs-button-4 is a Call Now link to the business."""
+    def fix(m):
+        cls = re.search(r'class="(cs-button-4[^"]*)"', m.group(0)).group(1)
+        return f'<a href="{TEL}" class="{cls}">Call Now</a>'
+    return re.sub(r'<a\b[^>]*class="cs-button-4[^"]*"[^>]*>.*?</a>', fix, h, flags=re.S)
+
 def section(path, repl, keep_empty_links=False):
     """Component markup with copy swapped. Each (old, new) replaces the FIRST
     remaining occurrence, so repeated placeholder text can be replaced in order."""
@@ -71,6 +78,7 @@ def section(path, repl, keep_empty_links=False):
             raise SystemExit(f'{path}: text not found: {old[:70]!r}')
         h = h.replace(old, new, 1)
     h = h.replace('class="cs-button-solid', 'class="cs-button-4')
+    h = call_now(h)
     if not keep_empty_links:
         h = h.replace('href=""', 'href="contact.html"')
     leftovers = re.findall(r'[Ll]orem ipsum', h)
@@ -169,8 +177,7 @@ FOOTER_OVR = """
 #cs-footer-2544 .cs-top { background-color: #fff; }
 #cs-footer-2544 .cs-copyright-link { color: var(--primary); font-weight: 700; }
 #cs-footer-2544 .cs-wrapper { background-color: #FFF4EC; }
-#cs-footer-2544 .cs-form .cs-button-4 { min-width: 0; padding: 0 1.75rem; }
-#cs-footer-2544 .cs-demo-note { flex-basis: 100%; }
+#cs-footer-2544 .cs-subscribe-group .cs-button-4 { align-self: flex-start; }
 """
 
 def shared_css():
@@ -199,7 +206,7 @@ def nav(active):
         ('<a href="" class="cs-li-link cs-drop-link">Housing</a>', '<a href="services.html#services" class="cs-li-link cs-drop-link">Roof Replacement</a>'),
         ('<a href="" class="cs-li-link cs-drop-link">Food Banks</a>', '<a href="services.html#services" class="cs-li-link cs-drop-link">Roof Repair</a>\n                            </li>\n                            <li class="cs-drop-li">\n                                <a href="services.html#services" class="cs-li-link cs-drop-link">Storm Damage</a>\n                            </li>\n                            <li class="cs-drop-li">\n                                <a href="services.html#pricing" class="cs-li-link cs-drop-link">Inspections &amp; Pricing</a>'),
         ('Blog', 'Gallery'),
-        ('<a href="" class="cs-button-solid cs-nav-button">Contact Us</a>', f'<a href="{TEL}" class="cs-button-4 cs-nav-button">Free Estimate</a>'),
+        ('<a href="" class="cs-button-solid cs-nav-button">Contact Us</a>', f'<a href="{TEL}" class="cs-button-4 cs-nav-button">Call Now</a>'),
     ]
     for o, n in rep:
         assert o in h, o
@@ -221,9 +228,7 @@ def nav(active):
 
 def footer():
     rep = [
-        ('Trusted roofing experts you can rely on', 'Get roof tips and seasonal maintenance reminders'),
-        ('placeholder="Email"', 'placeholder="Your email"'),
-        ('data-submit="...Sending">Subscribe</button>', 'data-submit="...Sending">Subscribe</button>\n                        <p class="cs-demo-note" role="status"></p>'),
+        ('Trusted roofing experts you can rely on', 'Roof leaking or storm damage? Talk to a real roofer today.'),
     ]
     services = ['Roof Installation', 'Roof Replacement', 'Roof Repairs', 'Storm Damage Restoration', 'Emergency Roofing', 'Roof Inspections']
     for s in services:
@@ -248,6 +253,9 @@ def footer():
         ('<a class="cs-bottom-link" href="">Privacy Policy</a>', '<a class="cs-bottom-link" href="contact.html">Contact</a>'),
     ]
     h = section('footer/footer-2544-signup-panel-icon-contact-row', rep, keep_empty_links=True)
+    # no forms on this site: the signup form's slot holds the Call Now button
+    h, n = re.subn(r'<form class="cs-form".*?</form>', f'<a href="{TEL}" class="cs-button-4">Call Now</a>', h, flags=re.S)
+    assert n == 1
     assert 'href=""' not in h, 'footer has empty link'
     return h
 
@@ -274,22 +282,12 @@ def head(title, desc, page_css_file):
 <a class="cs-skip" href="#main">Skip to content</a>
 '''
 
-DEMO_JS = f"""// Sample site: forms don't send anywhere, they explain that instead.
-document.querySelectorAll('form').forEach((form) => {{
-    form.addEventListener('submit', (event) => {{
-        event.preventDefault();
-        const note = form.querySelector('.cs-demo-note');
-        if (!note) return;
-        note.innerHTML = 'This is a sample site, so nothing was sent. On your real website this form goes straight to your inbox. <a href="{CS_TEL}">Call or text Critchfield Systems at {CS_PHONE}</a>.';
-        note.classList.add('cs-show');
-    }});
-}});
-const year = document.getElementById('cs-year');
+DEMO_JS = """const year = document.getElementById('cs-year');
 if (year) year.textContent = new Date().getFullYear();
 """
 
 def page(name, title, desc, css_file, body, scripts=()):
-    tags = ''.join(f'<script src="js/{s}" defer></script>\n' for s in ('nav.js', *scripts, 'demo.js'))
+    tags = ''.join(f'<script src="js/{s}" defer></script>\n' for s in ('nav.js', *scripts, 'year.js'))
     return head(title, desc, css_file) + nav(name) + '\n<main id="main">\n' + body + '\n</main>\n' + footer() + '\n' + tags + '</body>\n</html>\n'
 
 # ---------------------------------------------------------------- shared sections
@@ -355,9 +353,9 @@ HOME_BODY = section('hero/hero-1061-overlapping-four-icon-cards', [
      'From a single leak to a full replacement, our crews handle residential and light commercial roofing across Central Kentucky.'),
     ('<a href="" class="cs-button-solid">Explore More Projects</a>', '<a href="services.html" class="cs-button-solid">See All Services</a>'),
     ('alt="roofer" width="427" height="320"', 'alt="Roofer repairing shingles on a pitched roof" width="427" height="320"'),
-    ('<a href="" class="cs-link">\n', '<a href="contact.html" class="cs-link">\n'),
+    ('<a href="" class="cs-link">\n', f'<a href="{TEL}" class="cs-link">\n'), ('Get Roof Repaired', 'Call Now'),
     ('alt="roofer" width="427" height="320"', 'alt="Roofing crew installing a new roof" width="427" height="320"'),
-    ('<a href="" class="cs-link">\n', '<a href="contact.html" class="cs-link">\n'),
+    ('<a href="" class="cs-link">\n', f'<a href="{TEL}" class="cs-link">\n'), ('Request Free Estimate', 'Call Now'),
 ]) + section('about/about-2555-wide-photo-overlap-icon-card', [
     ('Our Core Values', 'Why Homeowners Choose Us'),
     ('Driven By Quality Trust Craftsmanship', 'Quality You Can See, Service You Can Trust'),
@@ -486,8 +484,8 @@ rep282 = [
      'Whatever your roof needs, one call covers it. Every service starts with a free inspection and a written, itemized estimate.'),
 ]
 for old, (name, text) in zip(['Concerts & Recitals', 'Competitions', 'Orchestras', 'Piano Duets', 'Master Classes', 'Chamber'], SERVICES_282):
-    rep282 += [('<a class="cs-link" href="">', '<a class="cs-link" href="contact.html">'), (old, name),
-               ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi magna ut et, ut.', text), ('Read More', 'Get an Estimate')]
+    rep282 += [('<a class="cs-link" href="">', f'<a class="cs-link" href="{TEL}">'), (old, name),
+               ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi magna ut et, ut.', text), ('Read More', 'Call Now')]
 
 def price_card(price, unit):
     return f'<span class="cs-price">{price}<small>{unit}</small></span>'
@@ -556,44 +554,45 @@ SERVICES_BODY = banner('Roofing Services', 'Replacement, repair, storm damage an
 ]).replace('<section id="faq-1109">', '<section id="faq-1109">\n    <span id="faq"></span>', 1) + cta('Same-Week Inspections', 'Get a Free, Written Roofing Estimate', 'house5')
 
 # ---------------------------------------------------------------- GALLERY
-GALLERY_PATHS = ['page-banner/page-banner-2285-dark-photo-band-breadcrumb-bar', 'gallery/gallery-406-tabbed-rounded-three-column-grid',
-                 'reviews/reviews-1307-centered-quote-over-photo-band', 'cta/cta-2574-photo-band-contact-info-row']
+GALLERY_PATHS = ['page-banner/page-banner-2285-dark-photo-band-breadcrumb-bar', 'gallery/gallery-44-three-column-grid-with-button',
+                 'gallery/gallery-379-rounded-three-column-grid', 'reviews/reviews-1307-centered-quote-over-photo-band',
+                 'cta/cta-2574-photo-band-contact-info-row']
 GALLERY_OVR = BANNER_OVR + """
-#gallery-406 .cs-button.cs-active, #gallery-406 .cs-button:hover { background-color: var(--primary); color: #fff; }
+#gallery-379 { background-color: var(--stone); }
 #quote-1307 .cs-background:before { background: var(--secondary); opacity: .8; }
 #quote-1307 .cs-job { color: #FDBA74; }
 #cta-2574 .cs-background:before { background: var(--secondary); opacity: .82; }
 #cta-2574 .cs-topper, #cta-2574 .cs-heading { color: #FDBA74; }
 #cta-2574 .cs-link { white-space: nowrap; }
 """
-G = {
-    'one':   [('house1', 'Finished home with a new roof'), ('crew1', 'Roofer repairing shingles'), ('house3', 'Home exterior after roof replacement'),
-              ('service2', 'Crew installing a new roof'), ('house6', 'Finished home with new shingles'), ('comm1', 'Commercial building roof project')],
-    'two':   [('house1', 'Finished home with a new roof'), ('house2', 'New roof on a two-story home'), ('house3', 'Home exterior after roof replacement'),
-              ('house4', 'Completed residential roofing project'), ('house5', 'Home with new architectural shingles'), ('house6', 'Finished home with new shingles')],
-    'three': [('crew1', 'Roofer repairing shingles'), ('crew2', 'Roofers working on a residential roof'), ('crew3', 'Roofer installing flashing'),
-              ('service2', 'Crew installing a new roof'), ('about', 'Roofers inspecting a metal roof'), ('roofer_seam', 'Roofer fitting a standing seam metal panel')],
-    'four':  [('build1', 'Roof framing on a new build'), ('build2', 'New construction roofing'), ('build3', 'Roof decking installation'),
-              ('build4', 'New construction project'), ('aerial', 'Aerial view of a finished shingle roof'), ('house2', 'New roof on a two-story home')],
-    'five':  [('comm1', 'Commercial building roof project'), ('comm2', 'Commercial roofing project'), ('comm3', 'Commercial property roof'),
-              ('aerial', 'Aerial view of a finished shingle roof'), ('build4', 'New construction project'), ('house4', 'Completed residential roofing project')],
-}
-def gallery():
-    h = section('gallery/gallery-406-tabbed-rounded-three-column-grid', [
-        ('Our Portfolio', 'Our Portfolio'), ('Some Work from Our Memorable Gallery', 'Recent Roofing Projects'),
-        ('Kitchen', 'Finished Homes'), ('Office Cleaning', 'Crew at Work'), ('Plumbing', 'New Construction'), ('Window Cleaning', 'Commercial'),
-    ])
-    for cat, items in G.items():
-        start = h.index(f'data-category="{cat}"')
-        for key, alt in items:
-            i = h.index('<picture class="cs-image">', start)
-            j = h.index('</picture>', i) + len('</picture>')
-            new = (f'<picture class="cs-image">\n                    <img loading="lazy" decoding="async" src="{IMG[key]}" alt="{alt}" width="305" height="400">\n                </picture>')
-            h = h[:i] + new + h[j:]
-            start = i + len(new)
+HOMES = [('house1', 'Finished home with a new roof'), ('house2', 'New roof on a two-story home'), ('house3', 'Home exterior after roof replacement'),
+         ('house4', 'Completed residential roofing project'), ('house5', 'Home with new architectural shingles'), ('house6', 'Finished home with new shingles')]
+CREW = [('crew1', 'Roofer repairing shingles'), ('crew2', 'Roofers working on a residential roof'), ('crew3', 'Roofer installing flashing'),
+        ('service2', 'Crew installing a new roof'), ('about', 'Roofers inspecting a metal roof'), ('roofer_seam', 'Roofer fitting a standing seam metal panel')]
+
+def swap_pictures(h, tag, items, w, hgt, cls):
+    start = 0
+    for key, alt in items:
+        i = h.index(tag, start)
+        j = h.index('</picture>', i) + len('</picture>')
+        new = f'{tag}\n                    <img loading="lazy" decoding="async" src="{IMG[key]}" alt="{alt}" width="{w}" height="{hgt}">\n                </picture>'
+        h = h[:i] + new + h[j:]
+        start = i + len(new)
     return h
 
-GALLERY_BODY = banner('Project Gallery', 'A look at recent roof replacements, repairs and new construction across Central Kentucky.', 'Gallery') + gallery() + section(
+GALLERY_BODY = banner('Project Gallery', 'A look at recent roof replacements and repairs across Central Kentucky.', 'Gallery') + swap_pictures(section(
+    'gallery/gallery-44-three-column-grid-with-button', [
+    ('Service', 'Finished Homes'),
+    ('Landscaping Services in Sometown, USA', 'Roof Replacements Across Central Kentucky'),
+    ('Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+     'Architectural shingles, metal roofs and full replacements on homes in Lexington, Nicholasville, Georgetown and Richmond.'),
+]), '<picture class="cs-picture">', HOMES, 346, 346, 'cs-picture') + swap_pictures(section(
+    'gallery/gallery-379-rounded-three-column-grid', [
+    ('Our Portfolio', 'Crew at Work'),
+    ('Some Work from Our Memorable Gallery', 'Craftsmanship You Can See'),
+    ('At Stitch Cleaning Service, let us help you solve problems so that you can focus on your mission. We support businesses through periods of expansion, succession.',
+     'Our licensed, insured crews protect your property, work safely, and leave the job site cleaner than they found it.'),
+]), '<picture class="cs-image">', CREW, 305, 400, 'cs-image') + section(
     'reviews/reviews-1307-centered-quote-over-photo-band', [
     ('Creating long-term value with entrepreneurial intelligence! Our main goal is Growth.', '&ldquo;They replaced our entire roof in a single day and you&rsquo;d never know a crew had been here. Best contractor we&rsquo;ve ever hired.&rdquo;'),
     ('Piter Bowman', 'Sarah &amp; Tom W.'), ('Creative Director', 'Homeowners, Nicholasville'),
@@ -604,30 +603,28 @@ GALLERY_BODY = banner('Project Gallery', 'A look at recent roof replacements, re
 ]) + cta('Like What You See?', 'Your Home Could Be Our Next Project', 'aerial')
 
 # ---------------------------------------------------------------- CONTACT
-CONTACT_PATHS = ['page-banner/page-banner-2285-dark-photo-band-breadcrumb-bar', 'contact/contact-1388-icon-list-beside-rounded-form',
-                 'locations/locations-2560-map-with-pinned-photo-card']
+CONTACT_PATHS = ['page-banner/page-banner-2285-dark-photo-band-breadcrumb-bar', 'contact/contact-1111-three-icon-info-row-over-photo',
+                 'locations/locations-2560-map-with-pinned-photo-card', 'cta/cta-2574-photo-band-contact-info-row']
 CONTACT_OVR = BANNER_OVR + """
-#contact-1388 .cs-icon-wrapper { background-color: #FFF4EC; }
-#contact-1388 .cs-icon { width: 1.75rem; height: auto; }
-#contact-1388 .cs-form { box-shadow: 0 1.5rem 3rem -1.5rem rgba(28, 37, 48, .35); }
-#contact-1388 .cs-submit { width: 100%; }
+#contact-strip-1111 .cs-background:before { background: var(--secondary); opacity: .82; }
+#contact-strip-1111 .cs-icon { width: 2rem; height: auto; }
+#contact-strip-1111 .cs-header { color: #FDBA74; }
 #locations-2560 { background-color: var(--stone); }
+#cta-2574 .cs-background:before { background: var(--secondary); opacity: .82; }
+#cta-2574 .cs-topper, #cta-2574 .cs-heading { color: #FDBA74; }
+#cta-2574 .cs-link { white-space: nowrap; }
 """
-CONTACT_BODY = banner('Contact Us', 'Call, email or send a message and we&rsquo;ll schedule your free roof inspection.', 'Contact') + section(
-    'contact/contact-1388-icon-list-beside-rounded-form', [
-    ('Get in Touch', 'Schedule Your Free Inspection'),
-    ('We are a team of passionate and creative individuals dedicated to crafting captivating designs that leave a lasting impression.',
-     'Tell us a little about your roof and we&rsquo;ll get back to you within one business day. For leaks or storm damage, call us now. Emergency tarping is available 24/7.'),
-    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-76.svg"', f'src="{icon("phone")}"'),
-    ('href="tel:888-4565-789', f'href="{TEL}'), ('" class="cs-link">+1 (888) 4565 789', f'" class="cs-link">{PHONE}'),
-    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-76.svg"', f'src="{icon("mail")}"'),
-    ('<a href="mailto:Email@stitch.com" class="cs-link">Email@stitch.com</a>', f'<a href="mailto:{EMAIL}" class="cs-link">{EMAIL}</a>'),
-    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-76.svg"', f'src="{icon("pin")}"'),
-    ('<a href="" class="cs-link">2553 Woodbridge Lane, Boston Ware 120</a>', f'<a href="#location" class="cs-link">{ADDRESS_1}, {ADDRESS_2}</a>'),
-    ('Make Appointment', 'Request an Estimate'),
-    ('type="number" id="phone-1388"', 'type="tel" id="phone-1388"'),
-    ('placeholder="Write message..."', 'placeholder="What&rsquo;s going on with your roof?"'),
-    ('<button class="cs-button-solid cs-submit" type="submit">Send Message</button>', '<button class="cs-button-solid cs-submit" type="submit">Send Request</button>\n            <p class="cs-demo-note" role="status"></p>'),
+CONTACT_BODY = banner('Contact Us', 'Call us to schedule your free roof inspection. Emergency tarping is available 24/7.', 'Contact') + section(
+    'contact/contact-1111-three-icon-info-row-over-photo', [
+    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="icon"', f'src="{icon("phone", "light")}" alt=""'),
+    ('<a href="tel:555-456-7899" class="cs-link">+1 (555) 456 7899</a>', f'<a href="{TEL}" class="cs-link">{PHONE}</a>'),
+    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="icon"', f'src="{icon("mail", "light")}" alt=""'),
+    ('<a href="mailto:Info@email.com" class="cs-link">Info@email.com</a>', f'<a href="mailto:{EMAIL}" class="cs-link">{EMAIL}</a>'),
+    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="icon"', f'src="{icon("pin", "light")}" alt=""'),
+    ('121 King St, Melbourne VIC 300, ', f'{ADDRESS_1}, '), ('Australia</span>', f'{ADDRESS_2}</span>'),
+    ('srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic24.jpg"', f'srcset="{IMG["crew3"]}"'),
+    ('srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic24.jpg"', f'srcset="{IMG["crew3"]}"'),
+    ('src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic24.jpg" alt="mechanic"', f'src="{IMG["crew3"]}" alt=""'),
 ]) + section('locations/locations-2560-map-with-pinned-photo-card', [
     ('Our Office Locations', 'Visit Our Showroom'),
     ('Visit Our Offices', 'Find Us in Lexington'),
@@ -635,7 +632,7 @@ CONTACT_BODY = banner('Contact Us', 'Call, email or send a message and we&rsquo;
      f'Stop by to see shingle and metal samples in person, or call ahead and we&rsquo;ll have an estimator ready. {HOURS}.'),
     ('Regional Roofing Headquarters', 'Keystone Ridge Main Office'),
     ('<a class="cs-link" href="">7425 Industrial Parkway, Suite 400, Dallas, TX 75247</a>', f'<a class="cs-link" href="{TEL}">{ADDRESS_1}, {ADDRESS_2}</a>'),
-]).replace('<section id="locations-2560">', '<section id="locations-2560">\n    <span id="location"></span>', 1)
+]).replace('<section id="locations-2560">', '<section id="locations-2560">\n    <span id="location"></span>', 1) + cta('Free Inspections, Written Estimates', 'Call Today to Schedule Your Free Roof Inspection', 'house6')
 
 # ---------------------------------------------------------------- assets
 ICONS = {
@@ -683,13 +680,12 @@ write('css/contact.css', page_css(CONTACT_PATHS, CONTACT_OVR))
 write('js/nav.js', js('nav/nav-1722-shaded-top-bar-with-dropdown'))
 write('js/faq.js', js('faq/faq-1109-accordion-cards-image-right'))
 write('js/why.js', js('why-choose-us/why-choose-us-2556-split-cards-grid-accordion').replace('".cs-button"', '"#why-2556 .cs-button"'))
-write('js/gallery.js', js('gallery/gallery-406-tabbed-rounded-three-column-grid').replace("filtersSelector = '.cs-button'", "filtersSelector = '#gallery-406 .cs-button'"))
-write('js/demo.js', DEMO_JS)
+write('js/year.js', DEMO_JS)
 
 D = f'{BIZ} is a sample roofing website built by Critchfield Systems.'
 write('index.html', page('index.html', f'Roof Replacement &amp; Repair in Lexington, KY | {BIZ}', D, 'home.css', HOME_BODY))
 write('about.html', page('about.html', f'About Us | {BIZ}', D, 'about.css', ABOUT_BODY, ('why.js',)))
 write('services.html', page('services.html', f'Roofing Services &amp; Pricing | {BIZ}', D, 'services.css', SERVICES_BODY, ('faq.js',)))
-write('gallery.html', page('gallery.html', f'Project Gallery | {BIZ}', D, 'gallery.css', GALLERY_BODY, ('gallery.js',)))
+write('gallery.html', page('gallery.html', f'Project Gallery | {BIZ}', D, 'gallery.css', GALLERY_BODY))
 write('contact.html', page('contact.html', f'Contact Us | {BIZ}', D, 'contact.css', CONTACT_BODY))
 print('built', os.path.normpath(OUT))

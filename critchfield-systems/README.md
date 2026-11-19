@@ -65,13 +65,14 @@ Location data from the original photo was stripped.
 
 | Page | Sections |
 | --- | --- |
-| All | nav-1722 (top bar carries the demo notice), footer-2544, button3 |
+| All | nav-1722 (top bar carries the demo notice), footer-2544 (signup form replaced by the Call Now button), button3 |
 | Home | hero-1061, services-2557, about-2555, steps-2549, reviews-2565, cta-2574 |
 | About | page-banner-2285, stats-2552, why-choose-us-2556, locations-2559, cta-2574 |
 | Services | page-banner-2285, services-282, steps-2551, pricing-2562, faq-1109, cta-2574 |
-| Gallery | page-banner-2285, gallery-406, reviews-1307, cta-2574 |
-| Contact | page-banner-2285, contact-1388, locations-2560 |
+| Gallery | page-banner-2285, gallery-44, gallery-379, reviews-1307, cta-2574 |
+| Contact | page-banner-2285, contact-1111, locations-2560, cta-2574 |
 
 Photos are the placeholder photos that ship with the components (CodeStitch image CDN),
-listed in the `IMG` table at the top of the build script. Pages are `noindex`, the phone
-number is a 555 number, and forms show a "this is a sample" note instead of sending.
+listed in the `IMG` table at the top of the build script. Pages are `noindex` and the phone
+number is a 555 number. There are no forms: every button is the same `.cs-button-4` "Call Now"
+button linking to the phone number (the build enforces this).
