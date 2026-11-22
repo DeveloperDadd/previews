@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plumbing Services &amp; Pricing | Limestone Plumbing &amp; Drain</title>
+    <meta name="description" content="Limestone Plumbing &amp; Drain is a sample plumbing website built by Critchfield Systems.">
+    <!-- Sample site: kept out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0E3A56">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+<a class="cs-skip" href="#main">Skip to content</a>
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <!--Nav Logo-->
+    <a href="index.html" class="cs-logo" aria-label="Return to Limestone Plumbing &amp; Drain home page">
+        <img src="assets/logo-light.svg" alt="" width="220" height="64" aria-hidden="true" decoding="async">
+    </a>
+    <!--Top Bar-->
+    <ul class="cs-top-bar">
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/phone-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Call 24/7</span>
+                <a href="tel:+18592707050" class="cs-link">(859) 270-7050</a>
+            </div>
+        </li>
+        <li class="cs-item cs-demo">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/star-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Sample Website</span>
+                <a href="https://critchfieldsystems.com" class="cs-link">Built by Critchfield Systems. Get yours for $99/mo</a>
+            </div>
+        </li>
+        <li class="cs-item cs-remove">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/mail-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Email Us</span>
+                <a href="mailto:office@limestoneplumbing.example" class="cs-link">office@limestoneplumbing.example</a>
+            </div>
+        </li>
+    </ul>
+    <div class="cs-bottom-bar">
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1"></span>
+                    <span class="cs-line cs-line2"></span>
+                    <span class="cs-line cs-line3"></span>
+                </span>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how many there are-->
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a href="index.html" class="cs-li-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="about.html" class="cs-li-link">
+                                About
+                            </a>
+                        </li>
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle cs-active" aria-haspopup="menu" aria-expanded="false" id="services-dropdown-toggle">
+                                Services
+                                <img class="cs-drop-icon" src="assets/icons/chevron-water.svg" alt="" width="15" height="15" decoding="async" aria-hidden="true">
+                            </button>
+                            <ul class="cs-drop-ul" aria-labelledby="services-dropdown-toggle">
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Drain Cleaning</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Water Heaters</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Leak Detection</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#pricing" class="cs-li-link cs-drop-link">Pricing</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#faq" class="cs-li-link cs-drop-link">Service FAQ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cs-li">
+                            <a href="gallery.html" class="cs-li-link">
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="contact.html" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="tel:+18592707050" class="cs-button-1 cs-nav-button">Call Now</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!--<button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" /></svg>
+            <img class="cs-sun" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="" aria-hidden="true" width="15" height="15">
+        </button>-->
+    </div>
+</header>
+
+<main id="main">
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <h1 class="cs-int-title">Plumbing Services</h1>
+        <div class="cs-breadcrumbs">
+            <a href="index.html" class="cs-link">Home</a>
+            <a href="#main" class="cs-link cs-active" aria-current="page">Services</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg" alt="" width="1920" height="375">
+    </picture>
+</div>
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
+<section id="services-1188">
+    <span id="services"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What We Fix</span>
+            <h2 class="cs-title">Full-Service Residential Plumbing</h2>
+            <p class="cs-text">
+                Every service comes with an upfront price, a clean work area and our two-year workmanship warranty.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src="assets/icons/pipe-copper.svg"
+                            loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Drain Cleaning &amp; Hydro-Jetting</h3>
+                    <p class="cs-item-text">Kitchen, bath and main line clogs cleared, then camera-checked so they stay clear.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/icons/thermometer-copper.svg"
+                            loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Water Heater Repair &amp; Install</h3>
+                    <p class="cs-item-text">Tank and tankless units repaired or replaced, most the same day you call.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src="assets/icons/droplet-copper.svg"
+                            loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Leak Detection &amp; Repair</h3>
+                    <p class="cs-item-text">Hidden leaks in walls, ceilings and slabs found fast with less tearing out.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src="assets/icons/search-copper.svg" loading="lazy"
+                            decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Sewer Line Repair</h3>
+                    <p class="cs-item-text">Camera inspections, root removal and trenchless repairs that save your yard.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src="assets/icons/shower-copper.svg" loading="lazy"
+                            decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Toilets, Faucets &amp; Fixtures</h3>
+                    <p class="cs-item-text">Repairs and installs for toilets, sinks, showers, tubs and garbage disposals.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src="assets/icons/rain-copper.svg"
+                            loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Sump Pumps &amp; Water Filtration</h3>
+                    <p class="cs-item-text">Sump pumps, backups, water softeners and whole-home filters for hard water.</p>
+                </div>
+            </li>
+        </ul>
+        <a href="tel:+18592707050" class="cs-button-1">Call Now</a>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                  Pricing                     -->
+<!-- ============================================ -->
+
+<section id="pricing-975">
+    <span id="pricing"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Upfront Pricing</span>
+            <h2 class="cs-title">Common Jobs &amp; Starting Prices</h2>
+                <p class="cs-text">Every job gets a flat, written price before we start. No overtime charges, even at night.</p>
+        </div>
+        <div class="cs-menu">
+            <!--Left Menu-->
+            <ul class="cs-menu-group">
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Drain Cleaning (sink or tub)</span>
+                        <span class="cs-price">from $129</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Clear one fixture drain and test the flow.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Main Sewer Line Clearing</span>
+                        <span class="cs-price">from $249</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Cleanout access and full-length line clearing.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Sewer Camera Inspection</span>
+                        <span class="cs-price">$199</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Video inspection with recording you can keep.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Toilet Repair</span>
+                        <span class="cs-price">from $119</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Running, leaking or weak flushes fixed.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Faucet Installation</span>
+                        <span class="cs-price">from $149</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Your faucet or ours, connected and leak-tested.
+                    </p>
+                </li>
+            </ul>
+            <!--Right Menu-->
+            <ul class="cs-menu-group">
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Garbage Disposal Install</span>
+                        <span class="cs-price">from $229</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Old unit removed and a new 1/2 HP installed.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Water Heater Flush</span>
+                        <span class="cs-price">$129</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Sediment flush and safety check to extend its life.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Tank Water Heater Install</span>
+                        <span class="cs-price">from $1,450</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Haul-away, permit and new 40 or 50 gallon tank.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Tankless Water Heater Install</span>
+                        <span class="cs-price">from $3,200</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        Endless hot water, sized to your home.
+                    </p>
+                </li>
+                <li class="cs-menu-item">
+                    <h3 class="cs-h3">
+                        <span class="cs-header">Sump Pump Replacement</span>
+                        <span class="cs-price">from $495</span>
+                    </h3>
+                    <p class="cs-menu-text">
+                        New pump, check valve and a test run.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-1171">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">How It Works</span>
+            <h2 class="cs-title">Fixed in Four Simple Steps</h2>
+            <p class="cs-text">
+                No forms and no runaround. One phone call gets a licensed plumber headed your way.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/icons/phone-white.svg" alt="" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">1. You Call</h3>
+                <p class="cs-item-p">
+                    A real person answers 24/7 and books a time that works for you.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/icons/truck-white.svg" alt="" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">2. We Arrive</h3>
+                <p class="cs-item-p">
+                    A licensed plumber shows up on time in a fully stocked truck.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/icons/dollar-white.svg" alt="" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">3. Upfront Price</h3>
+                <p class="cs-item-p">
+                    We find the real problem and quote the job before any work starts.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="assets/icons/check-white.svg" alt="" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">4. Fixed Right</h3>
+                <p class="cs-item-p">
+                    We fix it, clean up and back the repair for two full years.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!--Tire Screech-->
+    <img class="cs-graphic" src="assets/waves-light.svg" alt="" width="840" height="357" loading="lazy" decoding="async" aria-hidden="true">
+</section>
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-351">
+    <span id="faq"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <!-- Active class added as default -->
+            <li class="cs-faq-item active">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How much does a service call cost?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Our diagnostic visit is $79, and it&rsquo;s waived when you go ahead with the repair. You always get the full price before we start. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you offer 24/7 emergency service?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Yes. A real person answers around the clock, and we keep plumbers on call nights, weekends and holidays. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How fast can you get here?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Most Lexington calls get a same-day visit, and we can usually reach emergencies within an hour. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Are your plumbers licensed and insured?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Every plumber holds a Kentucky plumbing license, and we carry full liability and workers&rsquo; compensation coverage. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you guarantee your work?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Yes. Every repair comes with a two-year workmanship warranty, and new water heaters keep their full manufacturer warranty. 
+                </p>
+            </li>
+        </ul>
+        <!--Added second UL, this allows you to open an FAQ item on each side without messing up the flexbox for the other -->
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Should I repair or replace my water heater?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    If it&rsquo;s under ten years old and the tank isn&rsquo;t leaking, a repair usually makes sense. We&rsquo;ll give you both prices so you can decide.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you install tankless water heaters?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Yes. We size, install and service tankless units from all the major brands, including any gas line work they need. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What causes slow drains?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Grease, hair and soap build up over time, and tree roots can get into older sewer lines. A camera inspection shows exactly what&rsquo;s going on. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you work on older homes?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    All the time. Lexington has plenty of older homes with cast iron and galvanized pipes, and we know how to work with them. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What areas do you serve?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lexington and the surrounding area, including Nicholasville, Georgetown, Winchester, Versailles and Richmond. 
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-51">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Plumbing Emergency?</span>
+            <h2 class="cs-title">A Real Plumber Answers 24/7</h2>
+            <p class="cs-text">
+                Burst pipe, no hot water or a backed-up drain? Call now and a licensed plumber will be on the way, usually within the hour.
+            </p>
+            <a href="tel:+18592707050" class="cs-button-1">Call Now</a>
+        </div>
+    </div>
+    <!-- Background Image-->
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets.jpg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets.jpg" alt="" width="1920" height="1280" aria-hidden="true">
+    </picture>
+</section>
+
+</main>
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-1782">
+    <div class="cs-container">
+        <!-- Logo Group -->
+        <div class="cs-logo-group">
+            <a aria-label="go back to home" class="cs-logo" href="index.html">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="assets/logo-light.svg" alt="" width="220" height="64">
+            </a>
+            <p class="cs-text">
+                Family-owned plumbing, drain and water heater service for Lexington and Central Kentucky since 2010. Licensed, insured and on call 24/7.
+            </p>
+            <div class="cs-contact">
+                <div class="cs-contact-info">
+                    <span class="cs-topper">Call us anytime</span>
+                    <a href="tel:+18592707050" class="cs-contact-link">(859) 270-7050</a>
+                </div>
+                <div class="cs-contact-info">
+                    <span class="cs-topper">Service area</span>
+                    <a href="contact.html#map-1834" class="cs-contact-link">Lexington &amp; Central Kentucky</a>
+                </div>
+            </div>
+        </div>
+        <!-- Links -->
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Our Services</span>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Drain Cleaning</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Water Heaters</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Leak Detection</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Sewer Lines</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Fixtures &amp; Faucets</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#pricing">Pricing</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Company</span>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <a class="cs-link" href="about.html">About Us</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="about.html#reviews">Reviews</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="gallery.html">Project Gallery</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#faq">FAQ</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="contact.html#map-1834">Service Area</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <table class="cs-table">
+            <tbody>
+                <tr>
+                    <th scope="row">Monday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tuesday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Wednesday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Thursday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Friday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Saturday</th>
+                    <td>8:00am - 4:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sunday</th>
+                    <td>Emergency calls</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cs-bottom">
+        <span class="cs-credit">
+            &copy; <span id="cs-year">2026</span> <a href="index.html" class="cs-credit-link">Limestone Plumbing &amp; Drain</a>. Sample site by <a href="https://critchfieldsystems.com" class="cs-credit-link cs-cs">Critchfield Systems</a>.
+        </span>
+        <div class="cs-bottom-links">
+            <a href="services.html#faq" class="cs-bottom-link">FAQ</a>
+            <a href="contact.html" class="cs-bottom-link">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+<script src="js/faq.js" defer></script>
+<script src="js/year.js" defer></script>
+</body>
+</html>

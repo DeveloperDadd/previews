@@ -473,6 +473,7 @@ Q_ECOM = ('Can you build an online store?', f'Not on this plan. The $99 plan is 
 # ---------------------------------------------------------------- HOME
 HOME_SECTIONS = [
     ('hero/hero-1349-dark-photo-band-circle-accents', '1349', [('https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/on-computer.jpg', '../assets/bg-waves.svg')]),
+    ('services/services-877-three-rounded-photo-cards', '877', []),
     ('stats/stats-2596-four-stats-with-descriptions', '2596', []),
     ('services/services-18-circled-icon-grid-line-button', 's18', []),
     ('steps/steps-1173-light-three-icon-steps-arrows', '1173', [('https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/curved-arrow-light.svg', '../assets/curved-arrow.svg')]),
@@ -488,6 +489,17 @@ HOME_OVR = """
 #hero-1349 .cs-bubbles1:after, #hero-1349 .cs-bubbles2:after { background: linear-gradient(135deg, var(--primaryLight), var(--primary)); opacity: .55; }
 #hero-1349 .cs-bubbles1:before, #hero-1349 .cs-bubbles2:before { border-color: rgba(34, 195, 255, .6); }
 #hero-1349 .cs-price { color: var(--primaryLight); white-space: nowrap; }
+/* sample of my work: homepage screenshots of the three sample sites */
+#services-877 { background-color: #fff; }
+#services-877 .cs-item { background-color: var(--ice); border-radius: .5rem; overflow: hidden; box-shadow: 0 1rem 2rem -1rem rgba(11, 35, 80, .35); transition: transform .3s, box-shadow .3s; }
+#services-877 .cs-item:hover { transform: translateY(-0.25rem); box-shadow: 0 1.5rem 2.5rem -1rem rgba(11, 35, 80, .45); }
+#services-877 .cs-picture { height: auto; aspect-ratio: 800 / 525; background-color: var(--ice); border-bottom: 1px solid #D3DEEC; }
+#services-877 .cs-picture img { object-position: top; }
+#services-877 .cs-link:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+#services-877 .cs-h3, #services-877 .cs-item-text, #services-877 .cs-view { padding: 0 1.25rem; }
+#services-877 .cs-trade { display: block; font-size: .8125rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: .25rem; }
+#services-877 .cs-view { display: block; margin-top: .75rem; font-size: .9375rem; font-weight: 700; color: var(--primary); }
+#services-877 .cs-button-4 { margin-top: clamp(2rem, 4vw, 3rem); }
 /* fact strip */
 #stats-2596 .cs-container { background-color: var(--ice); border-top: 4px solid var(--primary); }
 #stats-2596 .cs-number { color: var(--secondary); border-bottom-color: #D3DEEC; }
@@ -540,6 +552,61 @@ HOME_BODY = f'''
     <picture class="cs-background">
         <img decoding="async" src="assets/bg-waves.svg" alt="" width="1266" height="712" aria-hidden="true" fetchpriority="high">
     </picture>
+</section>
+
+<!-- ============================================ -->
+<!--              Sample of My Work               -->
+<!--   components: services-877-three-rounded-photo-cards   -->
+<!-- ============================================ -->
+<section id="services-877" aria-labelledby="work-title">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Sample of My Work</span>
+            <h2 id="work-title" class="cs-title">See What Your Website Could Look Like</h2>
+            <p class="cs-text">
+                Each one is a full 5-page sample site for a made-up home service business, built exactly the way I would build yours. Click around, then call or text me for a free demo of your own.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="sample/" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/work/sample-roofing.webp" alt="" width="800" height="525">
+                    </picture>
+                    <h3 class="cs-h3"><span class="cs-trade">Roofing</span>Keystone Ridge Roofing</h3>
+                    <p class="cs-item-text">
+                        A bold, trustworthy roofer site with services, pricing, a project gallery and FAQs.
+                    </p>
+                    <span class="cs-view">View the sample site &rarr;</span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="sample-landscaping/" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/work/sample-landscaping.webp" alt="" width="800" height="525">
+                    </picture>
+                    <h3 class="cs-h3"><span class="cs-trade">Landscaping</span>Hollow Creek Lawn &amp; Landscape</h3>
+                    <p class="cs-item-text">
+                        Earthy greens, seasonal services and a step-by-step estimate process.
+                    </p>
+                    <span class="cs-view">View the sample site &rarr;</span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="sample-plumbing/" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img loading="lazy" decoding="async" src="assets/work/sample-plumbing.webp" alt="" width="800" height="525">
+                    </picture>
+                    <h3 class="cs-h3"><span class="cs-trade">Plumbing</span>Limestone Plumbing &amp; Drain</h3>
+                    <p class="cs-item-text">
+                        24/7 emergency focus, an upfront price list and a service-area map.
+                    </p>
+                    <span class="cs-view">View the sample site &rarr;</span>
+                </a>
+            </li>
+        </ul>
+        <a href="{TEL}" class="cs-button-4">Call or Text for a Free Demo</a>
+    </div>
 </section>
 
 <!-- ============================================ -->

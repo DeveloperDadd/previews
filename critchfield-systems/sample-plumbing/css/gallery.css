@@ -1,0 +1,531 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-310 {
+        /* 144px - 252px */
+        padding-top: clamp(9rem, 25vw, 15.75rem);
+        /* 80px - 140px */
+        padding-bottom: clamp(5rem, 13vw, 8.75rem);
+        position: relative;
+        z-index: 1;
+    }
+    #banner-310 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #banner-310 .cs-int-title {
+        /* 39px - 49px */
+        font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: center;
+        max-width: 43.75rem;
+        margin: 0 auto 0.75rem;
+        color: var(--bodyTextColorWhite);
+        position: relative;
+    }
+    #banner-310 .cs-breadcrumbs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner-310 .cs-link {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.2em;
+        text-decoration: none;
+        color: var(--bodyTextColorWhite);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner-310 .cs-link:last-of-type {
+        /* remove the chevron on the last list item */
+    }
+    #banner-310 .cs-link:last-of-type::after {
+        display: none;
+    }
+    #banner-310 .cs-link:after {
+        /* chevron - added as pseudo to make adding and removing them easier */
+        content: "";
+        width: 0.4375rem;
+        height: 0.75rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        background: url("https://csimg.nyc3.digitaloceanspaces.com/Banners/chevron-right.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #banner-310 .cs-link.cs-active {
+        color: var(--primaryLight);
+    }
+    #banner-310 .cs-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        z-index: -1;
+    }
+    #banner-310 .cs-background:before {
+        /* black overlay box */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.72;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #banner-310 .cs-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-1086 {
+        padding: var(--sectionPadding);
+    }
+    #gallery-1086 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #gallery-1086 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #gallery-1086 .cs-title {
+        margin: 0;
+    }
+    #gallery-1086 .cs-image-group {
+        width: 100%;
+        /* changes to 1280px at large desktop */
+        max-width: 49rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(20, minmax(9vw, 1fr));
+        /* 16px - 20px */
+        gap: clamp(1rem, 2vw, 1.25rem);
+    }
+    #gallery-1086 .cs-picture {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+    #gallery-1086 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #gallery-1086 .cs-picture1 {
+        grid-column: 1 / span 6;
+        grid-row: span 4;
+    }
+    #gallery-1086 .cs-picture2 {
+        grid-column: 7 / span 6;
+        grid-row: span 5;
+    }
+    #gallery-1086 .cs-picture3 {
+        grid-column: 1 / span 6;
+        grid-row: 5 / span 6;
+    }
+    #gallery-1086 .cs-picture4 {
+        grid-column: 7 / span 6;
+        grid-row: 6 / span 5;
+    }
+    #gallery-1086 .cs-picture5 {
+        grid-column: 1 / span 6;
+        grid-row: 11 / span 4;
+    }
+    #gallery-1086 .cs-picture6 {
+        grid-column: 7 / span 6;
+        grid-row: 11 / span 5;
+    }
+    #gallery-1086 .cs-picture7 {
+        grid-column: 1 / span 6;
+        grid-row: 15 / span 6;
+    }
+    #gallery-1086 .cs-picture8 {
+        grid-column: 7 / span 6;
+        grid-row: 16 / span 5;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #gallery-1086 .cs-image-group {
+        grid-template-rows: repeat(20, minmax(6rem, 1fr));
+    }
+}
+/* Large Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #gallery-1086 .cs-image-group {
+        max-width: 80rem;
+        height: 49.0625rem;
+        grid-template-rows: repeat(12, 1fr);
+    }
+    #gallery-1086 .cs-picture1 {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 7;
+    }
+    #gallery-1086 .cs-picture2 {
+        grid-column: 4 / span 3;
+        grid-row: 1 / span 10;
+    }
+    #gallery-1086 .cs-picture3 {
+        grid-column: 7 / span 3;
+        grid-row: 1 / span 5;
+    }
+    #gallery-1086 .cs-picture4 {
+        grid-column: 10 / span 3;
+        grid-row: 1 / span 7;
+    }
+    #gallery-1086 .cs-picture5 {
+        grid-column: 1 / span 3;
+        grid-row: 8 / span 13;
+    }
+    #gallery-1086 .cs-picture6 {
+        grid-column: 4 / span 3;
+        grid-row: 11 / span 10;
+    }
+    #gallery-1086 .cs-picture7 {
+        grid-column: 7 / span 3;
+        grid-row: 6 / span 15;
+    }
+    #gallery-1086 .cs-picture8 {
+        grid-column: 10 / span 3;
+        grid-row: 8 / span 13;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #reviews-1673 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+  }
+  #reviews-1673 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 40px - 64px */
+    gap: clamp(2.5rem, 4.5vw, 4rem);
+  }
+  #reviews-1673 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #reviews-1673 .cs-title {
+    margin: 0rem;
+  }
+  #reviews-1673 .cs-card-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  #reviews-1673 .cs-item {
+    list-style: none;
+    width: 100%;
+    max-width: 39.375rem;
+    /* 20px - 40px top & bottom */
+    /* 20px - 40px left & right */
+    padding: clamp(1.25rem, 3.15vw, 2.5rem) clamp(1.25rem, 3.15vw, 2.5rem);
+    background-color: #f7f7f7;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    /* 24px - 48px */
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  #reviews-1673 .cs-flex-group {
+    /* this margin top auto will push everything up and force the cs-flex-group to the bottom of the container. This is to account for review cards with different heights because of more or less text and makes the cards more responsive to changing text */
+    margin-top: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  #reviews-1673 .cs-profile {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+  }
+  #reviews-1673 .cs-profile img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes the image behave like a background image */
+    object-fit: cover;
+  }
+  #reviews-1673 .cs-name {
+    /* 20px - 25px */
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
+    margin-top: auto;
+    color: var(--headerColor);
+    display: block;
+  }
+  #reviews-1673 .cs-job {
+    /* 14px - 16px */
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
+  }
+  #reviews-1673 .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #reviews-1673 .cs-item-stars {
+    width: 6.75rem;
+    height: auto;
+  }
+  #reviews-1673 .cs-review {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    z-index: 1;
+  }
+  #reviews-1673 .cs-quote {
+    width: 5.375rem;
+    height: auto;
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+    z-index: 0;
+  }
+  #reviews-1673 .cs-background {
+    display: none;
+    position: absolute;
+    left: 50%;
+    /* changes to 40px at 1300px */
+    right: 1rem;
+    top: 2.5rem;
+    bottom: 2.5rem;
+    z-index: -1;
+  }
+  #reviews-1673 .cs-background img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #reviews-1673 .cs-container {
+    max-width: 80rem;
+  }
+  #reviews-1673 .cs-card-group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #reviews-1673 .cs-background {
+    display: block;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #reviews-1673 .cs-background {
+    right: 2.5rem;
+  }
+}
+
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-51 {
+        padding: var(--sectionPadding);
+        position: relative;
+    }
+    #cta-51 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #cta-51 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #cta-51 .cs-title {
+        color: var(--bodyTextColorWhite);
+    }
+    #cta-51 .cs-text {
+        margin-bottom: 1rem;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+    }
+    #cta-51 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #cta-51 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #cta-51 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #cta-51 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #cta-51 .cs-picture {
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #cta-51 .cs-picture:before {
+        /* black color overlay */
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #cta-51 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ---- brand overrides ---- */
+
+#banner-310 .cs-background:before { background: var(--waterDeep); opacity: .78; }
+#banner-310 .cs-int-title { color: #fff; }
+#banner-310 .cs-link { color: var(--bodyTextColorWhite); }
+#banner-310 .cs-link.cs-active { color: var(--copperLight); }
+
+#gallery-1086 { background-color: #fff; }
+#reviews-1673 { background-color: var(--stone); }
+#reviews-1673 .cs-job { color: var(--copper); }
+
+#cta-51 .cs-picture:before, #cta-51:before { background: var(--waterDeep); opacity: .82; }
+#cta-51 .cs-topper { color: var(--copperLight); }
+#cta-51 .cs-title { color: #fff; }
+#cta-51 .cs-text { color: var(--bodyTextColorWhite); margin-bottom: 2rem; }

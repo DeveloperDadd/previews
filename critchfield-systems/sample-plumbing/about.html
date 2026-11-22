@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us | Limestone Plumbing &amp; Drain</title>
+    <meta name="description" content="Limestone Plumbing &amp; Drain is a sample plumbing website built by Critchfield Systems.">
+    <!-- Sample site: kept out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0E3A56">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+<a class="cs-skip" href="#main">Skip to content</a>
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <!--Nav Logo-->
+    <a href="index.html" class="cs-logo" aria-label="Return to Limestone Plumbing &amp; Drain home page">
+        <img src="assets/logo-light.svg" alt="" width="220" height="64" aria-hidden="true" decoding="async">
+    </a>
+    <!--Top Bar-->
+    <ul class="cs-top-bar">
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/phone-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Call 24/7</span>
+                <a href="tel:+18592707050" class="cs-link">(859) 270-7050</a>
+            </div>
+        </li>
+        <li class="cs-item cs-demo">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/star-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Sample Website</span>
+                <a href="https://critchfieldsystems.com" class="cs-link">Built by Critchfield Systems. Get yours for $99/mo</a>
+            </div>
+        </li>
+        <li class="cs-item cs-remove">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="assets/icons/mail-copper.svg" alt="" width="24" height="24" aria-hidden="true" decoding="async">
+            </picture>
+            <div class="cs-flex">
+                <span class="cs-header">Email Us</span>
+                <a href="mailto:office@limestoneplumbing.example" class="cs-link">office@limestoneplumbing.example</a>
+            </div>
+        </li>
+    </ul>
+    <div class="cs-bottom-bar">
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1"></span>
+                    <span class="cs-line cs-line2"></span>
+                    <span class="cs-line cs-line3"></span>
+                </span>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how many there are-->
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a href="index.html" class="cs-li-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="about.html" class="cs-li-link cs-active" aria-current="page">
+                                About
+                            </a>
+                        </li>
+                        <li class="cs-li cs-dropdown">
+                            <button class="cs-li-link cs-dropdown-toggle" aria-haspopup="menu" aria-expanded="false" id="services-dropdown-toggle">
+                                Services
+                                <img class="cs-drop-icon" src="assets/icons/chevron-water.svg" alt="" width="15" height="15" decoding="async" aria-hidden="true">
+                            </button>
+                            <ul class="cs-drop-ul" aria-labelledby="services-dropdown-toggle">
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Drain Cleaning</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Water Heaters</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#services" class="cs-li-link cs-drop-link">Leak Detection</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#pricing" class="cs-li-link cs-drop-link">Pricing</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="services.html#faq" class="cs-li-link cs-drop-link">Service FAQ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cs-li">
+                            <a href="gallery.html" class="cs-li-link">
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="contact.html" class="cs-li-link">
+                                Contact
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="tel:+18592707050" class="cs-button-1 cs-nav-button">Call Now</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!--<button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve" aria-hidden="true"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z" /></svg>
+            <img class="cs-sun" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="" aria-hidden="true" width="15" height="15">
+        </button>-->
+    </div>
+</header>
+
+<main id="main">
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <h1 class="cs-int-title">About Limestone Plumbing</h1>
+        <div class="cs-breadcrumbs">
+            <a href="index.html" class="cs-link">Home</a>
+            <a href="#main" class="cs-link cs-active" aria-current="page">About</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room3-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room3.jpg">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room3.jpg" alt="" width="1920" height="375">
+    </picture>
+</div>
+<!-- ============================================ -->
+<!--            Side By Side Reverse              -->
+<!-- ============================================ -->
+
+<section id="sbsr-298">
+    <div class="cs-container">
+        <!-- Left Image Section -->
+        <div class="cs-image-group">
+            <!--Floating Box-->
+            <div class="cs-box">
+                <span class="cs-number">15</span>
+                <span class="cs-desc">years serving Lexington</span>
+                <!--Background image for cs-box-->
+                <picture class="cs-box-picture">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tools.jpg">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tools.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tools.jpg" alt="" width="521" height="672" aria-hidden="true">
+                </picture>
+            </div>
+            <!--Big Background Image-->
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechaninc29.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechaninc29.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechaninc29.jpg" alt="" width="521" height="672" aria-hidden="true">
+            </picture>
+        </div>
+        <!-- Right Content Section-->
+        <div class="cs-content">
+            <span class="cs-topper">Who We Are</span>
+            <h2 class="cs-title">Good People, Great Plumbers</h2>
+            <p class="cs-text">
+                Owner Dale Whitaker started Limestone Plumbing &amp; Drain in 2010 with one van and a simple promise: show up on time, explain the problem in plain English and charge a fair price. Fifteen years later we run eight trucks across Central Kentucky, and that promise hasn&rsquo;t changed.
+            </p>
+            <p class="cs-text">Questions? Call us anytime: <a class="cs-link" href="tel:+18592707050">(859) 270-7050</a></p>
+            <a href="tel:+18592707050" class="cs-button-1">Call Now</a>
+        </div>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-1161">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Top left image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/SideBySide/room.jpg" alt="Kitchen with a new sink and faucet" width="630" height="390">
+            </picture>
+            <!--Bottom right image-->
+            <picture class="cs-picture cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/FAQ/kitchen1.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/FAQ/kitchen1.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/FAQ/kitchen1.jpg" alt="Kitchen island with a prep sink" width="461" height="300">
+            </picture>
+            <!--Splash Graphic-->
+            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-4.svg" alt="" width="1154" height="505" aria-hidden="true">
+            <!--Tire Mark-->
+            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="assets/waves-water.svg" alt="" width="1085" height="322" aria-hidden="true">
+            <div class="cs-box">
+                <span class="cs-number">8,500+</span>
+                <span class="cs-desc">Jobs completed in Central Kentucky</span>
+            </div>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Our Promise</span>
+            <h2 class="cs-title">Work Done Right the First Time</h2>
+            <p class="cs-text">
+                Every Limestone plumber is licensed, background-checked and trained on the latest equipment. We find the real problem, quote the job before we start and stand behind the work for two years.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">Upfront, flat-rate pricing before any work begins</li>
+                <li class="cs-li">Kentucky-licensed, insured plumbers on every job</li>
+                <li class="cs-li">Camera inspections and modern leak detection</li>
+                <li class="cs-li">Two-year workmanship warranty on every repair</li>
+                <li class="cs-li">Same-day service for most repairs</li>
+            </ul>
+            <a href="tel:+18592707050" class="cs-button-1">Call Now</a>
+        </div>
+    </div>
+</section>
+<!-- ============================================ -->
+<!--                  Reviews                     -->
+<!-- ============================================ -->
+
+<section id="reviews-864">
+    <span id="reviews"></span>
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Reviews</span>
+            <h2 class="cs-title">Trusted by Thousands of Kentucky Families</h2>
+            <p class="cs-text">
+                Homeowners, landlords and local businesses call us back again and again. Here&rsquo;s why.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/profile8.jpg" decoding="async" alt="" width="50" height="50">
+                    </picture>
+                    <span class="cs-name">
+                        Karen B.
+                        <span class="cs-job">Homeowner</span>
+                    </span>
+                </div>
+                <p class="cs-review">
+                    They replaced every galvanized pipe in our 1950s house in three days and patched the drywall so well you can&rsquo;t tell they were there. 
+                </p>
+                <!--Stars-->
+                <img class="cs-stars" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fstars.svg" decoding="async" alt="" width="108" height="16">
+                <span class="cs-desc">Google</span>
+            </li>
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img class="cs-profile" src="https://csimages2.nyc3.digitaloceanspaces.com/Reviews/profile5.jpg" decoding="async" alt="" width="50" height="50">
+                    </picture>
+                    <span class="cs-name">
+                        Marcus J.
+                        <span class="cs-job">Property Manager</span>
+                    </span>
+                </div>
+                <p class="cs-review">
+                    I manage forty rental units. Limestone is the only plumber I call because they show up when they say and the invoices always match the quote.
+                </p>
+                <!--Stars-->
+                <img class="cs-stars" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fstars.svg" decoding="async" alt="" width="108" height="16">
+                <span class="cs-desc">Google</span>
+            </li>
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/review-profile.jpg" decoding="async" alt="" width="50" height="50">
+                    </picture>
+                    <span class="cs-name">
+                        Linda P.
+                        <span class="cs-job">Restaurant Owner</span>
+                    </span>
+                </div>
+                <p class="cs-review">
+                    Our grease trap and kitchen drains back up during the dinner rush, and they come out after hours so we never have to close. Lifesavers.
+                </p>
+                <!--Stars-->
+                <img class="cs-stars" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fstars.svg" decoding="async" alt="" width="108" height="16">
+                <span class="cs-desc">Google</span>
+            </li>
+        </ul>
+    </div>
+    <!--Top Left Quote-->
+    <img class="cs-quote1" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2FQuote.svg" decoding="async" alt="" width="194" height="160">
+    <!--Top Right Quote-->
+    <img class="cs-quote2" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2FQuote.svg" decoding="async" alt="" width="194" height="160">
+</section>
+<!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
+
+<section id="cta-51">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Plumbing Emergency?</span>
+            <h2 class="cs-title">A Real Plumber Answers 24/7</h2>
+            <p class="cs-text">
+                Burst pipe, no hot water or a backed-up drain? Call now and a licensed plumber will be on the way, usually within the hour.
+            </p>
+            <a href="tel:+18592707050" class="cs-button-1">Call Now</a>
+        </div>
+    </div>
+    <!-- Background Image-->
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets.jpg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/CTA/cabinets.jpg" alt="" width="1920" height="1280" aria-hidden="true">
+    </picture>
+</section>
+
+</main>
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer-1782">
+    <div class="cs-container">
+        <!-- Logo Group -->
+        <div class="cs-logo-group">
+            <a aria-label="go back to home" class="cs-logo" href="index.html">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="assets/logo-light.svg" alt="" width="220" height="64">
+            </a>
+            <p class="cs-text">
+                Family-owned plumbing, drain and water heater service for Lexington and Central Kentucky since 2010. Licensed, insured and on call 24/7.
+            </p>
+            <div class="cs-contact">
+                <div class="cs-contact-info">
+                    <span class="cs-topper">Call us anytime</span>
+                    <a href="tel:+18592707050" class="cs-contact-link">(859) 270-7050</a>
+                </div>
+                <div class="cs-contact-info">
+                    <span class="cs-topper">Service area</span>
+                    <a href="contact.html#map-1834" class="cs-contact-link">Lexington &amp; Central Kentucky</a>
+                </div>
+            </div>
+        </div>
+        <!-- Links -->
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Our Services</span>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Drain Cleaning</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Water Heaters</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Leak Detection</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Sewer Lines</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#services">Fixtures &amp; Faucets</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#pricing">Pricing</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cs-ul-wrapper">
+            <span class="cs-header">Company</span>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <a class="cs-link" href="about.html">About Us</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="about.html#reviews">Reviews</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="gallery.html">Project Gallery</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="services.html#faq">FAQ</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="contact.html#map-1834">Service Area</a>
+                </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <table class="cs-table">
+            <tbody>
+                <tr>
+                    <th scope="row">Monday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tuesday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Wednesday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Thursday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Friday</th>
+                    <td>7:00am - 7:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Saturday</th>
+                    <td>8:00am - 4:00pm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sunday</th>
+                    <td>Emergency calls</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cs-bottom">
+        <span class="cs-credit">
+            &copy; <span id="cs-year">2026</span> <a href="index.html" class="cs-credit-link">Limestone Plumbing &amp; Drain</a>. Sample site by <a href="https://critchfieldsystems.com" class="cs-credit-link cs-cs">Critchfield Systems</a>.
+        </span>
+        <div class="cs-bottom-links">
+            <a href="services.html#faq" class="cs-bottom-link">FAQ</a>
+            <a href="contact.html" class="cs-bottom-link">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+<script src="js/year.js" defer></script>
+</body>
+</html>

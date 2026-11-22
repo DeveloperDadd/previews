@@ -32,6 +32,7 @@ Phone number, email and all copy live in `_tools/build-critchfield-systems.py`
 | All | Footer | `footer/footer-145-dark-logo-three-link-columns` |
 | All | Buttons | `button/button3` (`.cs-button-4`) with added shadow |
 | Home | Hero | `hero/hero-1349-dark-photo-band-circle-accents` |
+| Home | Sample of My Work | `services/services-877-three-rounded-photo-cards` (homepage screenshots in `assets/work/`) |
 | Home | Fact strip | `stats/stats-2596-four-stats-with-descriptions` |
 | Home | What you get | `services/services-18-circled-icon-grid-line-button` |
 | Home | How it works | `steps/steps-1173-light-three-icon-steps-arrows` |
@@ -94,3 +95,23 @@ reused from the roofing sample:
 | Contact | page-banner-559, contact-325, steps-1172, locations-720 |
 
 Same rules as the roofing sample: noindex, 555 number, no forms, every button is "Call Now".
+
+## Plumbing sample (`/sample-plumbing/`)
+
+`critchfield-systems/sample-plumbing/` is a five-page demo for a fictional plumbing company,
+"Limestone Plumbing & Drain", built by `_tools/build-sample-plumbing.py`. Palette (60-30-10):
+limestone `#F5F1E8` and white, deep water `#0E3A56`, copper `#A9501A`. None of its sections are
+reused from the roofing or landscaping samples or from this site:
+
+| Page | Sections |
+| --- | --- |
+| All | nav-759 (top bar carries the demo notice), footer-1782, button1, cta-51 (all but Contact) |
+| Home | hero-143, services-222, why-choose-us-223, stats-5, reviews-567 |
+| About | page-banner-310, about-298, about-1161, reviews-864 |
+| Services | page-banner-310, services-1188, pricing-975, steps-1171, faq-351 |
+| Gallery | page-banner-310, gallery-1086, reviews-1673 |
+| Contact | page-banner-310, contact-719, locations-1834, faq-254 |
+
+Same rules as the other samples (noindex, no forms, every button is "Call Now"), except the phone
+number is Critchfield Systems' own (859) 270-7050, so a prospect who taps Call reaches you.
+
