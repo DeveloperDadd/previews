@@ -75,7 +75,7 @@ Location data from the original photo was stripped.
 
 Photos are the placeholder photos that ship with the components (CodeStitch image CDN),
 listed in the `IMG` table at the top of the build script. Pages are `noindex` and the phone
-number is a 555 number. There are no forms: every button is the same `.cs-button-4` "Call Now"
+number is Critchfield Systems' own (859) 270-7050. There are no forms: every button is the same `.cs-button-4` "Call Now"
 button linking to the phone number (the build enforces this).
 
 ## Landscaping sample (`/sample-landscaping/`)
@@ -94,7 +94,7 @@ reused from the roofing sample:
 | Gallery | page-banner-559, gallery-45, gallery-377 |
 | Contact | page-banner-559, contact-325, steps-1172, locations-720 |
 
-Same rules as the roofing sample: noindex, 555 number, no forms, every button is "Call Now".
+Same rules as the roofing sample (noindex, no forms, every button is "Call Now"), but it still uses the 555 number (859) 555-0168.
 
 ## Plumbing sample (`/sample-plumbing/`)
 
