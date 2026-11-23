@@ -587,10 +587,10 @@ SERVICES_PATHS = ['page-banner/page-banner-310-centered-photo-band-breadcrumb', 
                   'pricing/pricing-975-two-column-price-list', 'steps/steps-1171-dark-four-icon-steps-arrows',
                   'faq/faq-351-two-column-divided-accordion', 'cta/cta-51-dark-centered-photo-band']
 SERVICES_OVR = BANNER_OVR + """
-#services-1188 { background-color: #fff; }
+#services-1188 { background-color: var(--stone); }
 #services-1188 .cs-item { border-color: var(--stoneMid); background-color: #fff; }
 #services-1188 .cs-picture { background-color: var(--stone); }
-#pricing-975 { background-color: var(--stone); }
+#pricing-975 { background-color: #fff; }
 #pricing-975 .cs-content .cs-text { margin: 0 auto; text-align: center; }
 #pricing-975 .cs-header { color: var(--water); }
 #pricing-975 .cs-price { color: var(--copper); }
@@ -598,6 +598,7 @@ SERVICES_OVR = BANNER_OVR + """
 #steps-1171 .cs-topper { color: var(--copperLight); }
 #steps-1171 .cs-picture { background-color: var(--copper); border-color: var(--copperLight); }
 #steps-1171 .cs-graphic { opacity: .5; }
+#steps-1171 .cs-item:after { filter: brightness(0) invert(1); opacity: .45; }
 #faq-351 { background-color: #fff; }
 #faq-351 .cs-faq-item.active .cs-button-text, #faq-351 .cs-button:hover .cs-button-text { color: var(--copper); }
 #faq-351 .cs-faq-item.active .cs-button:before, #faq-351 .cs-faq-item.active .cs-button:after { background-color: var(--copper); }
