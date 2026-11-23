@@ -1419,7 +1419,7 @@
 #hero-1349 .cs-bubbles1:before, #hero-1349 .cs-bubbles2:before { border-color: rgba(34, 195, 255, .6); }
 #hero-1349 .cs-price { color: var(--primaryLight); white-space: nowrap; }
 /* sample of my work: homepage screenshots of the three sample sites */
-#services-877 { background-color: #fff; }
+#services-877 { background-color: #fff; padding-bottom: clamp(2.5rem, 5vw, 3.5rem); }
 #services-877 .cs-item { background-color: var(--ice); border-radius: .5rem; overflow: hidden; box-shadow: 0 1rem 2rem -1rem rgba(11, 35, 80, .35); transition: transform .3s, box-shadow .3s; }
 #services-877 .cs-item:hover { transform: translateY(-0.25rem); box-shadow: 0 1.5rem 2.5rem -1rem rgba(11, 35, 80, .45); }
 #services-877 .cs-picture { height: auto; aspect-ratio: 800 / 525; background-color: var(--ice); border-bottom: 1px solid #D3DEEC; }
