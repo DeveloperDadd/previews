@@ -17,8 +17,8 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'critchfiel
 # ---------------------------------------------------------------- business (fictional)
 BIZ = 'Hollow Creek Lawn &amp; Landscape'
 BIZ_TEXT = 'Hollow Creek Lawn & Landscape'
-PHONE = '(859) 555-0168'          # 555 = fictional number
-TEL = 'tel:+18595550168'
+PHONE = '(859) 270-7050'          # Critchfield Systems' number, so calls reach Clayton
+TEL = 'tel:+18592707050'
 EMAIL = 'office@hollowcreek.example'
 ADDRESS_1 = '400 Old Frankfort Pike'
 ADDRESS_2 = 'Lexington, KY 40510'

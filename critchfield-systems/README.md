@@ -94,7 +94,7 @@ reused from the roofing sample:
 | Gallery | page-banner-559, gallery-45, gallery-377 |
 | Contact | page-banner-559, contact-325, steps-1172, locations-720 |
 
-Same rules as the roofing sample (noindex, no forms, every button is "Call Now"), but it still uses the 555 number (859) 555-0168.
+Same rules as the roofing sample: noindex, Critchfield Systems' number (859) 270-7050, no forms, every button is "Call Now".
 
 ## Plumbing sample (`/sample-plumbing/`)
 
