@@ -1409,7 +1409,7 @@ PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems col
 <section id="legal">
     <div class="cs-container">
         <h2>Who we are</h2>
-        <p>Critchfield Systems (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a web design business based in Lexington, Kentucky. We build and host websites for small businesses and serve customers across the United States remotely. This policy explains what information we collect when you visit <a href="{SITE}">critchfieldsystems.com</a> or contact us, and how we use it. Questions? Call or text <a href="{TEL}">{PHONE_DISPLAY}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+        <p>Critchfield Systems, LLC (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a web design business based in Lexington, Kentucky. We build and host websites for small businesses and serve customers across the United States remotely. This policy explains what information we collect when you visit <a href="{SITE}">critchfieldsystems.com</a> or contact us, and how we use it. Questions? Call or text <a href="{TEL}">{PHONE_DISPLAY}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 
         <h2>Information we collect</h2>
         <p><strong>Information you give us.</strong> This website does not have a sign-up or contact form. We receive information when you call, text or email us, and when you become a customer. That can include:</p>
@@ -1467,7 +1467,7 @@ PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems col
         <p>We may update this policy from time to time. The &ldquo;last updated&rdquo; date at the top shows when it last changed. Continuing to use the website after an update means you accept the updated policy.</p>
 
         <h2>Contact us</h2>
-        <p>Critchfield Systems<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+        <p>Critchfield Systems, LLC<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
     </div>
 </section>
 '''
@@ -1476,7 +1476,7 @@ TERMS_BODY = hero_493('Legal', 'Terms of Service', f'The terms that apply when y
 <section id="legal">
     <div class="cs-container">
         <h2>Agreement to these terms</h2>
-        <p>These Terms of Service (&ldquo;Terms&rdquo;) are an agreement between you and Critchfield Systems (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;), a web design business based in Lexington, Kentucky. They apply when you visit <a href="{SITE}">critchfieldsystems.com</a> and when you sign up for our website plan (the &ldquo;Service&rdquo;). By using this website or the Service, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use them.</p>
+        <p>These Terms of Service (&ldquo;Terms&rdquo;) are an agreement between you and Critchfield Systems, LLC (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;), a web design business based in Lexington, Kentucky. They apply when you visit <a href="{SITE}">critchfieldsystems.com</a> and when you sign up for our website plan (the &ldquo;Service&rdquo;). By using this website or the Service, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use them.</p>
 
         <h2>The Service</h2>
         <p>For a flat monthly fee, the Service includes:</p>
@@ -1535,7 +1535,7 @@ TERMS_BODY = hero_493('Legal', 'Terms of Service', f'The terms that apply when y
         <p>We may update these Terms from time to time. The &ldquo;last updated&rdquo; date at the top shows the latest version. For active customers, we will give at least 30 days&rsquo; notice of material changes, and you may cancel before they take effect. Continuing to use the website or the Service after changes take effect means you accept them.</p>
 
         <h2>Contact us</h2>
-        <p>Critchfield Systems<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+        <p>Critchfield Systems, LLC<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
     </div>
 </section>
 '''
