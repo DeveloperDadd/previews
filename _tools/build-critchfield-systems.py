@@ -802,7 +802,7 @@ HOME_BODY = f'''
     <div class="cs-container">
         <div class="cs-image-group">
             <picture class="cs-picture">
-                <img loading="lazy" decoding="async" src="assets/clayton-square.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="630" height="630">
+                <img loading="lazy" decoding="async" src="assets/clayton-square-2.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="630" height="630">
             </picture>
             <div class="cs-box">
                 <span class="cs-number">48h</span>
@@ -1143,7 +1143,7 @@ ABOUT_BODY = hero_493('About', 'The Person Behind Your Website',
 <section id="sbsr-99">
     <div class="cs-container">
         <picture class="cs-picture">
-            <img loading="lazy" decoding="async" src="assets/clayton-portrait.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="500" height="552">
+            <img loading="lazy" decoding="async" src="assets/clayton-portrait-2.webp" alt="Clayton Critchfield, owner of Critchfield Systems" width="500" height="552">
         </picture>
         <div class="cs-content">
             <span class="cs-topper">My Story</span>

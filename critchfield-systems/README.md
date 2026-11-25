@@ -55,7 +55,7 @@ SVG backgrounds are adapted from `backgrounds/background6` (waves) and `backgrou
 
 ## Owner photo
 
-`assets/clayton-square.webp` (Home about circle) and `assets/clayton-portrait.webp` (About story).
+`assets/clayton-square-2.webp` (Home about circle) and `assets/clayton-portrait-2.webp` (About story).
 Location data from the original photo was stripped.
 
 ## Sample site (`/sample/`)
