@@ -738,6 +738,10 @@ a { color: var(--primary); }
 #cs-footer-145 .cs-contact { border-color: rgba(34, 195, 255, .25); }
 #cs-footer-145 .cs-contact-link .cs-label { display: block; font-size: .8125rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--primaryLight); }
 #cs-footer-145 .cs-copyright { color: #9fb0cc; }
+#cs-footer-145 .cs-bottom { flex-wrap: wrap; gap: .75rem 1.5rem; }
+#cs-footer-145 .cs-legal { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+#cs-footer-145 .cs-legal a { color: #9fb0cc; font-size: .9375rem; text-decoration: none; }
+#cs-footer-145 .cs-legal a:hover { color: #fff; text-decoration: underline; }
 @media only screen and (max-width: 47.9375rem) {
   #cs-footer-145 .cs-container { align-items: flex-start; }
   #cs-footer-145 .cs-nav { width: 50%; margin-bottom: 2.5rem; }

@@ -17,6 +17,16 @@ TEL = f'tel:{PHONE_E164}'
 SMS = f'sms:{PHONE_E164}'
 SITE = 'https://critchfieldsystems.com'
 
+# Microsoft Clarity (approved third-party script exception; see CLAUDE.md). Goes in <head> of every page.
+CLARITY = '''    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "zix1q7ur26");
+    </script>
+'''
+
 def comp_css(path):
     return open(os.path.join(COMP, path, 'style.css')).read()
 
@@ -166,6 +176,10 @@ FOOTER_OVERRIDES = """
 #cs-footer-145 .cs-contact { border-color: rgba(34, 195, 255, .25); }
 #cs-footer-145 .cs-contact-link .cs-label { display: block; font-size: .8125rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--primaryLight); }
 #cs-footer-145 .cs-copyright { color: #9fb0cc; }
+#cs-footer-145 .cs-bottom { flex-wrap: wrap; gap: .75rem 1.5rem; }
+#cs-footer-145 .cs-legal { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+#cs-footer-145 .cs-legal a { color: #9fb0cc; font-size: .9375rem; text-decoration: none; }
+#cs-footer-145 .cs-legal a:hover { color: #fff; text-decoration: underline; }
 @media only screen and (max-width: 47.9375rem) {
   #cs-footer-145 .cs-container { align-items: flex-start; }
   #cs-footer-145 .cs-nav { width: 50%; margin-bottom: 2.5rem; }
@@ -231,7 +245,7 @@ def head(title, desc, css, path):
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/{css}">
-</head>
+{CLARITY}</head>
 <body>
 <a class="cs-skip" href="#main">Skip to content</a>
 '''
@@ -362,6 +376,7 @@ FOOTER = f'''
         <!-- Bottom Credits -->
         <div class="cs-bottom">
             <span class="cs-copyright">&copy; <span id="cs-year">2026</span> Critchfield Systems. All rights reserved.</span>
+            <span class="cs-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></span>
             <!-- Social links from the component go here once profiles exist:
             <a class="cs-social-link" aria-label="visit facebook profile" href="" target="_blank" rel="noopener">...</a> -->
         </div>
@@ -1371,6 +1386,160 @@ for (const item of faqItems) {
 }
 """
 
+
+# ---------------------------------------------------------------- legal pages
+LEGAL_UPDATED = 'November 24, 2026'
+LEGAL_SECTIONS = [
+    ('hero/hero-493-centered-band-line-eyebrow', '493', []),
+]
+LEGAL_OVR = HERO_493_OVR + """
+#legal { padding: var(--sectionPadding); background-color: #fff; }
+#legal .cs-container { max-width: 50rem; margin: 0 auto; }
+#legal h2 { font-size: clamp(1.25rem, 2.4vw, 1.5rem); font-weight: 800; line-height: 1.25em; color: var(--headerColor); margin: 2.5rem 0 .75rem; }
+#legal h2:first-child { margin-top: 0; }
+#legal p, #legal li { font-size: var(--bodyFontSize); line-height: 1.75em; color: var(--bodyTextColor); }
+#legal p { margin: 0 0 1rem; }
+#legal ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+#legal li { margin-bottom: .5rem; }
+#legal a { color: var(--primary); font-weight: 600; }
+#legal .cs-updated { font-weight: 600; color: var(--headerColor); }
+"""
+
+PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems collects, uses and protects your information. Last updated {LEGAL_UPDATED}.') + f'''
+<section id="legal">
+    <div class="cs-container">
+        <h2>Who we are</h2>
+        <p>Critchfield Systems (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a web design business based in Lexington, Kentucky. We build and host websites for small businesses and serve customers across the United States remotely. This policy explains what information we collect when you visit <a href="{SITE}">critchfieldsystems.com</a> or contact us, and how we use it. Questions? Call or text <a href="{TEL}">{PHONE_DISPLAY}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+
+        <h2>Information we collect</h2>
+        <p><strong>Information you give us.</strong> This website does not have a sign-up or contact form. We receive information when you call, text or email us, and when you become a customer. That can include:</p>
+        <ul>
+            <li>Your name, phone number and email address</li>
+            <li>Your business name, services, service area and hours</li>
+            <li>Photos, logos, videos and text you send us to put on your website</li>
+            <li>The content of your messages, and billing details needed to charge you for your plan</li>
+        </ul>
+        <p><strong>Information collected automatically.</strong> When you visit this website, we and our service providers receive technical information such as your IP address, browser and device type, operating system, the pages you view, how long you stay, the website that referred you, and your approximate location (for example, city or region) based on your IP address. With our session-recording tool (described below), we also see how you interact with pages, such as clicks, taps, scrolling and mouse movement.</p>
+
+        <h2>How we use your information</h2>
+        <ul>
+            <li>To respond to your calls, texts and emails</li>
+            <li>To build, host, secure and maintain your website</li>
+            <li>To bill you and keep records</li>
+            <li>To understand how people use this website so we can fix problems and make it faster and clearer</li>
+            <li>To protect against fraud, abuse and security threats, and to meet legal obligations</li>
+        </ul>
+
+        <h2>Analytics, cookies and similar tools</h2>
+        <p>This website uses the following third-party services:</p>
+        <ul>
+            <li><strong>Cloudflare</strong> hosts this website and provides Cloudflare Web Analytics for basic traffic statistics. Cloudflare describes Web Analytics as privacy-focused, and it does not use cookies to track visitors. Cloudflare also processes visitor IP addresses as part of delivering and securing the site. See the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.</li>
+            <li><strong>Microsoft Clarity</strong> is a free analytics tool that records how visitors use this website, including session replays and heatmaps. Clarity uses cookies and similar technologies to recognize a visit across pages, and it masks sensitive content by default. Microsoft receives and processes this data under the <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a> and the <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener">Clarity terms</a>.</li>
+            <li><strong>Google Fonts</strong> serves the typeface used on this website. When a page loads, your browser requests the font from Google, which means Google receives your IP address. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+        </ul>
+        <p>You can limit cookies and tracking through your browser settings, a content blocker or a privacy-focused browser. Blocking these tools will not stop you from using the website.</p>
+
+        <h2>Text messages</h2>
+        <p>If you text us, we use your phone number and message only to reply and to provide our services. We do not sell or share mobile phone numbers or text messaging opt-in information with third parties for their marketing or promotional purposes. If we ever send you recurring or automated text messages, we will first get your consent, tell you how often to expect messages, and you can reply STOP at any time to opt out or HELP for help. Message and data rates may apply.</p>
+
+        <h2>How we share information</h2>
+        <p>We do not sell your personal information. We share it only with:</p>
+        <ul>
+            <li><strong>Service providers</strong> that help us run the business, such as hosting, analytics, payment processing, email and phone services. They may use the information only to provide services to us.</li>
+            <li><strong>Legal and safety recipients</strong> when we believe disclosure is required by law, or necessary to protect our rights, our customers or others.</li>
+            <li><strong>A successor</strong> if our business is sold or transferred, in which case this policy continues to apply to your information.</li>
+        </ul>
+        <p>If you are a customer, the business information and content you ask us to publish on your website becomes public when the site goes live.</p>
+
+        <h2>How long we keep information</h2>
+        <p>We keep information only as long as we need it for the purposes above, to keep business and tax records, and to resolve disputes. When it is no longer needed, we delete it or de-identify it. Analytics providers keep data under their own retention periods.</p>
+
+        <h2>Your choices</h2>
+        <p>You can ask us to access, correct or delete the personal information we hold about you by calling, texting or emailing us. Depending on where you live, you may have additional privacy rights under state law. We will respond to reasonable requests as required by law. We may need to verify your identity first.</p>
+
+        <h2>Security</h2>
+        <p>This website is served over HTTPS, and we use reputable providers to host and protect it. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
+
+        <h2>Children</h2>
+        <p>This website is intended for business owners and is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has given us information, contact us and we will delete it.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy from time to time. The &ldquo;last updated&rdquo; date at the top shows when it last changed. Continuing to use the website after an update means you accept the updated policy.</p>
+
+        <h2>Contact us</h2>
+        <p>Critchfield Systems<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+    </div>
+</section>
+'''
+
+TERMS_BODY = hero_493('Legal', 'Terms of Service', f'The terms that apply when you use this website or sign up for a Critchfield Systems website plan. Last updated {LEGAL_UPDATED}.') + f'''
+<section id="legal">
+    <div class="cs-container">
+        <h2>Agreement to these terms</h2>
+        <p>These Terms of Service (&ldquo;Terms&rdquo;) are an agreement between you and Critchfield Systems (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;), a web design business based in Lexington, Kentucky. They apply when you visit <a href="{SITE}">critchfieldsystems.com</a> and when you sign up for our website plan (the &ldquo;Service&rdquo;). By using this website or the Service, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use them.</p>
+
+        <h2>The Service</h2>
+        <p>For a flat monthly fee, the Service includes:</p>
+        <ul>
+            <li>A custom 5-page website designed around your business</li>
+            <li>Website hosting and an SSL certificate, set up and renewed for you</li>
+            <li>Unlimited small edits, meaning updates to the text, photos and videos on your existing pages, such as new hours, a new service or fresh project photos</li>
+            <li>Our PageSpeed commitment, described below</li>
+        </ul>
+        <p>We aim to put your website online within 48 hours of receiving the information we need from you. Timing depends on how quickly you send us your business details, photos and approvals.</p>
+
+        <h2>What is not included</h2>
+        <p>The plan is built for service businesses and does not include online stores or shopping carts, custom web applications (such as customer logins, member portals or booking systems), social media management, paid advertising management, or professional photography. Redesigns, new pages beyond the five included and other custom work are not &ldquo;small edits.&rdquo; If you need something that is not included, we will tell you before we do any work and agree on a price in advance.</p>
+
+        <h2>Fees and billing</h2>
+        <p>The plan is $99 per month, billed monthly, plus any applicable taxes. By signing up, you authorize us to charge the payment method you provide each month until you cancel. We will tell you at least 30 days before any change in price, and you may cancel before the new price applies.</p>
+
+        <h2>Month to month and cancellation</h2>
+        <p>There is no contract and no cancellation fee. You can cancel at any time by calling, texting or emailing us. Cancellation takes effect at the end of the month you have already paid for, and we do not refund partial months. When your plan ends, your website will be taken offline. On request, we will send you the text, photos and logos you provided to us.</p>
+
+        <h2>Your content and responsibilities</h2>
+        <p>You are responsible for the accuracy of the information you give us and for having the right to use everything you send us, including logos, photos, text, videos and any third-party material. You promise that your content does not infringe anyone&rsquo;s rights and is not unlawful, misleading or harmful. You keep ownership of your content and give us permission to use, copy, display and modify it as needed to build, host and maintain your website. You are also responsible for the claims your business makes about itself, including prices, licenses, certifications and reviews.</p>
+
+        <h2>Ownership</h2>
+        <ul>
+            <li><strong>Domain name.</strong> Critchfield Systems owns and registers the domain name used for your website.</li>
+            <li><strong>Website design and code.</strong> We own the design, code and underlying materials we create. While your plan is active, you have the right to use them for your business&rsquo;s website.</li>
+            <li><strong>Your content.</strong> You keep ownership of the content you provide, as described above.</li>
+        </ul>
+
+        <h2>PageSpeed commitment</h2>
+        <p>We design your site to score 90 or higher on Google PageSpeed Insights. If your site scores below 90 for reasons within our control, we will fix it at no extra charge. This commitment does not apply to score drops caused by things outside our control, such as third-party scripts or embeds you ask us to add, very large images or videos you provide, changes Google makes to how it measures speed, or variations between tests and testing conditions.</p>
+
+        <h2>Third-party services and availability</h2>
+        <p>Your website depends on third-party providers, including hosting, domain and internet infrastructure. We work to keep your site online and secure, but we do not guarantee uninterrupted or error-free service, and we are not responsible for outages or failures of those providers.</p>
+
+        <h2>Acceptable use</h2>
+        <p>You may not use the Service or this website to break the law, to infringe others&rsquo; rights, to send spam or malware, to publish deceptive or harmful content, or to interfere with the website&rsquo;s security or operation. We may remove content or suspend a site that violates these Terms or the law, and we will try to notify you when we do.</p>
+
+        <h2>Disclaimers</h2>
+        <p>The website and the Service are provided &ldquo;as is&rdquo; and &ldquo;as available.&rdquo; To the fullest extent permitted by law, we disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose and non-infringement. We do not guarantee any particular number of visitors, calls, search rankings or sales.</p>
+
+        <h2>Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, Critchfield Systems will not be liable for any indirect, incidental, special, consequential or punitive damages, or for lost profits, revenue, data or business opportunities, arising from your use of the website or the Service. Our total liability for any claim relating to the Service will not exceed the amount you paid us in the three months before the event that gave rise to the claim. Some jurisdictions do not allow certain limitations, so some of these may not apply to you.</p>
+
+        <h2>Indemnification</h2>
+        <p>You agree to defend and hold us harmless from claims, losses and expenses (including reasonable attorney fees) arising from the content you provide, your use of the Service in violation of these Terms, or your violation of any law or third-party right.</p>
+
+        <h2>Using this website</h2>
+        <p>The information on this website is for general information about our services. The text, design, graphics and code on this website belong to Critchfield Systems, and you may not copy or reuse them without our written permission. Sample sites shown on this website are examples and are not real businesses.</p>
+
+        <h2>Governing law</h2>
+        <p>These Terms are governed by the laws of the Commonwealth of Kentucky, without regard to conflict-of-law rules. Any dispute that cannot be resolved informally will be brought in the state or federal courts located in Fayette County, Kentucky, and you agree to their jurisdiction.</p>
+
+        <h2>Changes to these Terms</h2>
+        <p>We may update these Terms from time to time. The &ldquo;last updated&rdquo; date at the top shows the latest version. For active customers, we will give at least 30 days&rsquo; notice of material changes, and you may cancel before they take effect. Continuing to use the website or the Service after changes take effect means you accept them.</p>
+
+        <h2>Contact us</h2>
+        <p>Critchfield Systems<br>Lexington, Kentucky<br><a href="{TEL}">{PHONE_DISPLAY}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+    </div>
+</section>
+'''
+
 # ---------------------------------------------------------------- write
 def write(rel, text):
     p = os.path.join(OUT, rel)
@@ -1391,8 +1560,12 @@ write('pricing.html', page('pricing.html', 'Pricing: $99/Month, No Contract | Cr
 write('about.html', page('about.html', 'About | Critchfield Systems', 'Critchfield Systems is a one-person web studio building fast, affordable websites for small businesses across the U.S., fully remote.', 'about.css', ABOUT_BODY))
 write('contact.html', page('contact.html', 'Contact | Critchfield Systems', f'Call or text {PHONE_DISPLAY} to get your $99/month small business website started. Live within 48 hours.', 'contact.css', CONTACT_BODY, faq=True))
 
+write('css/legal.css', page_css(LEGAL_SECTIONS, LEGAL_OVR))
+write('privacy.html', page('privacy.html', 'Privacy Policy | Critchfield Systems', 'How Critchfield Systems collects, uses and protects your information.', 'legal.css', PRIVACY_BODY))
+write('terms.html', page('terms.html', 'Terms of Service | Critchfield Systems', 'The terms that apply to this website and the Critchfield Systems website plan.', 'legal.css', TERMS_BODY))
+
 write('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-urls = ''.join(f'  <url><loc>{SITE}{u}</loc></url>\n' for u in ['/', '/pricing', '/about', '/contact'])
+urls = ''.join(f'  <url><loc>{SITE}{u}</loc></url>\n' for u in ['/', '/pricing', '/about', '/contact', '/privacy', '/terms'])
 write('sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 write('_headers', '/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/css/*\n  Cache-Control: public, max-age=86400\n/js/*\n  Cache-Control: public, max-age=86400\n')
 print('built', OUT)
