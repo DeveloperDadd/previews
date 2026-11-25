@@ -27,6 +27,29 @@ CLARITY = '''    <script type="text/javascript">
     </script>
 '''
 
+# Meta Pixel (approved third-party script exception; see CLAUDE.md). Script goes in <head>, noscript fallback right after <body>.
+META_PIXEL_ID = '1905399440638941'
+META_PIXEL = '''    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1905399440638941');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+'''
+META_PIXEL_NOSCRIPT = '''<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1905399440638941&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+'''
+
+
 def comp_css(path):
     return open(os.path.join(COMP, path, 'style.css')).read()
 
@@ -245,9 +268,9 @@ def head(title, desc, css, path):
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/{css}">
-{CLARITY}</head>
+{CLARITY}{META_PIXEL}</head>
 <body>
-<a class="cs-skip" href="#main">Skip to content</a>
+{META_PIXEL_NOSCRIPT}<a class="cs-skip" href="#main">Skip to content</a>
 '''
 
 NAV_LINKS = [('index.html', 'Home'), ('pricing.html', 'Pricing'), ('about.html', 'About'), ('contact.html', 'Contact')]
@@ -1427,6 +1450,7 @@ PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems col
             <li>To build, host, secure and maintain your website</li>
             <li>To bill you and keep records</li>
             <li>To understand how people use this website so we can fix problems and make it faster and clearer</li>
+            <li>To measure and improve our advertising, including showing our ads to people who may be interested</li>
             <li>To protect against fraud, abuse and security threats, and to meet legal obligations</li>
         </ul>
 
@@ -1435,6 +1459,7 @@ PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems col
         <ul>
             <li><strong>Cloudflare</strong> hosts this website and provides Cloudflare Web Analytics for basic traffic statistics. Cloudflare describes Web Analytics as privacy-focused, and it does not use cookies to track visitors. Cloudflare also processes visitor IP addresses as part of delivering and securing the site. See the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.</li>
             <li><strong>Microsoft Clarity</strong> is a free analytics tool that records how visitors use this website, including session replays and heatmaps. Clarity uses cookies and similar technologies to recognize a visit across pages, and it masks sensitive content by default. Microsoft receives and processes this data under the <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a> and the <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener">Clarity terms</a>.</li>
+            <li><strong>Meta Pixel</strong> (Meta, the company behind Facebook and Instagram) helps us measure the results of our ads and show them to people who may be interested. The pixel sets cookies and sends information about your visit to Meta, such as the pages you view and actions you take, along with your IP address and browser and device information. Meta uses this information under its own policies, including the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta Privacy Policy</a>. You can manage how Meta uses your activity for ads in your <a href="https://www.facebook.com/adpreferences/" target="_blank" rel="noopener">Meta ad preferences</a>.</li>
             <li><strong>Google Fonts</strong> serves the typeface used on this website. When a page loads, your browser requests the font from Google, which means Google receives your IP address. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
         </ul>
         <p>You can limit cookies and tracking through your browser settings, a content blocker or a privacy-focused browser. Blocking these tools will not stop you from using the website.</p>
@@ -1443,9 +1468,10 @@ PRIVACY_BODY = hero_493('Legal', 'Privacy Policy', f'How Critchfield Systems col
         <p>If you text us, we use your phone number and message only to reply and to provide our services. We do not sell or share mobile phone numbers or text messaging opt-in information with third parties for their marketing or promotional purposes. If we ever send you recurring or automated text messages, we will first get your consent, tell you how often to expect messages, and you can reply STOP at any time to opt out or HELP for help. Message and data rates may apply.</p>
 
         <h2>How we share information</h2>
-        <p>We do not sell your personal information. We share it only with:</p>
+        <p>We do not sell your personal information for money. We share it only with:</p>
         <ul>
             <li><strong>Service providers</strong> that help us run the business, such as hosting, analytics, payment processing, email and phone services. They may use the information only to provide services to us.</li>
+            <li><strong>Advertising and analytics providers</strong>, such as Meta, through the tools described above. These providers use the information under their own privacy policies.</li>
             <li><strong>Legal and safety recipients</strong> when we believe disclosure is required by law, or necessary to protect our rights, our customers or others.</li>
             <li><strong>A successor</strong> if our business is sold or transferred, in which case this policy continues to apply to your information.</li>
         </ul>
